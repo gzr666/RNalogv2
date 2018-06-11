@@ -50,6 +50,45 @@ namespace RadniNalog.Controllers
         }
 
 
+        [HttpGet, Route("/api/statistika/putninalozi")]
+        public PutniNalogStatistics GetStatisticsPutni()
+        {
+
+            return new PutniNalogStatistics
+            {
+
+                NaloziDa = _context.RadniNalozi.Where(c => c.PutniNalog == "DA").Count(),
+                NaloziNe = _context.RadniNalozi.Where(c => c.PutniNalog == "NE").Count()
+
+
+            };
+
+
+        }
+
+        [HttpGet, Route("/api/statistika/automobili")]
+        public object GetStatisticsAutomobili()
+        {
+
+            return new
+            {
+
+                DaciaDokkerS1435F = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Dacia Dokker ST-1435 F").Count(),
+                DaciaDokkerST1674C = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Dacia Dokker ST-1674 C").Count(),
+                DaciaSanderoST2653C = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Dacia Sandero ST-2653 C").Count(),
+                FiatDobloST851PA = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Doblo ST-851 PA").Count(),
+                FiatPandaST2164C = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Panda ST-2164 C").Count(),
+                FiatStilo741OS = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Stilo-741 OS").Count()
+
+
+
+
+            };
+
+
+        }
+
+
         [HttpGet,Route("/api/nalozi")]
         public IEnumerable<RNalogViewModel> GetRadniNalozi2(bool includeAll = false)
         {
@@ -107,7 +146,12 @@ namespace RadniNalog.Controllers
             }
 
             //var nalog = await _context.RadniNalozi.SingleOrDefaultAsync(m => m.ID == id);
-            rNalog.Datum = DateTime.Now.ToShortDateString();
+
+
+
+           // rNalog.Datum = rNalog.Datum;
+
+          //  Datum = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
 
             _context.Entry(rNalog).State = EntityState.Modified;
 
@@ -187,7 +231,7 @@ namespace RadniNalog.Controllers
 
             };
 
-
+            Console.WriteLine(nalog.Datum);
 
             _context.Entry(nalog).State = EntityState.Added;
 

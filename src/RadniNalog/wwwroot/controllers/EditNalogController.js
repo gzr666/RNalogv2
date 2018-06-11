@@ -57,31 +57,34 @@
         });
 
         
-        $http.get("/api/RNalog/" + $stateParams.id).then(function (data) {
+            $http.get("/api/RNalog/" + $stateParams.id).then(function (data) {
 
-            angular.copy(data.data, $scope.rnalog);
-            $scope.pNalozi
-            
-            $scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime: data.data.rukovoditelj })[0];
-            $scope.spremnik.izvrsitelj1 = _.where($scope.izvrsitelji1, { ime: data.data.izvrsitelj2 })[0];
-            $scope.spremnik.izvrsitelj2 = _.where($scope.izvrsitelji2, { ime: data.data.izvrsitelj3 })[0];
-            $scope.spremnik.nalog = _.where($scope.pNalozi, { name: data.data.putniNalog })[0];
-            $scope.spremnik.mjestoRada = _.where($scope.mjestaRada, { id: data.data.mjestoRadaID })[0];
-            $scope.spremnik.vrstaRada = _.where($scope.vrsteRada, { id: data.data.vrstaRadaID })[0];
-            $scope.spremnik.automobil = _.where($scope.automobili, { id: data.data.automobilID })[0];
-            $scope.spremnik.opisRadova = data.data.opisRadova;
-            $scope.spremnik.materijal = data.data.materijal;
-          
+                console.log(data.data);
+                angular.copy(data.data, $scope.rnalog);
+                //  $scope.pNalozi
 
-            
-
-
-
-        }, function () {
+                $scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime: data.data.rukovoditelj })[0];
+                $scope.spremnik.izvrsitelj1 = _.where($scope.izvrsitelji1, { ime: data.data.izvrsitelj2 })[0];
+                $scope.spremnik.izvrsitelj2 = _.where($scope.izvrsitelji2, { ime: data.data.izvrsitelj3 })[0];
+                $scope.spremnik.nalog = _.where($scope.pNalozi, { name: data.data.putniNalog })[0];
+                $scope.spremnik.mjestoRada = _.where($scope.mjestaRada, { id: data.data.mjestoRadaID })[0];
+                $scope.spremnik.vrstaRada = _.where($scope.vrsteRada, { id: data.data.vrstaRadaID })[0];
+                $scope.spremnik.automobil = _.where($scope.automobili, { id: data.data.automobilID })[0];
+                $scope.spremnik.opisRadova = data.data.opisRadova;
+                $scope.spremnik.materijal = data.data.materijal;
+                $scope.spremnik.datum = data.data.Datum;
 
 
 
-        });
+
+
+
+            }, function () {
+
+
+
+            })
+       
 
         $scope.defRuk1 = function ()
         {
@@ -127,17 +130,20 @@
         //uredinalog
         $scope.urediNalog = function (spremnik)
         {
+           
 
+            console.log(spremnik);
 
-
-            if (spremnik.Izvrsitelj3 == undefined) {
-                spremnik.Izvrsitelj3 = {};
-                spremnik.Izvrsitelj3.ime = "";
+            if (typeof spremnik.izvrsitelj1 === undefined) {
+                spremnik.izvrsitelj1 = {};
+                spremnik.izvrsitelj1.ime = "";
             }
 
-            if (spremnik.Izvrsitelj2 == undefined) {
-                spremnik.Izvrsitelj2 = {};
-                spremnik.Izvrsitelj2.ime = "";
+            if (typeof spremnik.izvrsitelj2 === undefined) {
+                spremnik.izvrsitelj2 = {};
+                spremnik.izvrsitelj2.ime = "";
+
+
             }
 
             var rnalog = {
@@ -150,7 +156,9 @@
                 PutniNalog: spremnik.nalog.name,
                 AutomobilID: spremnik.automobil.id,
                 MjestoRadaID: spremnik.mjestoRada.id,
-                VrstaRadaID: spremnik.vrstaRada.id
+                VrstaRadaID: spremnik.vrstaRada.id,
+                Datum: spremnik.datum
+
 
 
 

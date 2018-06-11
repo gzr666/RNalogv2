@@ -14,7 +14,7 @@ using RadniNalog.Models;
 using RadniNalog.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
-
+using Rotativa.AspNetCore;
 
 namespace RadniNalog
 {
@@ -49,7 +49,7 @@ namespace RadniNalog
         public  void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
+           // services.AddApplicationInsightsTelemetry(Configuration);
 
 
             /*Dodavanje servisa za interakciju s  MSSQLbazom u INJECT KONTAINER*/
@@ -140,7 +140,11 @@ namespace RadniNalog
             fillRole.fillNalog();
             fillRole.createRolesandUsers();
 
-         
+
+
+            // var webRootPath = env.WebRootPath;
+            // call rotativa conf passing env to get web root path
+            RotativaConfiguration.Setup(env);
 
 
         }

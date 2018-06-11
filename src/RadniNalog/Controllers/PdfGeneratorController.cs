@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using Rotativa.AspNetCore;
 
 namespace RadniNalog.Controllers
 {
@@ -88,6 +89,33 @@ namespace RadniNalog.Controllers
             HttpContext.Response.Headers.Add("Access-Control-Expose-Headers", "x-filename");
             HttpContext.Response.Body.Write(result, 0, result.Length);
             return new ContentResult();
+        }
+
+
+        //igra sa rotativom
+
+        [HttpGet("pdfNalogROT/{id}")]
+        public  IActionResult ZaposlenikSingleROTATIVAAsync([FromRoute] int id)
+        {
+            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+
+
+            var single = nalozi.SingleOrDefault(m => m.ID == id);
+
+
+
+            return  new ViewAsPdf("SingleROTATIVA",single)
+            {
+                PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 20 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                CustomSwitches = "--page-offset 0 --footer-center [page] --footer-font-size 12",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4
+
+
+            };
+
+
+
         }
 
 

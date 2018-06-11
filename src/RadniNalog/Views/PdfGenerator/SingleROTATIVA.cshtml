@@ -1,0 +1,69 @@
+﻿
+@model RadniNalog.ViewModels.RNalogViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="~/css/bootstrapprint.css" rel="stylesheet" />
+    <title>SingleROTATIVA</title>
+</head>
+<body>
+
+    <div class="container">
+
+
+
+
+
+
+        <div class="panel panel-primary marginax" style="min-height:1200px;float:leftx">
+            <div class="panel-heading"><h4 class="text-center">Radni Nalog</h4></div>
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="col-md-6" style="width:100%;float:leftx">
+                        <p> <b>Datum Naloga:</b>  @Model.Datum</p>
+                        <p> <b>Mjesto Rada:</b>  @Model.MjestoRada.Ime</p>
+                        <p> <b>Putni Nalog:</b> @Model.PutniNalog</p>
+                        <p> <b>Automobil:</b>  @Model.Automobil.Registracija</p>
+                        <hr>
+                        <p> <b>Rukovoditelj:</b> @Model.Rukovoditelj</p>
+                        <p> <b>Izvršitelj1:</b> @Model.Izvrsitelj2</p>
+                        <p> <b>Izvršitelj2:</b> @Model.Izvrsitelj3</p>
+
+                    </div>
+
+                    <div class="col-md-6" style="width:100%;float:leftx">
+
+                        <p> <b>Vrsta Rada:</b>  @Model.VrstaRada.Naziv}</p>
+                        <hr>
+                        <p> <b> Materijal:</b>  @Model.Materijal</p>
+                        <p> <b>Opis Rada:</b>  @Model.OpisRadova</p>
+
+                        <hr>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div style='page-break-before: always;min-height:20%'></div>
+
+
+
+
+    </div>
+
+
+</body>
+</html>
