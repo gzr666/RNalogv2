@@ -2,7 +2,8 @@
 (function () {
 
     angular.module("myApp")
-    .controller("EditNalogController", function ($scope, $rootScope, $http, $filter, ngTableParams, toastr,$state, $stateParams,_) {
+        .controller("EditNalogController", function ($scope, $rootScope, $http, $filter, ngTableParams, toastr, $state, $stateParams, _,
+            automobilService, vrstaRadaService, mjestoRadaService, zaposlenikService, nalogService) {
         
 
       
@@ -18,73 +19,133 @@
         $scope.automobili = [];
         $scope.rnalog = {};
         $scope.spremnik = {};
+        $scope.testMe = {};
 
 
 
         //dohvati mjesta rada
-        $http.get("/api/MjestoRada").success(function (data) {
+
+        mjestoRadaService.getMjestaRada().then(function (data) {
 
             angular.copy(data, $scope.mjestaRada);
 
+
+        }, function (error) {
 
 
         });
 
         //dohvati vrste rada
-        $http.get("/api/VrstaRada").success(function (data) {
+     
+        vrstaRadaService.getVrsteRada().then(function (data) {
 
             angular.copy(data, $scope.vrsteRada);
 
+
+
+        }, function (error) {
+
+
         });
 
+
         //dohvati automobile
-        $http.get("/api/Automobil").success(function (data) {
+
+        automobilService.getAutomobili().then(function (data) {
 
             angular.copy(data, $scope.automobili);
 
+
+
+        }, function (error) {
+
+
         });
+        
 
 
 
         //dohvati zaposlenike
-        $http.get("/api/zaposlenici").success(function (data) {
+
+
+        zaposlenikService.getZaposlenici().then(function (data) {
 
 
 
+            console.log(data);
             angular.copy(data, $scope.rukovoditelji);
             angular.copy(data, $scope.izvrsitelji1);
             angular.copy(data, $scope.izvrsitelji2);
+            console.log($scope.izvrsitelji1);
+
+
+        }, function (error) {
+
+
         });
 
+
+
+        //dohvati nalog za edit
+        nalogService.getNalozi().then(function (data) {
+
+           
+          
+          //  angular.copy(data, $scope.rnalog);
+
+           
+
+            //$scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime:data.rukovoditelj })[0];
+            //$scope.spremnik.izvrsitelj1 = _.where($scope.izvrsitelji1, { ime:data.izvrsitelj2 })[0];
+            //$scope.spremnik.izvrsitelj2 = _.where($scope.izvrsitelji2, { ime:data.izvrsitelj3 })[0];
+            //$scope.spremnik.nalog = _.where($scope.pNalozi, { name: data.putniNalog })[0];
+            //$scope.spremnik.mjestoRada = _.where($scope.mjestaRada, { id:data.mjestoRadaID })[0];
+            //$scope.spremnik.vrstaRada = _.where($scope.vrsteRada, { id:data.vrstaRadaID })[0];
+            //$scope.spremnik.automobil = _.where($scope.automobili, { id:data.automobilID })[0];
+            //$scope.spremnik.opisRadova = data.opisRadova;
+            //$scope.spremnik.materijal = data.materijal;
+            //$scope.spremnik.datum = data.Datum;
+
+
+         
+
+
+        }, function (error) {
+
+
+
+            });
+
+
+
+
+
+        nalogService.getNalog($stateParams.id).then(function (data) {
+
+            //ovdje moramo prepopulirati formu
+
+            console.log(data);
+            
+            $scope.spremnik.materijal = data.materijal;
+            $scope.spremnik.opisRadova = data.opisRadova;
+          
         
-            $http.get("/api/RNalog/" + $stateParams.id).then(function (data) {
+           
+            $scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime: data.rukovoditelj })[0];
 
-                console.log(data.data);
-                angular.copy(data.data, $scope.rnalog);
-                //  $scope.pNalozi
+            $scope.spremnik.izvrsitelj1 = _.where($scope.rukovoditelji, { ime: data.izvrsitelj2 })[0];
+           
+           
 
-                $scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime: data.data.rukovoditelj })[0];
-                $scope.spremnik.izvrsitelj1 = _.where($scope.izvrsitelji1, { ime: data.data.izvrsitelj2 })[0];
-                $scope.spremnik.izvrsitelj2 = _.where($scope.izvrsitelji2, { ime: data.data.izvrsitelj3 })[0];
-                $scope.spremnik.nalog = _.where($scope.pNalozi, { name: data.data.putniNalog })[0];
-                $scope.spremnik.mjestoRada = _.where($scope.mjestaRada, { id: data.data.mjestoRadaID })[0];
-                $scope.spremnik.vrstaRada = _.where($scope.vrsteRada, { id: data.data.vrstaRadaID })[0];
-                $scope.spremnik.automobil = _.where($scope.automobili, { id: data.data.automobilID })[0];
-                $scope.spremnik.opisRadova = data.data.opisRadova;
-                $scope.spremnik.materijal = data.data.materijal;
-                $scope.spremnik.datum = data.data.Datum;
+        }, function (error) {
 
 
 
+        });
 
 
-
-            }, function () {
-
-
-
-            })
-       
+        
+           
 
         $scope.defRuk1 = function ()
         {

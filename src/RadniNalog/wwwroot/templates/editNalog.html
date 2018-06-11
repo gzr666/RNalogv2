@@ -28,11 +28,13 @@
                 <div class="form-group" ng-class="{'has-error': userForm.rukovoditelj.$invalid && !userForm.rukovoditelj.$pristine}">
                     <label class="col-md-4 control-label" for="selectbasic">Rukovoditelj</label>
                     <div class="col-md-5">
-                        <select   ng-change="defRuk1()"  name="rukovoditelj" class="form-control" ng-model="spremnik.rukovoditelj" ng-options="rukovoditelj.ime for rukovoditelj in rukovoditelji" ng-init="spremnik.rukovoditelj=rukovoditelji[1]"   required>
+                       <!-- <select   ng-change="defRuk1()"  name="rukovoditelj" class="form-control" ng-model="spremnik.rukovoditelj" ng-options="rukovoditelj.ime for rukovoditelj in rukovoditelji" ng-init="spremnik.rukovoditelj=rukovoditelji[1]"   required> -->
 
-                            <option value=""></option>
-                           
-                        </select>
+                            <select ng-change="defRuk1()" name="rukovoditelj" class="form-control" ng-model="spremnik.rukovoditelj" ng-options="rukovoditelj.ime for rukovoditelj in rukovoditelji track by rukovoditelj.id" ng-init="spremnik.rukovoditelj={id:rukovoditelj.id}"  required>
+
+                                <option value=""></option>
+
+                            </select>
                     </div>
 
                     <span ng-show="userForm.rukovoditelj.$invalid &&  !userForm.rukovoditelj.$dirty " class="has-error">Morate odabrati rukovoditelja.</span>
@@ -43,7 +45,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 1</label>
                 <div class="col-md-5">
-                    <select ng-change="defRuk2()"  class="form-control" ng-model="spremnik.izvrsitelj1" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1">
+                    <select ng-change="defRuk2()"  class="form-control" ng-model="spremnik.izvrsitelj1" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1 track by izvrsitelj1.id" ng-init="spremnik.izvrsitelj1={id:izvrsitelj1.id}">
 
                         <option value="-">-</option>
                     </select>

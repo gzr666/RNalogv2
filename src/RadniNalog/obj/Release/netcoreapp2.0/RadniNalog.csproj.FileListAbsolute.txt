@@ -37,3 +37,16 @@ E:\Projects\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.Assembl
 E:\Projects\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.AssemblyInfo.cs
 E:\Projects\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.dll
 E:\Projects\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.pdb
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.0\RadniNalog.dll.config
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.0\RadniNalog.deps.json
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.0\RadniNalog.runtimeconfig.json
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.0\RadniNalog.runtimeconfig.dev.json
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.0\RadniNalog.dll
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.0\RadniNalog.pdb
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.csprojResolveAssemblyReference.cache
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.csproj.CoreCompileInputs.cache
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.AssemblyInfoInputs.cache
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.AssemblyInfo.cs
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.dll
+D:\WEBDEVELOPMENT\POSAO\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.0\RadniNalog.pdb

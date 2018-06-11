@@ -3,6 +3,30 @@
     angular.module("appAdmin").factory("automobilService", function ($http, $q) {
 
 
+        var getAutomobili = function () {
+
+            var q = $q.defer();
+            var url = "/api/Automobil/";
+            $http.get(url).then(
+                function (data) {
+
+                    q.resolve(data.data);
+
+                },
+                function (error) {
+                    q.reject(error);
+
+
+                })
+
+            return q.promise;
+
+
+
+
+        }
+
+
         var saveAutomobil = function (automobil) {
 
             var q = $q.defer();
@@ -104,104 +128,7 @@
         
 
 
-        //var getData = function (id) {
-        //    var q = $q.defer();
-
-        //    $http.get("data/apartman" + id + ".json").then(
-        //        function (data) {
-
-
-        //            q.resolve(data.data);
-
-        //        },
-        //    function (error) {
-
-        //        q.reject(error);
-        //    });
-
-        //    return q.promise;
-        //}
-
-        //var getApartmani = function () {
-        //    var q = $q.defer();
-
-        //    $http.get("data/apartmani.json").then(
-        //        function (data) {
-
-
-        //            q.resolve(data.data);
-
-        //        },
-        //    function (error) {
-
-        //        q.reject(error);
-        //    });
-
-        //    return q.promise;
-
-
-        //}
-
-        //var getBooking = function (id) {
-        //    var q = $q.defer();
-
-        //    $http.get("http://nodesinj-gzr.rhcloud.com/apartman?apartmanID=" + id).then(
-        //        function (data) {
-
-
-        //            q.resolve(data.data);
-
-        //        },
-        //    function (error) {
-
-        //        q.reject(error);
-        //    });
-
-        //    return q.promise;
-        //}
-
-        //var postBook = function (booking) {
-
-        //    var q = $q.defer();
-
-        //    $http.post("http://nodesinj-gzr.rhcloud.com/apartman", booking).then(
-        //        function (data) {
-
-
-        //            q.resolve(data.data);
-
-        //        },
-        //    function (error) {
-
-        //        q.reject(error);
-        //    });
-
-        //    return q.promise;
-
-
-        //}
-
-        //var deleteBooking = function (id) {
-
-        //    var q = $q.defer();
-
-        //    $http.delete("http://nodesinj-gzr.rhcloud.com/apartman/" + id).then(
-        //        function (data) {
-
-
-        //            q.resolve(data.data);
-
-        //        },
-        //    function (error) {
-
-        //        q.reject(error);
-        //    });
-
-        //    return q.promise;
-
-
-        //}
-
+      
 
 
 
@@ -211,7 +138,8 @@
             postAutomobil: saveAutomobil,
             deleteAutomobil: deleteAutomobil,
             editAutomobil: updateAutomobil,
-            dohvatiAutomobil:getAutomobil
+            dohvatiAutomobil: getAutomobil,
+            getAutomobili: getAutomobili
 
         }
 
