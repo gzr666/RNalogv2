@@ -15,3 +15,16 @@ E:\Projects\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.dll
 E:\Projects\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.pdb
 E:\Projects\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.csprojResolveAssemblyReference.cache
 E:\Projects\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.0\RadniNalog.dll.config
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.0\RadniNalog.deps.json
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.0\RadniNalog.runtimeconfig.json
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.0\RadniNalog.runtimeconfig.dev.json
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.0\RadniNalog.dll
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.0\RadniNalog.pdb
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.csprojResolveAssemblyReference.cache
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.csproj.CoreCompileInputs.cache
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.AssemblyInfoInputs.cache
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.AssemblyInfo.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.dll
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.0\RadniNalog.pdb

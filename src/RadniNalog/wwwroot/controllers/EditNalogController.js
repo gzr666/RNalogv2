@@ -134,8 +134,18 @@
             $scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime: data.rukovoditelj })[0];
 
             $scope.spremnik.izvrsitelj1 = _.where($scope.rukovoditelji, { ime: data.izvrsitelj2 })[0];
+
+            $scope.spremnik.izvrsitelj2 = _.where($scope.rukovoditelji, { ime: data.izvrsitelj3 })[0];
+
+            $scope.spremnik.nalog = _.where($scope.pNalozi, { name: data.putniNalog })[0];
+
+            $scope.spremnik.mjestoRada = _.where($scope.mjestaRada, { id:data.mjestoRadaID })[0];
+
+            $scope.spremnik.vrstaRada = _.where($scope.vrsteRada, { id: data.vrstaRadaID })[0];
+
+            $scope.spremnik.automobil = _.where($scope.automobili, { id:data.automobilID })[0];
            
-           
+            $scope.spremnik.datum = data.datum;
 
         }, function (error) {
 

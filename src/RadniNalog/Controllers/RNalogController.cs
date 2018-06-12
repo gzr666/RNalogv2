@@ -254,7 +254,7 @@ namespace RadniNalog.Controllers
                 }
             }
 
-            return CreatedAtAction("GetRNalog", new { id = nalog.ID }, nalog);
+            return CreatedAtAction("GetRNalog", new { id = nalog.ID }, "success creating nalog");
         }
 
         // DELETE: api/RNalog/5

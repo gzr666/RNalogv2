@@ -56,7 +56,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 2</label>
                 <div class="col-md-5">
-                    <select ng-change="defRuk3()"  name="izvrsitelj3" class="form-control" ng-model="spremnik.izvrsitelj2" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2"  >
+                    <select ng-change="defRuk3()"  name="izvrsitelj3" class="form-control" ng-model="spremnik.izvrsitelj2" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2 track by izvrsitelj2.id" ng-init="spremnik.izvrsitelj2={id:izvrsitelj2.id}"   >
 
                         <option value="-">-</option>
                     </select>
@@ -72,7 +72,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.pNalog.$invalid && !userForm.pNalog.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Putni Nalog</label>
                 <div class="col-md-5">
-                    <select ng-change="defRuk4()" name="pNalog" class="form-control" ng-model="spremnik.nalog" ng-options="nalog.name for nalog in pNalozi"  required>
+                    <select ng-change="defRuk4()" name="pNalog" class="form-control" ng-model="spremnik.nalog" ng-options="nalog.name for nalog in pNalozi track by nalog.id" ng-init="spremnik.nalog={id:nalog.id}"  required>
 
                         <option value=""></option>
                     </select>
@@ -86,7 +86,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.mRada.$invalid && !userForm.mRada.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Mjesto Rada</label>
                 <div class="col-md-5">
-                    <select ng-change="defRuk5()" name="mRada" class="form-control" ng-model="spremnik.mjestoRada" ng-options="mjestoRada.ime for mjestoRada in mjestaRada"  required>
+                    <select ng-change="defRuk5()" name="mRada" class="form-control" ng-model="spremnik.mjestoRada" ng-options="mjestoRada.ime for mjestoRada in mjestaRada track by mjestoRada.id" ng-init="spremnik.mjestoRada={id:mjestoRada.id}"  required>
 
                         <option value=""></option>
                     </select>
@@ -100,7 +100,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.vRada.$invalid && !userForm.vRada.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Vrsta Rada</label>
                 <div class="col-md-5">
-                    <select ng-change="defRuk6()" name="vRada" class="form-control" ng-model="spremnik.vrstaRada" ng-options="vrstaRada.naziv for vrstaRada in vrsteRada" required>
+                    <select ng-change="defRuk6()" name="vRada" class="form-control" ng-model="spremnik.vrstaRada" ng-options="vrstaRada.naziv for vrstaRada in vrsteRada track by vrstRada.id" ng-init="spremnik.vrstaRada={id:vrstaRada.id}" required>
 
                         <option value=""></option>
                     </select>
@@ -114,7 +114,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.automobil.$invalid && !userForm.automobil.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Registracija</label>
                 <div class="col-md-5">
-                    <select  name="automobil" class="form-control" ng-model="spremnik.automobil" ng-options="automobil.registracija for automobil in automobili"  required>
+                    <select  name="automobil" class="form-control" ng-model="spremnik.automobil" ng-options="automobil.registracija for automobil in automobili track by automobil.id" ng-init="spremnik.automobil={id:automobil.id}"  required>
 
                         <option value=""></option>
                     </select>
@@ -125,6 +125,8 @@
             </div>
 
            
+
+            <input type="text" hidden ng-model="spremnik.datum">
 
             <!-- Text input-->
             <div class="form-group" ng-class="{'has-error': userForm.opisRadova.$invalid && !userForm.opisRadova.$pristine}">
