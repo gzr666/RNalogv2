@@ -205,14 +205,14 @@
 
             console.log(spremnik);
 
-            if (typeof spremnik.izvrsitelj1 === undefined) {
-                spremnik.izvrsitelj1 = {};
-                spremnik.izvrsitelj1.ime = "";
+            if ( spremnik.izvrsitelj1 === undefined) {
+                spremnik.izvrsitelj1 = {ime:"-"};
+               
             }
 
-            if (typeof spremnik.izvrsitelj2 === undefined) {
-                spremnik.izvrsitelj2 = {};
-                spremnik.izvrsitelj2.ime = "";
+            if (spremnik.izvrsitelj2 === undefined) {
+                spremnik.izvrsitelj2 = {ime:"-"};
+               
 
 
             }
