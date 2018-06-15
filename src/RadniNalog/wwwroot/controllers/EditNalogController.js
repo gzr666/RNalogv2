@@ -72,11 +72,11 @@
 
 
 
-            console.log(data);
+           
             angular.copy(data, $scope.rukovoditelji);
             angular.copy(data, $scope.izvrsitelji1);
             angular.copy(data, $scope.izvrsitelji2);
-            console.log($scope.izvrsitelji1);
+          
 
 
         }, function (error) {
@@ -124,7 +124,7 @@
 
             //ovdje moramo prepopulirati formu
 
-            console.log(data);
+           
             
             $scope.spremnik.materijal = data.materijal;
             $scope.spremnik.opisRadova = data.opisRadova;
@@ -133,9 +133,11 @@
            
             $scope.spremnik.rukovoditelj = _.where($scope.rukovoditelji, { ime: data.rukovoditelj })[0];
 
-            $scope.spremnik.izvrsitelj1 = _.where($scope.rukovoditelji, { ime: data.izvrsitelj2 })[0];
+         
 
-            $scope.spremnik.izvrsitelj2 = _.where($scope.rukovoditelji, { ime: data.izvrsitelj3 })[0];
+            $scope.spremnik.izvrsitelj1 = _.where($scope.izvrsitelji1, { ime: data.izvrsitelj2 })[0];
+
+            $scope.spremnik.izvrsitelj2 = _.where($scope.izvrsitelji2, { ime: data.izvrsitelj3 })[0];
 
             $scope.spremnik.nalog = _.where($scope.pNalozi, { name: data.putniNalog })[0];
 
@@ -143,7 +145,9 @@
 
             $scope.spremnik.vrstaRada = _.where($scope.vrsteRada, { id: data.vrstaRadaID })[0];
 
-            $scope.spremnik.automobil = _.where($scope.automobili, { id:data.automobilID })[0];
+            $scope.spremnik.automobil = _.where($scope.automobili, { id: data.automobilID })[0];
+
+         
            
             $scope.spremnik.datum = data.datum;
 
