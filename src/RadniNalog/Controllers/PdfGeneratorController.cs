@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using Rotativa.AspNetCore;
+using RadniNalog.Models;
 
 namespace RadniNalog.Controllers
 {
@@ -209,6 +210,42 @@ namespace RadniNalog.Controllers
 
 
          
+
+
+        }
+
+        [HttpGet("nalogtest")]
+        public IActionResult RNGen() {
+
+            return View();
+
+
+        }
+
+        //igra sa rotativom
+
+        [HttpGet("pdfNalogROT2")]
+        public IActionResult RN()
+        {
+
+            Automobil car = new Automobil
+            {
+
+                Registracija = "ttttt",
+                ID = 1
+            };
+
+
+            return new ViewAsPdf("RNGen",car)
+            {
+                PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 5 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                CustomSwitches = "--page-offset 0 --footer-center [page] --footer-font-size 12",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4
+
+
+            };
+
 
 
         }
