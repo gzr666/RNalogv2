@@ -1,7 +1,7 @@
 ﻿/// <reference path="../lib/angular/angular.js" />
 
 
-var myApp = angular.module("appAdmin", ["ui.router", "toastr", 'ngTable', 'chart.js', "720kb.datepicker"]);
+var myApp = angular.module("appAdmin", ["ui.router", "toastr", 'ngTable', 'chart.js', "720kb.datepicker","moment-picker"]);
 
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -115,6 +115,14 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: "/editAutomobil/:id",
         templateUrl: "../templates/editAutomobil.html",
         controller: "CreateAutomobilController"
+
+    });
+
+    $stateProvider.state("printPDF", {
+
+        url: "/printPDF",
+        templateUrl: "../templates/printPDF.html",
+        controller: "PrintPDFController"
 
     });
 

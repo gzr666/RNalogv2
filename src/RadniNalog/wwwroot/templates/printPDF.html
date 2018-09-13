@@ -1,0 +1,65 @@
+﻿
+
+
+
+<div id="radniNalog2">
+    <form name="userForm" class="form-horizontal" novalidate>
+        <fieldset>
+
+
+
+
+
+            <!-- Form Name -->
+            <legend>Printaj Nalog</legend>
+
+
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasicccc">Datum</label>
+                <div class="col-md-5">
+                    <input class="form-control" placeholder="Select a month...." ng-model="datumkr" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl.datepicker" format="DD-MM-YYYY HH">
+                </div>
+
+
+
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group" ng-class="{'has-error': userForm.mRada.$invalid && !userForm.mRada.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Mjesto Rada</label>
+                <div class="col-md-5">
+                    <select data-live-search="true" name="mRada" class="form-control" ng-model="rnalog.MjestoRadaID" ng-options="mjestoRada.ime for mjestoRada in mjestaRada" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.mRada.$invalid &&  !userForm.mRada.$dirty " class="has-error">Odaberi Mjesto Rada</span>
+                <span ng-show="userForm.mRada.$invalid && !userForm.mRada.$pristine  " class="has-error">Odaberi Mjesto Rada</span>
+            </div>
+
+
+           
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton">Spremi Nalog</label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" ng-disabled="userForm.$invalid" class="btn btn-success" ng-click="saveNalog(rnalog)">Spremi</button>
+
+                </div>
+            </div>
+
+
+
+
+        </fieldset>
+    </form>
+
+
+
+</div>
+
+

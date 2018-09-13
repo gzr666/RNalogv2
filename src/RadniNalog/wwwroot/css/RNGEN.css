@@ -47,3 +47,14 @@
 
 
 }
+.potpis{
+
+    border-bottom:1px solid black;
+    width:20px;
+    height:10px;
+
+}
+.signature {
+    border: 0;
+    border-bottom: 1px solid #000;
+}

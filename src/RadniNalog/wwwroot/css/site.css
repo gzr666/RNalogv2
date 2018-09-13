@@ -83,3 +83,7 @@ table.tmx > tbody > tr:first-child > td:first-child>input[type=text]{
 
 background-color:black;
 }
+.printer {
+
+    padding-top:50px;
+}

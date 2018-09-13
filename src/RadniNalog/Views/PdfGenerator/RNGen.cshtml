@@ -1,4 +1,4 @@
-﻿@model RadniNalog.Models.Automobil
+﻿@model RadniNalog.Models.PrintRN
 @{
     Layout = null;
 }
@@ -105,7 +105,7 @@
                 <p><span class="textbold2">Napomena:</span> &nbsp;<span>12853</span></p>
                 <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span>21.12.2012</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>10.00</span></p>
                 <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span>21.12.2012</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>10.00</span></p>
-                <p><span class="textbold2">Rukovoditelj radova:</span> &nbsp;<span>@Model.Registracija</span></p>
+                <p><span class="textbold2">Rukovoditelj radova:</span> &nbsp;<span>@Model.DatumNalog</span></p>
                 <p><span class="textbold2">Ostali izvrsitelji:</span> &nbsp;<span>12853</span></p>
 
                 <p>
@@ -205,7 +205,7 @@
                 </p>
 
 
-                <p><span class="textbold2">Nalog za rad izdao (organizator rada):</span> &nbsp;<span>12853</span></p>
+                <p><span class="textbold2">Nalog za rad izdao (organizator rada):</span> &nbsp;<span><input type="text" class="signature" /></span></p>
 
             </div>
 
@@ -225,6 +225,19 @@
             <i class="fa fa-angle-double-right"></i>&nbsp;&nbsp;<span>Pravilnika o zaštiti na radu,</span></br>
             <i class="fa fa-angle-double-right"></i>&nbsp;&nbsp;<span>Pravilnika o zaštiti na radu,</span></br>
             <i class="fa fa-angle-double-right"></i>&nbsp;&nbsp;<span>Pravilnika o zaštiti na radu,</span>
+
+        </div>
+
+        <div class="row main">
+
+            <div class="col-xs-12">
+
+                <p><span class="textbold2">Nalog za rad primio:</span> &nbsp;<span> <input type="text" class="signature"  /></span></p>
+               
+
+
+            </div>
+
 
         </div>
 

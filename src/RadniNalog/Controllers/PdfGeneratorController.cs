@@ -224,9 +224,11 @@ namespace RadniNalog.Controllers
 
         //igra sa rotativom
 
-        [HttpGet("pdfNalogROT2")]
-        public IActionResult RN()
+        [HttpPost("pdfNalogROT2")]
+        public IActionResult RN2([FromBody]  PrintRN rn)
         {
+
+
 
             Automobil car = new Automobil
             {
@@ -236,7 +238,20 @@ namespace RadniNalog.Controllers
             };
 
 
-            return new ViewAsPdf("RNGen",car)
+            return RedirectToAction("pdfNalogROT3", rn);
+
+
+
+        }
+
+        [HttpGet("pdfNalogROT3")]
+        public IActionResult RN([FromQuery]PrintRN rn)
+        {
+
+
+
+
+            return new ViewAsPdf("RNGen", rn)
             {
                 PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 5 },
                 PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
@@ -245,6 +260,10 @@ namespace RadniNalog.Controllers
 
 
             };
+
+
+
+
 
 
 

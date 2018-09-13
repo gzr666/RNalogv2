@@ -9,6 +9,7 @@ namespace RadniNalog.Models
     {
 
         public DateTime DatumNalog { get; set; }
+        public string MjestoRada { get; set; }
 
 
     }
