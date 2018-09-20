@@ -125,6 +125,30 @@
         }
 
 
+        var postRN = function (rnalog) {
+
+            var config = { responseType: 'blob' };
+            var q = $q.defer();
+            var url = "/api/pdf/pdfNalogROT2";
+            $http.post(url, rnalog, config).then(
+                function (data) {
+
+                    q.resolve(data.data);
+
+                },
+                function (error) {
+                    q.reject(error);
+
+
+                })
+
+            return q.promise;
+
+
+        }
+
+
+
 
         
 
@@ -139,7 +163,8 @@
             deleteZaposlenik: deleteZaposlenik,
             editZaposlenik: updateZaposlenik,
             dohvatiZaposlenika: getZaposlenik,
-            getZaposlenici: getZaposlenici
+            getZaposlenici: getZaposlenici,
+            postRN:postRN
 
         }
 

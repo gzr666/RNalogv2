@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <!-- <TargetFramework>net461</TargetFramework> -->
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>RadniNalog</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -59,9 +59,11 @@
    
     <PackageReference Include="DotNetCore.NPOI" Version="1.0.2" />
    
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.8.0-beta1" />
    
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0-preview2-35157" />
+   
+    <!--<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />-->
    
     <PackageReference Include="Rotativa.AspNetCore" Version="1.0.6" />
    
@@ -82,11 +84,11 @@
     <Exec Command="dotnet bundle" />
   </Target>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>

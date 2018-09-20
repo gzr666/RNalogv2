@@ -198,134 +198,134 @@ namespace RadniNalog.Services
             //fill nalozi
 
 
-            var autoID = 0;
-            var vrstaRadaID = 0;
-            var mjestoRadaID = 0;
-            string jsonRNalog = @"apexbaza/apexbaza.json";
+            //var autoID = 0;
+            //var vrstaRadaID = 0;
+            //var mjestoRadaID = 0;
+            //string jsonRNalog = @"apexbaza/apexbaza.json";
 
-            var pathToRNalog = Path.Combine(_env.WebRootPath, jsonRNalog);
+            //var pathToRNalog = Path.Combine(_env.WebRootPath, jsonRNalog);
 
-            var parseRNalog = System.IO.File.ReadAllText(pathToRNalog);
+            //var parseRNalog = System.IO.File.ReadAllText(pathToRNalog);
 
-            var deserRNalog = JsonConvert.DeserializeObject<List<ApexSer>>(parseRNalog);
-
-
-            if (_context.RadniNalozi.Count() == 0)
-            {
-                Automobil defaultAuto = new Automobil
-                {
-
-                    Registracija = "Ostalo"
+            //var deserRNalog = JsonConvert.DeserializeObject<List<ApexSer>>(parseRNalog);
 
 
-                };
+            //if (_context.RadniNalozi.Count() == 0)
+            //{
+            //    Automobil defaultAuto = new Automobil
+            //    {
 
-                _context.Entry(defaultAuto).State = EntityState.Added;
-
-
-                VrstaRada defaultVrsta = new VrstaRada
-                {
-                    Naziv = "Ostalo"
+            //        Registracija = "Ostalo"
 
 
+            //    };
 
-                };
+            //    _context.Entry(defaultAuto).State = EntityState.Added;
 
-                _context.Entry(defaultVrsta).State = EntityState.Added;
+
+            //    VrstaRada defaultVrsta = new VrstaRada
+            //    {
+            //        Naziv = "Ostalo"
 
 
 
-                MjestoRada defaultMjesto = new MjestoRada
-                {
+            //    };
 
-                    Ime = "Ostalo"
-
-                };
-
-                _context.Entry(defaultMjesto).State = EntityState.Added;
+            //    _context.Entry(defaultVrsta).State = EntityState.Added;
 
 
-                foreach (var rNalog in deserRNalog)
+
+            //    MjestoRada defaultMjesto = new MjestoRada
+            //    {
+
+            //        Ime = "Ostalo"
+
+            //    };
+
+            //    _context.Entry(defaultMjesto).State = EntityState.Added;
+
+
+            //    foreach (var rNalog in deserRNalog)
 
               
-                {
+            //    {
 
 
 
                    
 
 
-                    var auto = _context.Automobili.Where(automobil => automobil.Registracija == rNalog.FIELD11).FirstOrDefault();
+            //        var auto = _context.Automobili.Where(automobil => automobil.Registracija == rNalog.FIELD11).FirstOrDefault();
 
-                    if (auto == null)
-                    {
-                        autoID = defaultAuto.ID;
+            //        if (auto == null)
+            //        {
+            //            autoID = defaultAuto.ID;
 
-                    }
-                    else {
+            //        }
+            //        else {
 
-                        autoID = auto.ID;
-                    }
+            //            autoID = auto.ID;
+            //        }
 
-                    var vRad = _context.VrstaRada.Where(vRada => vRada.Naziv == rNalog.FIELD3).FirstOrDefault();
+            //        var vRad = _context.VrstaRada.Where(vRada => vRada.Naziv == rNalog.FIELD3).FirstOrDefault();
 
-                    if (vRad == null)
-                    {
-                        vrstaRadaID = defaultVrsta.ID;
+            //        if (vRad == null)
+            //        {
+            //            vrstaRadaID = defaultVrsta.ID;
 
-                    }
-                    else
-                    {
+            //        }
+            //        else
+            //        {
 
-                        vrstaRadaID = vRad.ID;
-                    }
+            //            vrstaRadaID = vRad.ID;
+            //        }
 
-                    var mRad = _context.MjestoRada.Where(mRada => mRada.Ime == rNalog.FIELD2).FirstOrDefault();
+            //        var mRad = _context.MjestoRada.Where(mRada => mRada.Ime == rNalog.FIELD2).FirstOrDefault();
 
-                    if (mRad == null)
-                    {
-                        mjestoRadaID = defaultMjesto.ID;
+            //        if (mRad == null)
+            //        {
+            //            mjestoRadaID = defaultMjesto.ID;
 
-                    }
-                    else
-                    {
+            //        }
+            //        else
+            //        {
 
-                        mjestoRadaID = mRad.ID;
-                    }
-
-
-
-
-                    RNalog nalog = new RNalog
-                    {
-
-                       OpisRadova = rNalog.FIELD4,
-                       Materijal = rNalog.FIELD5,
-                       Rukovoditelj = rNalog.FIELD7,
-                       Izvrsitelj2 = rNalog.FIELD8,
-                       Izvrsitelj3 = rNalog.FIELD9,
-                       PutniNalog = rNalog.FIELD10,
-                       AutomobilID = autoID,
-                       VrstaRadaID = vrstaRadaID,
-                       MjestoRadaID = mjestoRadaID,
-                       Datum = rNalog.FIELD6
+            //            mjestoRadaID = mRad.ID;
+            //        }
 
 
 
-                    };
-                    // _context.Zaposlenici.Add(z);
-                    _context.Entry(nalog).State = EntityState.Added;
+
+            //        RNalog nalog = new RNalog
+            //        {
+
+            //           OpisRadova = rNalog.FIELD4,
+            //           Materijal = rNalog.FIELD5,
+            //           Rukovoditelj = rNalog.FIELD7,
+            //           Izvrsitelj2 = rNalog.FIELD8,
+            //           Izvrsitelj3 = rNalog.FIELD9,
+            //           PutniNalog = rNalog.FIELD10,
+            //           AutomobilID = autoID,
+            //           VrstaRadaID = vrstaRadaID,
+            //           MjestoRadaID = mjestoRadaID,
+            //           Datum = rNalog.FIELD6
 
 
-                }
 
-                _context.SaveChanges();
+            //        };
+            //        // _context.Zaposlenici.Add(z);
+            //        _context.Entry(nalog).State = EntityState.Added;
 
-            }
-            else
-            {
 
-            }
+            //    }
+
+            //    _context.SaveChanges();
+
+            //}
+            //else
+            //{
+
+            //}
 
 
 

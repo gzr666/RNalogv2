@@ -137,7 +137,7 @@ namespace RadniNalog
 
 
 
-            fillRole.fillNalog();
+           // fillRole.fillNalog();
             fillRole.createRolesandUsers();
 
 

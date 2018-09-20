@@ -177,13 +177,16 @@ namespace RadniNalog.Controllers
                 {
                     row = excelSheet.CreateRow(i + 1);
                    
+
+
+                    //ispraviti excel
                     row.CreateCell(0).SetCellValue(nalozi.ElementAt(i).ID);
                     row.CreateCell(1).SetCellValue(nalozi.ElementAt(i).Datum);
                     row.CreateCell(2).SetCellValue(nalozi.ElementAt(i).OpisRadova);
                     row.CreateCell(3).SetCellValue(nalozi.ElementAt(i).Materijal);
-                    row.CreateCell(4).SetCellValue(nalozi.ElementAt(i).Rukovoditelj);
-                    row.CreateCell(5).SetCellValue(nalozi.ElementAt(i).Izvrsitelj2);
-                    row.CreateCell(6).SetCellValue(nalozi.ElementAt(i).Izvrsitelj3);
+                    row.CreateCell(4).SetCellValue(nalozi.ElementAt(i).Rukovoditelj.Ime);
+                    row.CreateCell(5).SetCellValue(nalozi.ElementAt(i).Izvrsitelj2.Ime);
+                    row.CreateCell(6).SetCellValue(nalozi.ElementAt(i).Izvrsitelj3.Ime);
                     row.CreateCell(7).SetCellValue(nalozi.ElementAt(i).PutniNalog);
                     row.CreateCell(8).SetCellValue(nalozi.ElementAt(i).Automobil.Registracija);
                     row.CreateCell(9).SetCellValue(nalozi.ElementAt(i).VrstaRada.Naziv);
@@ -228,17 +231,20 @@ namespace RadniNalog.Controllers
         public IActionResult RN2([FromBody]  PrintRN rn)
         {
 
-
-
-            Automobil car = new Automobil
+            return new ViewAsPdf("RNGen", rn)
             {
+                PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 5 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                CustomSwitches = "--page-offset 0 --footer-center [page] --footer-font-size 12",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4
 
-                Registracija = "ttttt",
-                ID = 1
+
             };
 
 
-            return RedirectToAction("pdfNalogROT3", rn);
+
+
+            //return RedirectToAction("pdfNalogROT3", rn);
 
 
 

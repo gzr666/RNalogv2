@@ -2,7 +2,7 @@
 (function () {
 
     angular.module("appAdmin")
-    .controller("PrintPDFController", function ($scope, $rootScope, $http) {
+        .controller("PrintPDFController", function ($scope, $rootScope, $http, zaposlenikService) {
 
         var ctrl = this;
         $scope.test2 = "Radi li PRINT PDF";
@@ -24,6 +24,9 @@
 
         $scope.saveNalog = function (nalog) {
 
+
+            var config = { responseType: 'blob' };
+            var newWindow = window.open();
             var rnalog = {
 
                 DatumNalog: $scope.datumkr._d,
@@ -35,16 +38,35 @@
 
             console.log(rnalog);
 
+            zaposlenikService.postRN(rnalog).then(function (data) {
 
+                  var blob = data.data;
+                var contentType = data.headers("content-type");
+               var fileURL = URL.createObjectURL(blob);
+              // window.open(fileURL); 
+                newWindow.location = fileURL;
+              
 
-            $http.post("/api/pdf/pdfNalogROT2", rnalog).then(function (data) {
-
-               
 
             }, function (error) {
 
+
+
+
+                })
+
+            //$http.post("/api/pdf/pdfNalogROT2", rnalog,config).then(function (response) {
+
+            //    var blob = response.data;
+            //    var contentType = response.headers("content-type");
+            //    var fileURL = URL.createObjectURL(blob);
+            //    // window.open(fileURL); 
+            //    newWindow.location = fileURL;
+
+            //}, function (error) {
+
                
-            });
+            //});
 
 
        

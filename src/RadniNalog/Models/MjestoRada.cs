@@ -13,6 +13,12 @@ namespace RadniNalog.Models
         [Required]
         public string Ime { get; set; }
 
+
+        //nav props
+        public int TipPostrojenjaID { get; set; }
+        public TipPostrojenja TipPostrojenja { get; set; }
+        public int PodrucjeID { get; set; }
+        public Podrucje Podrucje { get; set; }
         public ICollection<RNalog> Nalozi { get; set; }
 
     }
