@@ -48,6 +48,8 @@ namespace RadniNalog.Models
         public Zaposlenik Izvrsitelj2 { get; set; }
         public Zaposlenik Izvrsitelj3 { get; set; }
 
+       // public Aktivnost Aktivnost { get; set; }
+
 
         public string PutniNalog{get;set;}
 

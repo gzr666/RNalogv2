@@ -2,30 +2,83 @@
 (function () {
 
     angular.module("appAdmin")
-    .controller("CreateMjestoRadaController", function ($scope, $rootScope, $http, mjestoRadaService, toastr, $state, $stateParams) {
+        .controller("CreateMjestoRadaController", function ($scope, $rootScope, $http, mjestoRadaService, toastr, $state, $stateParams, tipPostrojenjaService, podrucjaService, _,) {
         
 
+            $scope.tipoviPostrojenja = [];
+            $scope.podrucja = [];
+            $scope.mjestoRada = {};
 
-      
-        mjestoRadaService.dohvatiMjestoRada($stateParams.id).then(function (data) {
-
-            $scope.mjestoRada = data;
-
-        }, function (error) {
-
-
-
-        });
+            //DOHVATI TIPOVE POSTROJENJA
+            tipPostrojenjaService.dohvatiTipovePostrojenja().then(function (data) {
+            
+                angular.copy(data, $scope.tipoviPostrojenja);
 
 
+            }, function () { });
+
+
+
+            //DOHVATI PODRUCJA
+            podrucjaService.dohvatiPodrucja().then(function (data) {
+
+                angular.copy(data, $scope.podrucja);
+
+            }, function () {
+
+
+
+            });
+
+
+
+
+            if ($stateParams.id != undefined) {
+
+                mjestoRadaService.dohvatiMjestoRada($stateParams.id).then(function (data) {
+
+                    $scope.mjestoRada = data;
+                  
+
+                    $scope.mjestoRada.tipPostrojenja = _.where($scope.tipoviPostrojenja, { id: data.tipPostrojenjaID })[0];
+                    $scope.mjestoRada.podrucje = _.where($scope.podrucja, { id: data.podrucjeID })[0];
+
+                }, function (error) {
+
+
+
+                });
+
+            }
+            else { }
+        
+
+            $scope.example5customTexts = { buttonDefaultText: 'Odaberi mjesta' };
+
+            $scope.example9model = [];
+
+            $scope.example9data = [{ id: 1, label: "David" }, { id: 2, label: "Jhon" }, { id: 3, label: "Danny" }];
+
+            $scope.example9settings = { enableSearch: true, smartButtonMaxItems: 1000 };
+
+       
 
         
 
         $scope.saveMjestoRada = function (mjestoRada) {
             
+            //kreirajmo mjesto rada sa potrebnim poljima
+            var savemjestorada = {
 
-           
-            mjestoRadaService.postMjestoRada(mjestoRada).then(function (data) {
+                ime: mjestoRada.ime,
+                PodrucjeID: mjestoRada.podrucje.id,
+                TipPostrojenjaID: mjestoRada.tipPostrojenja.id
+
+
+
+            }
+
+            mjestoRadaService.postMjestoRada(savemjestorada).then(function (data) {
 
                 toastr.success('Uspjesno kreirano Mjesto Rada', '',
                     {
@@ -44,12 +97,20 @@
 
         $scope.editMjestoRada = function (mjestoRada) {
 
-            
+            console.log(mjestoRada);
            
+            var savemjestorada2 = {
+
+                ime: mjestoRada.ime,
+                PodrucjeID: mjestoRada.podrucje.id,
+                TipPostrojenjaID: mjestoRada.tipPostrojenja.id,
+                id:mjestoRada.id
 
 
+            }
 
-            mjestoRadaService.editMjestoRada(mjestoRada).then(function (data) {
+
+            mjestoRadaService.editMjestoRada(savemjestorada2).then(function (data) {
 
                 toastr.success('Uspjesno izmijenjeno mjesto rada', '',
                     {

@@ -165,4 +165,12 @@
 		margin-left: 0;
 	}
 
+
+    .blackiconcolor {
+        color: black;
+    }
+
+    .whiteiconcolor {
+        color: white;
+    }
 }

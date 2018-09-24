@@ -6,15 +6,19 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RadniNalog.Models;
 using Microsoft.EntityFrameworkCore.Metadata;
+using RadniNalog.Services;
 
 namespace RadniNalog.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        
+     
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-
+           
             
         }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
@@ -23,6 +27,9 @@ namespace RadniNalog.Data
         public DbSet<RNalog> RadniNalozi { get; set; }
         public DbSet<VrstaRada> VrstaRada { get; set; }
         public DbSet<Zaposlenik> Zaposlenici { get; set; }
+        public DbSet<Podrucje> Podrucja { get; set; }
+        public DbSet<TipPostrojenja> TipoviPostrojenja { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -35,14 +42,17 @@ namespace RadniNalog.Data
             builder.Entity<RNalog>().ToTable("RadniNalog");
             builder.Entity<VrstaRada>().ToTable("VrstaRada");
             builder.Entity<Zaposlenik>().ToTable("Zaposlenik");
+            builder.Entity<Podrucje>().ToTable("Podrucja");
+            builder.Entity<TipPostrojenja>().ToTable("TipPostrojenja");
+
 
 
             //cascade deletions
             builder.Entity<RNalog>().HasOne(r => r.Automobil).WithMany(r => r.Nalozi).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<RNalog>().HasOne(r => r.MjestoRada).WithMany(r => r.Nalozi).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<RNalog>().HasOne(r => r.VrstaRada).WithMany(r => r.Nalozi).OnDelete(DeleteBehavior.Restrict);
-
-
+        
+           
         }
 
         

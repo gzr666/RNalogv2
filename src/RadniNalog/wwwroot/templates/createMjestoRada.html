@@ -6,6 +6,29 @@
             <!-- Form Name -->
             <legend>Unesi Mjesto Rada</legend>
 
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Tip Postrojenja</label>
+                <div class="col-md-5">
+                    <select class="form-control" ng-model="mjestoRada.tipPostrojenja" ng-options="tipPostrojenja.naziv for tipPostrojenja in tipoviPostrojenja">
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Podrucje</label>
+                <div class="col-md-5">
+                    <select class="form-control" ng-model="mjestoRada.podrucje" ng-options="podrucje.ime for podrucje in podrucja">
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+            </div>
+
+
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Ime</label>
@@ -25,6 +48,11 @@
 
         </fieldset>
     </form>
+
+
+
+    <div ng-dropdown-multiselect="" options="example9data" selected-model="example9model" extra-settings="example9settings" translation-texts="example5customTexts"></div>
+
 
 
 </div>

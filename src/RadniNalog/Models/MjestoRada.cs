@@ -19,6 +19,10 @@ namespace RadniNalog.Models
         public TipPostrojenja TipPostrojenja { get; set; }
         public int PodrucjeID { get; set; }
         public Podrucje Podrucje { get; set; }
+
+        /// <summary>
+        /// ne znam triba li ova referenca na naloge
+        /// </summary>
         public ICollection<RNalog> Nalozi { get; set; }
 
     }

@@ -10,13 +10,20 @@ namespace RadniNalog.Controllers
 {
     public class HomeController : Controller
     {
+        public IFillRole fillrole;
 
+        public HomeController(IFillRole fillrole)
+        {
+
+            this.fillrole = fillrole;
+
+        }
 
 
         public IActionResult home()
         {
+         
 
-           
 
             return View();
         }
@@ -31,8 +38,10 @@ namespace RadniNalog.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> About()
         {
+             await fillrole.createRolesandUsers();
+
             ViewData["Message"] = "Your application description page.";
 
             return View();

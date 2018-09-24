@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RadniNalog.Data;
 using RadniNalog.Models;
+using RadniNalog.ViewModels;
 
 namespace RadniNalog.Controllers
 {
@@ -23,9 +24,12 @@ namespace RadniNalog.Controllers
 
         // GET: api/MjestoRada
         [HttpGet]
-        public IEnumerable<MjestoRada> GetMjestoRada()
+        public IEnumerable<MjestoRadaViewModel> GetMjestoRada()
         {
-            return _context.MjestoRada;
+            return _context.MjestoRada.Include(mjesto=>mjesto.Podrucje).
+                Include(mjesto2=>mjesto2.TipPostrojenja).
+                Select(m=>ModelFactory.GetMjestoRadaVM(m))
+                .ToList();
         }
 
         // GET: api/MjestoRada/5

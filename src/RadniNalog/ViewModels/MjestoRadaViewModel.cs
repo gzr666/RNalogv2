@@ -9,5 +9,7 @@ namespace RadniNalog.ViewModels
     {
         public int ID { get; set; }
         public string Ime { get; set; }
+        public string Podrucje { get; set; }
+        public string TipPostrojenja { get; set; }
     }
 }

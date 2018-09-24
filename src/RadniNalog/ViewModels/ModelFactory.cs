@@ -25,7 +25,9 @@ namespace RadniNalog.ViewModels
             return new MjestoRadaViewModel
             {
                 ID = mRada.ID,
-               Ime = mRada.Ime
+               Ime = mRada.Ime,
+               Podrucje = mRada.Podrucje.Ime,
+               TipPostrojenja = mRada.TipPostrojenja.Naziv
 
             };
 

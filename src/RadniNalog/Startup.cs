@@ -97,7 +97,7 @@ namespace RadniNalog
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public  void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,IFillRole fillRole)
+        public void  Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,IFillRole fillRole)
         { 
 
             if (env.IsDevelopment())
@@ -136,9 +136,12 @@ namespace RadniNalog
             });
 
 
+            
+             fillRole.testFill();
 
-           // fillRole.fillNalog();
-            fillRole.createRolesandUsers();
+           
+
+
 
 
 

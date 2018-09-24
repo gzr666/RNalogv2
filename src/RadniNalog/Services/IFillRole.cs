@@ -12,6 +12,7 @@ namespace RadniNalog.Services
     {
 
          Task createRolesandUsers();
-        void fillNalog();
+        //void fillNalog();
+        void testFill();
     }
 }

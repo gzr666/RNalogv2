@@ -12,12 +12,15 @@
                 </td>
                 <td data-title="'IME'" sortable="'ime'" filter="{ 'ime': 'text' }">
                     {{user.ime | limitTo: 100 }}
-                
-                   
-                   
+                </td>
+                <td data-title="'Podrucje'" sortable="'podrucje'" filter="{ 'podrucje': 'text' }">
+                    {{user.podrucje}}
+                </td>
+                <td data-title="'Tip Postrojenja'" sortable="' tipPostrojenja'" filter="{ ' tipPostrojenja': 'text' }">
+                    {{user.tipPostrojenja}}
                 </td>
                 <td>
-                    <a ui-sref="editMjestoRada({id:user.id})"  class="btn btn-primary btn-sm">Uredi</a>
+                    <a ui-sref="editMjestoRada({id:user.id})" class="btn btn-primary btn-sm">Uredi</a>
 
                 </td>
                 <td>

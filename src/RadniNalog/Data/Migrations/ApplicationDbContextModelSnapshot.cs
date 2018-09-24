@@ -205,9 +205,13 @@ namespace RadniNalog.Data.Migrations
 
                     b.Property<int>("PodrucjeID");
 
+                    b.Property<int>("TipPostrojenjaID");
+
                     b.HasKey("ID");
 
                     b.HasIndex("PodrucjeID");
+
+                    b.HasIndex("TipPostrojenjaID");
 
                     b.ToTable("MjestoRada");
                 });
@@ -222,7 +226,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Podrucje");
+                    b.ToTable("Podrucja");
                 });
 
             modelBuilder.Entity("RadniNalog.Models.RNalog", b =>
@@ -280,6 +284,19 @@ namespace RadniNalog.Data.Migrations
                     b.ToTable("RadniNalog");
                 });
 
+            modelBuilder.Entity("RadniNalog.Models.TipPostrojenja", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Naziv");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("TipPostrojenja");
+                });
+
             modelBuilder.Entity("RadniNalog.Models.VrstaRada", b =>
                 {
                     b.Property<int>("ID")
@@ -288,6 +305,8 @@ namespace RadniNalog.Data.Migrations
 
                     b.Property<string>("Naziv")
                         .IsRequired();
+
+                    b.Property<string>("Sifra");
 
                     b.HasKey("ID");
 
@@ -359,6 +378,11 @@ namespace RadniNalog.Data.Migrations
                         .WithMany("MjestaRada")
                         .HasForeignKey("PodrucjeID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("RadniNalog.Models.TipPostrojenja", "TipPostrojenja")
+                        .WithMany("MjestaRada")
+                        .HasForeignKey("TipPostrojenjaID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("RadniNalog.Models.RNalog", b =>
@@ -390,6 +414,28 @@ namespace RadniNalog.Data.Migrations
                         .HasForeignKey("VrstaRadaID")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.OwnsOne("RadniNalog.ModeliPRINT.IspraveZaRad", "IspraveZaRad", b1 =>
+                        {
+                            b1.Property<int>("RNalogID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<bool>("DopusnicaIskljucenjeRad");
+
+                            b1.Property<bool>("DopusnicaZaRad");
+
+                            b1.Property<bool>("IzjavaRukovoditelja");
+
+                            b1.HasKey("RNalogID");
+
+                            b1.ToTable("RadniNalog");
+
+                            b1.HasOne("RadniNalog.Models.RNalog")
+                                .WithOne("IspraveZaRad")
+                                .HasForeignKey("RadniNalog.ModeliPRINT.IspraveZaRad", "RNalogID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+
                     b.OwnsOne("RadniNalog.ModeliPRINT.KategorijaRada", "KategorijaRada", b1 =>
                         {
                             b1.Property<int>("RNalogID")
@@ -407,6 +453,96 @@ namespace RadniNalog.Data.Migrations
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("KategorijaRada")
                                 .HasForeignKey("RadniNalog.ModeliPRINT.KategorijaRada", "RNalogID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+
+                    b.OwnsOne("RadniNalog.ModeliPRINT.NadzorZaposlenika", "NadzorZaposlenika", b1 =>
+                        {
+                            b1.Property<int>("RNalogID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<string>("NadzornaOsoba");
+
+                            b1.Property<bool>("Povremeni");
+
+                            b1.Property<bool>("Trajni");
+
+                            b1.HasKey("RNalogID");
+
+                            b1.ToTable("RadniNalog");
+
+                            b1.HasOne("RadniNalog.Models.RNalog")
+                                .WithOne("NadzorZaposlenika")
+                                .HasForeignKey("RadniNalog.ModeliPRINT.NadzorZaposlenika", "RNalogID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+
+                    b.OwnsOne("RadniNalog.ModeliPRINT.ObukaZaposlenika", "ObukaZaposlenika", b1 =>
+                        {
+                            b1.Property<int>("RNalogID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<bool>("Nepoduceni");
+
+                            b1.Property<bool>("Poduceni");
+
+                            b1.Property<bool>("Pripravnici");
+
+                            b1.Property<bool>("Strucni");
+
+                            b1.HasKey("RNalogID");
+
+                            b1.ToTable("RadniNalog");
+
+                            b1.HasOne("RadniNalog.Models.RNalog")
+                                .WithOne("ObukaZaposlenika")
+                                .HasForeignKey("RadniNalog.ModeliPRINT.ObukaZaposlenika", "RNalogID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+
+                    b.OwnsOne("RadniNalog.ModeliPRINT.OsiguranjeMjestaRada", "OsiguranjeMjestaRada", b1 =>
+                        {
+                            b1.Property<int>("RNalogID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<bool>("SN");
+
+                            b1.Property<bool>("VN");
+
+                            b1.HasKey("RNalogID");
+
+                            b1.ToTable("RadniNalog");
+
+                            b1.HasOne("RadniNalog.Models.RNalog")
+                                .WithOne("OsiguranjeMjestaRada")
+                                .HasForeignKey("RadniNalog.ModeliPRINT.OsiguranjeMjestaRada", "RNalogID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+
+                    b.OwnsOne("RadniNalog.ModeliPRINT.TipRada", "TipRada", b1 =>
+                        {
+                            b1.Property<int>("RNalogID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<bool>("Neplanirani");
+
+                            b1.Property<bool>("Planirani");
+
+                            b1.Property<bool>("Posebni");
+
+                            b1.Property<bool>("Slozeni");
+
+                            b1.HasKey("RNalogID");
+
+                            b1.ToTable("RadniNalog");
+
+                            b1.HasOne("RadniNalog.Models.RNalog")
+                                .WithOne("TipRada")
+                                .HasForeignKey("RadniNalog.ModeliPRINT.TipRada", "RNalogID")
                                 .OnDelete(DeleteBehavior.Cascade);
                         });
                 });

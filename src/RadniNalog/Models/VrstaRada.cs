@@ -13,6 +13,8 @@ namespace RadniNalog.Models
         [Required]
         public string Naziv { get; set; }
 
+        public string Sifra { get; set; }
+
         public ICollection<RNalog> Nalozi { get; set; }
     }
 }
