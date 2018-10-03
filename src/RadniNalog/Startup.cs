@@ -149,6 +149,8 @@ namespace RadniNalog
             // call rotativa conf passing env to get web root path
             RotativaConfiguration.Setup(env);
 
+            Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.DisableTelemetry = true;
+
 
         }
 

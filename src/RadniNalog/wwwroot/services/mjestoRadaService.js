@@ -99,6 +99,50 @@
 
         }
 
+        var getMjestoRadaCategory = function (id) {
+            var q = $q.defer();
+            var url = "/api/MjestoRada/kategorija/" + id;
+            $http.get(url).then(
+                function (data) {
+
+                    q.resolve(data.data);
+
+                },
+                function (error) {
+                    q.reject(error);
+
+
+                })
+
+            return q.promise;
+
+
+        }
+
+
+        var getMjestaRada = function () {
+
+            var q = $q.defer();
+            var url = "/api/MjestoRada";
+            $http.get(url).then(
+                function (data) {
+
+                    q.resolve(data.data);
+
+                },
+                function (error) {
+                    q.reject(error);
+
+
+                })
+
+            return q.promise;
+
+
+
+
+        }
+
 
 
         
@@ -211,7 +255,9 @@
             postMjestoRada: saveMjestoRada,
             deleteMjestoRada: deleteMjestoRada,
             editMjestoRada: updateMjestoRada,
-            dohvatiMjestoRada:getMjestoRada
+            dohvatiMjestoRada: getMjestoRada,
+            getMjestoCategory: getMjestoRadaCategory,
+            getMjestaRada:getMjestaRada
 
         }
 

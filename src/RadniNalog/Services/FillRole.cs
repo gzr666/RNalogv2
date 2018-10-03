@@ -362,6 +362,8 @@ namespace RadniNalog.Services
 
         public void  testFill()
         {
+
+            //fill podrucja
             if (_context.Podrucja.Count() == 0)
             {
                 List<Podrucje> listaPodrucja = new List<Podrucje> {
@@ -391,7 +393,7 @@ namespace RadniNalog.Services
             }
             else { }
 
-
+            //fill tipovi postrojenja
 
             if (_context.TipoviPostrojenja.Count() == 0)
             {
@@ -415,6 +417,53 @@ namespace RadniNalog.Services
 
                 _context.SaveChanges();
                 
+            }
+            else { }
+
+
+            //fill  Aktivnosti
+
+            if (_context.VrstaRada.Count() == 0)
+            {
+                List<VrstaRada> VrsteRada = new List<VrstaRada> {
+
+                    new VrstaRada{ Naziv="Pregledi MR NN",Sifra="1211",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi TS 10(20)/0.4 kV",Sifra="1212",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi MR 10(20) kV",Sifra="1213",TipPregleda=121},
+                    new VrstaRada {Naziv="Pregledi TS X/10 kV",Sifra="1214",TipPregleda=121 },
+                    new VrstaRada{ Naziv="Pregledi MR 35 kV",Sifra="1215",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi MR 110 kV",Sifra="1217",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi Ostala Oprema",Sifra="1218",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi Sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi Sustava MTU",Sifra="12182",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi Sustava Daljinskog Vodenja",Sifra="12183",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi Poslovno Informatickih Sustava",Sifra="12184",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi Sustava Mjerenja i Relejne Zastite",Sifra="12185",TipPregleda=121},
+
+                     new VrstaRada{ Naziv="Redovno odrzavanje MR NN",Sifra="1221",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje TS 10(20)/0.4 kV",Sifra="1222",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje MR 10(20) kV",Sifra="1223",TipPregleda=122},
+                    new VrstaRada {Naziv="Redovno odrzavanje TS X/10 kV",Sifra="1224",TipPregleda=122 },
+                    new VrstaRada{ Naziv="Redovno odrzavanje MR 35 kV",Sifra="1225",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje MR 110 kV",Sifra="1227",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje Ostala Oprema",Sifra="1228",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava MTU",Sifra="12282",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Daljinskog Vodenja",Sifra="12283",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje Poslovno Informatickih Sustava",Sifra="12284",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Mjerenja i Relejne Zastite",Sifra="12285",TipPregleda=122},
+
+                };
+
+                foreach (var vrsta in VrsteRada)
+                {
+                    _context.VrstaRada.Add(vrsta);
+                    _context.Entry(vrsta).State = EntityState.Added;
+
+                }
+
+                _context.SaveChanges();
+
             }
             else { }
 

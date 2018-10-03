@@ -274,5 +274,40 @@ namespace RadniNalog.Controllers
 
 
         }
+
+
+        //igra sa rotativom
+
+        [HttpGet("kreirajPDF/{id}")]
+        public IActionResult KreirajNalogPDFAsync([FromRoute] int id)
+        {
+            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada)
+                .Include(m => m.MjestoRada)
+                .Include(a => a.Automobil)
+                .Include(izvr=>izvr.Rukovoditelj)
+                .Include(izvr2 => izvr2.Izvrsitelj2)
+                .Include(izvr3 => izvr3.Izvrsitelj3)
+                .Include(katrada=>katrada.KategorijaRada)
+                .ToList());
+
+
+            var single = nalozi.SingleOrDefault(m => m.ID == id);
+
+
+
+            return new ViewAsPdf("RNGen", single)
+            {
+                PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 20 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                CustomSwitches = "--page-offset 0 --footer-center [page] --footer-font-size 12",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4
+
+
+            };
+
+
+
+        }
+
     }
 }

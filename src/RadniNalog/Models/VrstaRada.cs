@@ -15,6 +15,8 @@ namespace RadniNalog.Models
 
         public string Sifra { get; set; }
 
+        public int TipPregleda { get; set; }
+
         public ICollection<RNalog> Nalozi { get; set; }
     }
 }

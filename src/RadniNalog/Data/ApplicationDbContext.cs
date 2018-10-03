@@ -51,8 +51,18 @@ namespace RadniNalog.Data
             builder.Entity<RNalog>().HasOne(r => r.Automobil).WithMany(r => r.Nalozi).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<RNalog>().HasOne(r => r.MjestoRada).WithMany(r => r.Nalozi).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<RNalog>().HasOne(r => r.VrstaRada).WithMany(r => r.Nalozi).OnDelete(DeleteBehavior.Restrict);
-        
-           
+
+             builder.Entity<RNalog>().OwnsOne(nalog => nalog.IspraveZaRad).ToTable("nalog_isprava_rad").OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<RNalog>().OwnsOne(nalog => nalog.KategorijaRada).ToTable("nalog_kategorija_rad").OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<RNalog>().OwnsOne(nalog => nalog.NadzorZaposlenika).ToTable("nalog_nadzor_zaposlenika").OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<RNalog>().OwnsOne(nalog => nalog.ObukaZaposlenika).ToTable("nalog_obuka_zaposlenika").OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<RNalog>().OwnsOne(nalog => nalog.OsiguranjeMjestaRada).ToTable("nalog_osiguranje_mjesta_rad").OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<RNalog>().OwnsOne(nalog => nalog.TipRada).ToTable("nalog_tip_rad").OnDelete(DeleteBehavior.Cascade);
+            // builder.Entity<RNalog>().OwnsOne(nalog => nalog.IspraveZaRad).Property(x => x.DopusnicaIskljucenjeRad).HasColumnName("DopusnicaIskljucenjeRad1");
+            //builder.Entity<RNalog>().OwnsOne(nalog => nalog.IspraveZaRad).Property(x => x.DopusnicaZaRad).HasColumnName("DopusnicaZaRad1");
+            //builder.Entity<RNalog>().OwnsOne(nalog => nalog.IspraveZaRad).Property(x => x.IzjavaRukovoditelja).HasColumnName("IzjavaRukovoditelja1");
+
+
         }
 
         

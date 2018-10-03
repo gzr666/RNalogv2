@@ -38,6 +38,8 @@ namespace RadniNalog.Controllers
             return View();
         }
 
+
+        //ovdje radimo fill jer ne valja u STARTUP-U
         public async Task<IActionResult> About()
         {
              await fillrole.createRolesandUsers();

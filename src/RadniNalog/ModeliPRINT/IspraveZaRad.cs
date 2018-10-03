@@ -9,6 +9,7 @@ namespace RadniNalog.ModeliPRINT
     [Owned]
     public class IspraveZaRad
     {
+        //public int ID { get; set; }
         public bool DopusnicaZaRad { get; set; }
         public bool DopusnicaIskljucenjeRad { get; set; }
         public bool IzjavaRukovoditelja { get; set; }

@@ -51,6 +51,25 @@ namespace RadniNalog.Controllers
             return Ok(mjestoRada);
         }
 
+        // GET: api/MjestoRada/Kategorija5
+        [HttpGet("kategorija/{id}")]
+        public async Task<IActionResult> GetMjestoRadaPoKategoriji([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var mjestaRada = await _context.MjestoRada.Where(mj => mj.PodrucjeID == id).ToListAsync();
+
+            if (mjestaRada == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(mjestaRada);
+        }
+
         // PUT: api/MjestoRada/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMjestoRada([FromRoute] int id, [FromBody] MjestoRada mjestoRada)

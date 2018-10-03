@@ -2,8 +2,24 @@
 (function () {
 
     angular.module("myApp")
-    .controller("HomeController", function ($scope, $rootScope, $http, $filter, ngTableParams, toastr,$state, $stateParams,_,$timeout,moment) {
+    .controller("HomeController", function ($scope, $rootScope, $http, $filter, ngTableParams, toastr,$state, $stateParams,_,$timeout,moment,$location) {
         
+
+        //ove dvije funkcije moram dodati za routing jer sam dodao dva appmodula pa ima problema
+
+        $scope.gotoprint = function () {
+
+            window.location.href = 'Home/Administracija#/printPDF';
+            console.log("lokacion");
+
+        }
+
+        $scope.gotoEditNalog = function (user) {
+
+            window.location.href = 'Home/Administracija#/editNalog2/' + user.id;
+            console.log("lokacion edit");
+
+        }
 
       
        
@@ -240,12 +256,12 @@
 
                 return {
                     id:num.id,
-                    //datum: num.datum,
-                    datum:stringToDate(num.datum,"dd-mm-yyyy","-"),
+                    datum: num.datum,
+                   // datum:stringToDate(num.datum,"dd-mm-yyyy","-"),
                  
-                    rukovoditelj: num.rukovoditelj,
-                    izvrsitelj2: num.izvrsitelj2,
-                    izvrsitelj3: num.izvrsitelj3,
+                    rukovoditelj: num.rukovoditelj.ime,
+                    izvrsitelj2: num.izvrsitelj2.ime,
+                    izvrsitelj3: num.izvrsitelj3.ime,
                     mjestoRada: num.mjestoRada.ime,
                     automobil: num.automobil.registracija,
                     opisRadova: num.opisRadova

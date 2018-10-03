@@ -308,6 +308,8 @@ namespace RadniNalog.Data.Migrations
 
                     b.Property<string>("Sifra");
 
+                    b.Property<int>("TipPregleda");
+
                     b.HasKey("ID");
 
                     b.ToTable("VrstaRada");
@@ -416,9 +418,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.OwnsOne("RadniNalog.ModeliPRINT.IspraveZaRad", "IspraveZaRad", b1 =>
                         {
-                            b1.Property<int>("RNalogID")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            b1.Property<int>("RNalogID");
 
                             b1.Property<bool>("DopusnicaIskljucenjeRad");
 
@@ -428,7 +428,7 @@ namespace RadniNalog.Data.Migrations
 
                             b1.HasKey("RNalogID");
 
-                            b1.ToTable("RadniNalog");
+                            b1.ToTable("nalog_isprava_rad");
 
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("IspraveZaRad")
@@ -438,9 +438,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.OwnsOne("RadniNalog.ModeliPRINT.KategorijaRada", "KategorijaRada", b1 =>
                         {
-                            b1.Property<int>("RNalogID")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            b1.Property<int>("RNalogID");
 
                             b1.Property<bool>("BeznaponskoStanje");
 
@@ -448,7 +446,7 @@ namespace RadniNalog.Data.Migrations
 
                             b1.HasKey("RNalogID");
 
-                            b1.ToTable("RadniNalog");
+                            b1.ToTable("nalog_kategorija_rad");
 
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("KategorijaRada")
@@ -458,9 +456,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.OwnsOne("RadniNalog.ModeliPRINT.NadzorZaposlenika", "NadzorZaposlenika", b1 =>
                         {
-                            b1.Property<int>("RNalogID")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            b1.Property<int>("RNalogID");
 
                             b1.Property<string>("NadzornaOsoba");
 
@@ -470,7 +466,7 @@ namespace RadniNalog.Data.Migrations
 
                             b1.HasKey("RNalogID");
 
-                            b1.ToTable("RadniNalog");
+                            b1.ToTable("nalog_nadzor_zaposlenika");
 
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("NadzorZaposlenika")
@@ -480,9 +476,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.OwnsOne("RadniNalog.ModeliPRINT.ObukaZaposlenika", "ObukaZaposlenika", b1 =>
                         {
-                            b1.Property<int>("RNalogID")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            b1.Property<int>("RNalogID");
 
                             b1.Property<bool>("Nepoduceni");
 
@@ -494,7 +488,7 @@ namespace RadniNalog.Data.Migrations
 
                             b1.HasKey("RNalogID");
 
-                            b1.ToTable("RadniNalog");
+                            b1.ToTable("nalog_obuka_zaposlenika");
 
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("ObukaZaposlenika")
@@ -504,9 +498,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.OwnsOne("RadniNalog.ModeliPRINT.OsiguranjeMjestaRada", "OsiguranjeMjestaRada", b1 =>
                         {
-                            b1.Property<int>("RNalogID")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            b1.Property<int>("RNalogID");
 
                             b1.Property<bool>("SN");
 
@@ -514,7 +506,7 @@ namespace RadniNalog.Data.Migrations
 
                             b1.HasKey("RNalogID");
 
-                            b1.ToTable("RadniNalog");
+                            b1.ToTable("nalog_osiguranje_mjesta_rad");
 
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("OsiguranjeMjestaRada")
@@ -524,9 +516,7 @@ namespace RadniNalog.Data.Migrations
 
                     b.OwnsOne("RadniNalog.ModeliPRINT.TipRada", "TipRada", b1 =>
                         {
-                            b1.Property<int>("RNalogID")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            b1.Property<int>("RNalogID");
 
                             b1.Property<bool>("Neplanirani");
 
@@ -538,7 +528,7 @@ namespace RadniNalog.Data.Migrations
 
                             b1.HasKey("RNalogID");
 
-                            b1.ToTable("RadniNalog");
+                            b1.ToTable("nalog_tip_rad");
 
                             b1.HasOne("RadniNalog.Models.RNalog")
                                 .WithOne("TipRada")

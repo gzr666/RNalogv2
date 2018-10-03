@@ -22,12 +22,16 @@ namespace RadniNalog.ViewModels
 
         public static MjestoRadaViewModel GetMjestoRadaVM(MjestoRada mRada)
         {
+
+            
             return new MjestoRadaViewModel
             {
                 ID = mRada.ID,
                Ime = mRada.Ime,
-               Podrucje = mRada.Podrucje.Ime,
-               TipPostrojenja = mRada.TipPostrojenja.Naziv
+               PodrucjeID = mRada.PodrucjeID
+              
+              // Podrucje = mRada.Podrucje.Ime,
+               //TipPostrojenja = mRada.TipPostrojenja.Naziv
 
             };
 
@@ -38,6 +42,7 @@ namespace RadniNalog.ViewModels
             return new VrstRadaViewModel
             {
                 ID = mRada.ID,
+                Sifra = mRada.Sifra,
                Naziv = mRada.Naziv
 
             };
@@ -56,6 +61,21 @@ namespace RadniNalog.ViewModels
                     ID = m.ID,
                     Automobil = ModelFactory.GetAutomobilVM(m.Automobil),
                     //Datum = m.Datum.ToString("dd-MM-yyyy"),
+                    RadVezanUZ = m.RadVezanUZ,
+                    Prilog = m.Prilog,
+                    Napomena = m.Napomena,
+                    RadniZadatakBroj = m.RadniZadatakBroj,
+                    KategorijaRada = m.KategorijaRada,
+                    TipRada = m.TipRada,
+                    ObukaZaposlenika = m.ObukaZaposlenika,
+                    OsiguranjeMjestaRada = m.OsiguranjeMjestaRada,
+                    IspraveZaRad = m.IspraveZaRad,
+                    NadzorZaposlenika = m.NadzorZaposlenika,
+                    PocetakRadova = m.PocetakRadova,
+                    KrajRadova = m.KrajRadova,
+
+
+
                     Datum = m.Datum,
                     Izvrsitelj2 = m.Izvrsitelj2,
                     Izvrsitelj3 = m.Izvrsitelj3,

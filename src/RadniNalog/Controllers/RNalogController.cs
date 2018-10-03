@@ -93,9 +93,17 @@ namespace RadniNalog.Controllers
         public IEnumerable<RNalogViewModel> GetRadniNalozi2(bool includeAll = false)
         {
 
-            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+           // var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
 
-            
+            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).
+                Include(izvr=>izvr.Rukovoditelj)
+                .Include(izvr2=>izvr2.Izvrsitelj2)
+                .Include(izvr3=>izvr3.Izvrsitelj3)
+                .Include(katrada=>katrada.KategorijaRada).
+                
+                ToList());
+
+           
 
             return lista;
         }
@@ -103,7 +111,16 @@ namespace RadniNalog.Controllers
         [HttpGet, Route("/api/nalozi/{id}")]
         public RNalogViewModel GetRadniNalozi3(int id, bool includeAll = false)
         {
-            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+            var lista = ModelFactory.GetRNalozi(
+                _context.RadniNalozi
+               
+                .Include(v => v.VrstaRada)
+                .Include(m => m.MjestoRada)
+                .Include(a => a.Automobil)
+                .Include(ruk=>ruk.Rukovoditelj)
+                .Include(izvr1 => izvr1.Izvrsitelj2)
+                .Include(izvr2 => izvr2.Izvrsitelj3)
+                .ToList());
 
             var single = lista.SingleOrDefault(m => m.ID == id);
 
@@ -149,11 +166,91 @@ namespace RadniNalog.Controllers
 
 
 
-           // rNalog.Datum = rNalog.Datum;
+            // rNalog.Datum = rNalog.Datum;
 
-          //  Datum = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
+            //  Datum = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
 
-            _context.Entry(rNalog).State = EntityState.Modified;
+
+            var rnalog2 = _context.RadniNalozi
+                .Include(mjrada => mjrada.MjestoRada)
+                .Include(vrada => vrada.VrstaRada)
+                .Include(izvr2=>izvr2.Rukovoditelj)
+                .Include(izvr3 => izvr3.Izvrsitelj2)
+                .Include(izvr4 => izvr4.Izvrsitelj3).AsNoTracking().SingleOrDefault(rn=>rn.ID == rNalog.ID);
+
+            rnalog2.ID = rNalog.ID;
+            rnalog2.AutomobilID = rNalog.AutomobilID;
+            rnalog2.MjestoRadaID = rNalog.MjestoRadaID;
+            rnalog2.VrstaRadaID = rNalog.VrstaRadaID;
+            rnalog2.Datum = String.Format("{0:DD-MM-YYYY HH}", rNalog.Datum);
+            rnalog2.Izvrsitelj2.ID = rNalog.Izvrsitelj2.ID;
+            rnalog2.Izvrsitelj2 = rNalog.Izvrsitelj2;
+            rnalog2.Izvrsitelj3 = rNalog.Izvrsitelj3;
+            rnalog2.Izvrsitelj3.ID = rNalog.Izvrsitelj3.ID;
+            rnalog2.OpisRadova = rNalog.OpisRadova;
+            rnalog2.PutniNalog = rNalog.PutniNalog;
+            rnalog2.Rukovoditelj.ID = rNalog.Rukovoditelj.ID;
+            rnalog2.Rukovoditelj = rNalog.Rukovoditelj;
+            rnalog2.IspraveZaRad = rNalog.IspraveZaRad;
+            rnalog2.KategorijaRada = rNalog.KategorijaRada;
+            rnalog2.TipRada = rNalog.TipRada;
+            rnalog2.ObukaZaposlenika = rNalog.ObukaZaposlenika;
+            rnalog2.OsiguranjeMjestaRada = rNalog.OsiguranjeMjestaRada;
+            rnalog2.NadzorZaposlenika = rNalog.NadzorZaposlenika;
+            rnalog2.RadVezanUZ = rNalog.RadVezanUZ;
+            rnalog2.Prilog = rNalog.Prilog;
+            rnalog2.Napomena = rNalog.Napomena;
+            rnalog2.RadniZadatakBroj = rNalog.RadniZadatakBroj;
+            rnalog2.PocetakRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.PocetakRadova);
+            rnalog2.KrajRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.KrajRadova);
+
+            //RNalog nalog = new RNalog
+            //{
+            //    ID = rNalog.ID,
+            //    Automobil = rNalog.Automobil,
+            //    MjestoRada = rNalog.MjestoRada,
+            //    VrstaRada = rNalog.VrstaRada,
+            //    AutomobilID = rNalog.AutomobilID,
+            //    Datum = String.Format("{0:DD-MM-YYYY HH}", rNalog.Datum),
+            //    Izvrsitelj2 = rNalog.Izvrsitelj2,
+            //    Izvrsitelj3 = rNalog.Izvrsitelj3,
+            //    Materijal = rNalog.Materijal,
+            //    MjestoRadaID = rNalog.MjestoRada.ID,
+            //    OpisRadova = rNalog.OpisRadova,
+            //    PutniNalog = rNalog.PutniNalog,
+            //    Rukovoditelj = rNalog.Rukovoditelj,
+            //    VrstaRadaID = rNalog.VrstaRadaID,
+            //    IspraveZaRad = rNalog.IspraveZaRad,
+            //    KategorijaRada = rNalog.KategorijaRada,
+            //    TipRada = rNalog.TipRada,
+            //    ObukaZaposlenika = rNalog.ObukaZaposlenika,
+            //    OsiguranjeMjestaRada = rNalog.OsiguranjeMjestaRada,
+            //    NadzorZaposlenika = rNalog.NadzorZaposlenika,
+            //    RadVezanUZ = rNalog.RadVezanUZ,
+            //    Prilog = rNalog.Prilog,
+            //    Napomena = rNalog.Napomena,
+            //    RadniZadatakBroj = rNalog.RadniZadatakBroj,
+            //    PocetakRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.PocetakRadova),
+            //    KrajRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.KrajRadova)
+
+
+
+
+
+            //};
+
+
+            _context.Entry(rnalog2.Rukovoditelj).State = EntityState.Modified;
+            _context.Entry(rnalog2.Izvrsitelj2).State = EntityState.Modified;
+            _context.Entry(rnalog2.Izvrsitelj3).State = EntityState.Modified;
+            _context.Entry(rnalog2.KategorijaRada).State = EntityState.Modified;
+            _context.Entry(rnalog2.TipRada).State = EntityState.Modified;
+            _context.Entry(rnalog2.ObukaZaposlenika).State = EntityState.Modified;
+            _context.Entry(rnalog2.OsiguranjeMjestaRada).State = EntityState.Modified;
+            _context.Entry(rnalog2.IspraveZaRad).State = EntityState.Modified;
+            _context.Entry(rnalog2.NadzorZaposlenika).State = EntityState.Modified;
+
+            _context.Entry(rnalog2).State = EntityState.Modified;
 
             try
             {
@@ -171,7 +268,8 @@ namespace RadniNalog.Controllers
                 }
             }
 
-            return NoContent();
+            //return NoContent();
+            return Ok("SUCCESSFULLY edited NALOG WITH ID:" + rNalog.ID);
         }
 
         // POST: api/RNalog
@@ -193,8 +291,8 @@ namespace RadniNalog.Controllers
 
            
             Automobil auto = _context.Automobili.Where(a => a.ID == rNalog.AutomobilID).FirstOrDefault();
-            MjestoRada rad = _context.MjestoRada.Where(m => m.ID == rNalog.MjestoRadaID).FirstOrDefault();
-            VrstaRada vrsta = _context.VrstaRada.Where(vr => vr.ID == rNalog.VrstaRadaID).FirstOrDefault();
+            MjestoRada rad = _context.MjestoRada.Where(m => m.ID == rNalog.MjestoRada.ID).FirstOrDefault();
+            VrstaRada vrsta = _context.VrstaRada.Where(vr => vr.ID == rNalog.VrstaRada.ID).FirstOrDefault();
 
             //rNalog.Automobil = auto;
             //rNalog.MjestoRada = rad;
@@ -217,15 +315,29 @@ namespace RadniNalog.Controllers
                 MjestoRada = rad,
                 VrstaRada = vrsta,
                 AutomobilID = rNalog.AutomobilID,
-                Datum = String.Format("{0:dd-MM-yyyy}", DateTime.Now),
+                Datum = String.Format("{0:DD-MM-YYYY HH}", rNalog.Datum),
                 Izvrsitelj2 = rNalog.Izvrsitelj2,
                 Izvrsitelj3 = rNalog.Izvrsitelj3,
                 Materijal = rNalog.Materijal,
-                MjestoRadaID = rNalog.MjestoRadaID,
+                MjestoRadaID = rNalog.MjestoRada.ID,
                 OpisRadova = rNalog.OpisRadova,
                 PutniNalog = rNalog.PutniNalog,
                 Rukovoditelj = rNalog.Rukovoditelj,
-                VrstaRadaID = rNalog.VrstaRadaID
+                VrstaRadaID = rNalog.VrstaRadaID,
+                IspraveZaRad = rNalog.IspraveZaRad,
+                KategorijaRada = rNalog.KategorijaRada,
+                TipRada = rNalog.TipRada,
+                ObukaZaposlenika = rNalog.ObukaZaposlenika,
+                OsiguranjeMjestaRada = rNalog.OsiguranjeMjestaRada,
+                NadzorZaposlenika = rNalog.NadzorZaposlenika,
+                RadVezanUZ = rNalog.RadVezanUZ,
+                Prilog = rNalog.Prilog,
+                Napomena = rNalog.Napomena,
+                RadniZadatakBroj = rNalog.RadniZadatakBroj,
+                PocetakRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.PocetakRadova),
+                KrajRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.KrajRadova)
+
+
 
 
 
@@ -233,11 +345,32 @@ namespace RadniNalog.Controllers
 
             Console.WriteLine(nalog.Datum);
 
-            _context.Entry(nalog).State = EntityState.Added;
+           _context.Entry(nalog).State = EntityState.Added;
+
+         
+            //sranje koje trebaobaviti za save OWNED TIPOVA
+            var katRada = _context.Entry(nalog).Reference(s => s.KategorijaRada).TargetEntry;
+            katRada.State = EntityState.Added;
+
+            var ispraveRad = _context.Entry(nalog).Reference(s => s.IspraveZaRad).TargetEntry;
+            ispraveRad.State = EntityState.Added;
+
+            var nadzorZapo = _context.Entry(nalog).Reference(s => s.NadzorZaposlenika).TargetEntry;
+            nadzorZapo.State = EntityState.Added;
+
+            var obukaZapo = _context.Entry(nalog).Reference(s => s.ObukaZaposlenika).TargetEntry;
+            obukaZapo.State = EntityState.Added;
+
+            var osiguranjeMjesta= _context.Entry(nalog).Reference(s => s.OsiguranjeMjestaRada).TargetEntry;
+            osiguranjeMjesta.State = EntityState.Added;
 
 
-           // _context.RadniNalozi.Add(rNalog);
-            
+            var tipRada = _context.Entry(nalog).Reference(s => s.TipRada).TargetEntry;
+            tipRada.State = EntityState.Added;
+
+
+            // _context.RadniNalozi.Add(nalog);
+
             try
             {
                await _context.SaveChangesAsync();

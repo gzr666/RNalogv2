@@ -1,4 +1,5 @@
-﻿using RadniNalog.Models;
+﻿using RadniNalog.ModeliPRINT;
+using RadniNalog.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,26 @@ namespace RadniNalog.ViewModels
         public String Datum { get; set; }
         public string OpisRadova { get; set; }
         public string Materijal { get; set; }
+        public string RadVezanUZ { get; set; }
+        public string Prilog { get; set; }
+        public string Napomena { get; set; }
+        public string RadniZadatakBroj { get; set; }
+
+        // Mozda DATETIME
+        public string PocetakRadova { get; set; }
+        public string KrajRadova { get; set; }
+
+        //owned types
+        public KategorijaRada KategorijaRada { get; set; }
+        public TipRada TipRada { get; set; }
+        public ObukaZaposlenika ObukaZaposlenika { get; set; }
+        public OsiguranjeMjestaRada OsiguranjeMjestaRada { get; set; }
+        public IspraveZaRad IspraveZaRad { get; set; }
+        public NadzorZaposlenika NadzorZaposlenika { get; set; }
+
+
+
+
         //public string Rukovoditelj { get; set; }
         //public string Izvrsitelj2 { get; set; }
         //public string Izvrsitelj3 { get; set; }
