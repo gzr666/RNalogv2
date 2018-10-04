@@ -17,6 +17,7 @@ namespace RadniNalog.ViewModels
         public string Prilog { get; set; }
         public string Napomena { get; set; }
         public string RadniZadatakBroj { get; set; }
+        public string LokacijaRada { get; set; }
 
         // Mozda DATETIME
         public string PocetakRadova { get; set; }

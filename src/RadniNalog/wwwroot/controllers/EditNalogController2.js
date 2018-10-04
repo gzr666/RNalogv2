@@ -192,6 +192,7 @@
                $scope.rnalog.OpisRadova = data.opisRadova;
                $scope.rnalog.RadVezanUZ = data.radVezanUZ;
                $scope.rnalog.RadniZadatakBroj = data.radniZadatakBroj;
+               $scope.rnalog.LokacijaRada = data.lokacijaRada;
 
                $scope.rnalog.KategorijaRada = data.kategorijaRada;
 
@@ -302,7 +303,7 @@
             console.log(nalog);
 
             var rnalog = {
-
+                LokacijaRada:nalog.LokacijaRada,
                 ID: nalog.id,
                 Datum: nalog.datum,
                 IspraveZaRad: nalog.IspraveZaRad,
@@ -342,7 +343,11 @@
 
                 toastr.success('Uspjesno izmijenjen Nalog', '',
                     {
-                        onHidden: function () { $state.go("admin"); }
+                        onHidden: function () {
+
+                            //$state.go("admin");
+                            window.location.href = '/#home';
+                        }
                     });
 
 

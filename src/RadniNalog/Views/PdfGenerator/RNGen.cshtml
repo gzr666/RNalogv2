@@ -64,7 +64,7 @@
 
             <div class="col-xs-12">
 
-                <h2 class="text-center">Nalog za rad br.@DateTime.Parse(@Model.Datum).ToShortDateString() </h2>&nbsp;&nbsp;
+                <h2 class="text-center">Nalog za rad br.@Model.ID </h2>&nbsp;&nbsp;
 
                 @*<ul class="list-group mylist">
                                 <li class="list-group-item"><p><span class="textbold2">Naziv postrojenja:</span> &nbsp;<span>12853</span></p></li>
@@ -104,8 +104,8 @@
                 <p><span class="textbold2">Prilog:</span> &nbsp;<span>@Model.Prilog</span></p>
                 <p><span class="textbold2">Napomena:</span> &nbsp;<span>@Model.Napomena</span></p>
                 <p><span class="textbold2">Veza: Radni zadatak broj</span> &nbsp;<span>@Model.RadniZadatakBroj</span></p>
-                <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@Model.PocetakRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.PocetakRadova).ToShortTimeString()</span>&nbsp;<span>sati</span></p>
-                <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span>@DateTime.Parse(@Model.KrajRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.KrajRadova).ToShortTimeString()</span>&nbsp;<span>sati</span></p>
+                <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@Model.PocetakRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.PocetakRadova).Hour</span>&nbsp;<span>sati</span></p>
+                <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span>@DateTime.Parse(@Model.KrajRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.KrajRadova).Hour</span>&nbsp;<span>sati</span></p>
                 <p><span class="textbold2">Za rukovoditelj radova odredujem:</span> &nbsp;<span>@Model.Rukovoditelj.Ime</span></p>
                 <p><span class="textbold2">Ostali izvrsitelji:</span> &nbsp;<span>@Model.Izvrsitelj2.Ime</span><span>,</span><span>@Model.Izvrsitelj3.Ime</span></p>
 

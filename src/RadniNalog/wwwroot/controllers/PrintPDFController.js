@@ -47,7 +47,7 @@
 
                 Trajni: false,
                 Povremeni: false,
-                NadzornaOsoba:false
+                NadzornaOsoba:""
 
             }
 

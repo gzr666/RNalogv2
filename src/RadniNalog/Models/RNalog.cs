@@ -12,7 +12,8 @@ namespace RadniNalog.Models
     {
         public int ID { get; set; }
 
-
+        //
+        public string LokacijaRada { get; set; }
         public string Datum { get; set; }
         public string OpisRadova { get; set; }
         public string Materijal { get; set; }

@@ -73,6 +73,7 @@ namespace RadniNalog.ViewModels
                     NadzorZaposlenika = m.NadzorZaposlenika,
                     PocetakRadova = m.PocetakRadova,
                     KrajRadova = m.KrajRadova,
+                    LokacijaRada = m.LokacijaRada,
 
 
 

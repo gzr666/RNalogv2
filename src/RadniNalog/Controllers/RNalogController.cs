@@ -200,6 +200,7 @@ namespace RadniNalog.Controllers
             rnalog2.RadVezanUZ = rNalog.RadVezanUZ;
             rnalog2.Prilog = rNalog.Prilog;
             rnalog2.Napomena = rNalog.Napomena;
+            rnalog2.LokacijaRada = rNalog.LokacijaRada;
             rnalog2.RadniZadatakBroj = rNalog.RadniZadatakBroj;
             rnalog2.PocetakRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.PocetakRadova);
             rnalog2.KrajRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.KrajRadova);
@@ -311,6 +312,7 @@ namespace RadniNalog.Controllers
 
             RNalog nalog = new RNalog
             {
+                LokacijaRada = rNalog.LokacijaRada,
                 Automobil = auto,
                 MjestoRada = rad,
                 VrstaRada = vrsta,
