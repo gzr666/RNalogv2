@@ -52,4 +52,4 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.2\RadniNa
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Debug\netcoreapp2.2\RadniNalog.Views.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.2\RadniNalog.Views.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.2\RadniNalog.csproj.CopyComplete
-E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.2\RadniNalog.csprojAssemblyReference.cache
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Debug\netcoreapp2.2\RadniNalog.csprojResolveAssemblyReference.cache

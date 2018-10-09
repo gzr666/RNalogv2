@@ -98,14 +98,14 @@
 
 
                 <p><span class="textbold2">Naziv postrojenja:</span> &nbsp;<span class="signature">@Model.MjestoRada.Ime</span></p>
-                <p><span class="textbold2">Mjesto Rada:</span> &nbsp;<span>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing</span></p>
+                <p><span class="textbold2">Mjesto Rada:</span> &nbsp;<span>@Model.LokacijaRada</span></p>
                 <p><span class="textbold2">Opis Radova:</span> &nbsp;<span>@Model.VrstaRada.Naziv</span></p>
                 <p><span class="textbold2">Rad je vezan uz (org. jedinice/tvrtke):</span> &nbsp;<span>@Model.RadVezanUZ</span></p>
                 <p><span class="textbold2">Prilog:</span> &nbsp;<span>@Model.Prilog</span></p>
                 <p><span class="textbold2">Napomena:</span> &nbsp;<span>@Model.Napomena</span></p>
                 <p><span class="textbold2">Veza: Radni zadatak broj</span> &nbsp;<span>@Model.RadniZadatakBroj</span></p>
                 <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@Model.PocetakRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.PocetakRadova).Hour</span>&nbsp;<span>sati</span></p>
-                <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span>@DateTime.Parse(@Model.KrajRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.KrajRadova).Hour</span>&nbsp;<span>sati</span></p>
+                <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@Model.KrajRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.KrajRadova).Hour</span>&nbsp;<span>sati</span></p>
                 <p><span class="textbold2">Za rukovoditelj radova odredujem:</span> &nbsp;<span>@Model.Rukovoditelj.Ime</span></p>
                 <p><span class="textbold2">Ostali izvrsitelji:</span> &nbsp;<span>@Model.Izvrsitelj2.Ime</span><span>,</span><span>@Model.Izvrsitelj3.Ime</span></p>
 

@@ -6,7 +6,6 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.2\Radni
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.2\RadniNalog.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.2\RadniNalog.Views.dll
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\bin\Release\netcoreapp2.2\RadniNalog.Views.pdb
-E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.csprojResolveAssemblyReference.cache
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.csproj.CoreCompileInputs.cache
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.RazorAssemblyInfo.cache
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.RazorAssemblyInfo.cs

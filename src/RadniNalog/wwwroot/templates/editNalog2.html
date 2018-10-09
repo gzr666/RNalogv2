@@ -19,7 +19,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.datumrada.$invalid && !userForm.datumrada.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasicccc">Datum Naloga</label>
                 <div class="col-md-5">
-                    <input name="datumrada" class="form-control" placeholder="Odaberi datum" ng-model="rnalog.datum" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl" format="DD-MM-YYYY">
+                    <input name="datumrada" class="form-control" placeholder="Odaberi datum" ng-model="rnalog.datum" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl" format="DD-MM-YYYY" >
                 </div>
 
                 <span ng-show="userForm.datumrada.$invalid &&  !userForm.datumrada.$dirty " class="has-error">Odaberi Datum</span>

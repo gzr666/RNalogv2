@@ -2,7 +2,7 @@
 (function () {
 
     angular.module("appAdmin")
-        .controller("CreateMjestoRadaController", function ($scope, $rootScope, $http, mjestoRadaService, toastr, $state, $stateParams, tipPostrojenjaService, podrucjaService, _,) {
+        .controller("CreateMjestoRadaController", function ($scope, $rootScope, $http, mjestoRadaService, toastr, $state, $stateParams, tipPostrojenjaService, podrucjaService, _,$timeout) {
         
 
             $scope.tipoviPostrojenja = [];
@@ -38,11 +38,18 @@
                 mjestoRadaService.dohvatiMjestoRada($stateParams.id).then(function (data) {
 
                     $scope.mjestoRada = data;
-                  
 
-                    $scope.mjestoRada.tipPostrojenja = _.where($scope.tipoviPostrojenja, { id: data.tipPostrojenjaID })[0];
-                    $scope.mjestoRada.podrucje = _.where($scope.podrucja, { id: data.podrucjeID })[0];
 
+                    $timeout(function () {
+
+                        $scope.mjestoRada.tipPostrojenja = _.where($scope.tipoviPostrojenja, { id: data.tipPostrojenjaID })[0];
+                        $scope.mjestoRada.podrucje = _.where($scope.podrucja, { id: data.podrucjeID })[0];
+
+
+
+                    }, 2000);
+
+                   
                 }, function (error) {
 
 

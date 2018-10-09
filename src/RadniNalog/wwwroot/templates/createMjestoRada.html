@@ -1,48 +1,60 @@
 ﻿
 <div id="radniNalog2">
-    <form class="form-horizontal">
+    <form name="userForm" class="form-horizontal" novalidate>
         <fieldset>
 
             <!-- Form Name -->
             <legend>Unesi Mjesto Rada</legend>
 
             <!-- Select Basic -->
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': userForm.tipPostrojenja.$invalid && !userForm.tipPostrojenja.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Tip Postrojenja</label>
                 <div class="col-md-5">
-                    <select class="form-control" ng-model="mjestoRada.tipPostrojenja" ng-options="tipPostrojenja.naziv for tipPostrojenja in tipoviPostrojenja">
+                    <select name="tipPostrojenja" class="form-control" ng-model="mjestoRada.tipPostrojenja" ng-options="tipPostrojenja.naziv for tipPostrojenja in tipoviPostrojenja" required>
 
                         <option value="">Odaberi</option>
                     </select>
                 </div>
+
+                <span ng-show="userForm.tipPostrojenja.$invalid &&  !userForm.tipPostrojenja.$dirty " class="has-error">Odaberi tip postrojenja</span>
+                <span ng-show="userForm.tipPostrojenja.$invalid && !userForm.tipPostrojenja.$pristine  " class="has-error">Odaberi tip postrojenja</span>
+
             </div>
 
             <!-- Select Basic -->
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': userForm.podrucje.$invalid && !userForm.podrucje.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Podrucje</label>
                 <div class="col-md-5">
-                    <select class="form-control" ng-model="mjestoRada.podrucje" ng-options="podrucje.ime for podrucje in podrucja">
+                    <select name="podrucje" class="form-control" ng-model="mjestoRada.podrucje" ng-options="podrucje.ime for podrucje in podrucja" required>
 
                         <option value="">Odaberi</option>
                     </select>
                 </div>
+
+                <span ng-show="userForm.podrucje.$invalid &&  !userForm.podrucje.$dirty " class="has-error">Odaberi podrucje</span>
+                <span ng-show="userForm.podrucje.$invalid && !userForm.podrucje.$pristine  " class="has-error">Odaberi podrucje</span>
+
             </div>
 
 
             <!-- Text input-->
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': userForm.imepostrojenja.$invalid && !userForm.imepostrojenja.$pristine}">
                 <label class="col-md-4 control-label" for="textinput">Ime</label>
-                <div class="col-md-6">
-                    <input ng-model="mjestoRada.ime" id="textinput" name="textinput" placeholder="Unesi ime" class="form-control input-md" type="text">
+                <div class="col-md-5">
+                    <input name="imepostrojenja" ng-model="mjestoRada.ime" id="textinput"  placeholder="Unesi ime" class="form-control input-md" type="text" required>
 
                 </div>
+
+                <span ng-show="userForm.imepostrojenja.$invalid &&  !userForm.imepostrojenja.$dirty " class="has-error">Odaberi ime postrojenja</span>
+                <span ng-show="userForm.imepostrojenja.$invalid && !userForm.imepostrojenja.$pristine  " class="has-error">Odaberi ime postrojenja</span>
+
             </div>
 
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
-                    <button ng-click="saveMjestoRada(mjestoRada)" id="singlebutton" name="singlebutton" class="btn btn-success">Kreiraj MjestoRada</button>
+                    <button ng-click="saveMjestoRada(mjestoRada)" id="singlebutton" name="singlebutton" class="btn btn-success" ng-disabled="userForm.$invalid">Kreiraj MjestoRada</button>
                 </div>
             </div>
 
@@ -51,7 +63,7 @@
 
 
 
-    <div ng-dropdown-multiselect="" options="example9data" selected-model="example9model" extra-settings="example9settings" translation-texts="example5customTexts"></div>
+    <!--<div ng-dropdown-multiselect="" options="example9data" selected-model="example9model" extra-settings="example9settings" translation-texts="example5customTexts"></div>-->
 
 
 
