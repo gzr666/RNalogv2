@@ -1,0 +1,33 @@
+﻿
+<div id="radniNalog2">
+    <form name="userForm" class="form-horizontal" novalidate>
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Unesi Zaposlenika</legend>
+
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.zaposlenik.$invalid && !userForm.zaposlenik.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Ime</label>
+                <div class="col-md-5">
+                    <input name="zaposlenik" ng-model="zaposlenik.ime" id="textinput" placeholder="Unesi ime" class="form-control input-md" type="text" required>
+
+                </div>
+
+                <span ng-show="userForm.zaposlenik.$invalid &&  !userForm.zaposlenik.$dirty " class="has-error">Unesi ime zaposlenika</span>
+                <span ng-show="userForm.zaposlenik.$invalid && !userForm.zaposlenik.$pristine  " class="has-error">Unesi ime zaposlenika</span>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                    <button ng-click="saveZaposlenik(zaposlenik)" id="singlebutton" name="singlebutton" class="btn btn-success" ng-disabled="userForm.$invalid">Kreiraj Zaposlenika</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+
+</div>

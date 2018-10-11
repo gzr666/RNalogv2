@@ -63,6 +63,8 @@
    
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0-preview2-35157" />
    
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0-preview2-35157" />
+   
    
    
     <!--<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />-->
@@ -83,7 +85,7 @@
 
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="bower install" />
-    <Exec Command="dotnet bundle" />
+    <!--<Exec Command="dotnet bundle" />-->
   </Target>
 
   <!--<ItemGroup>

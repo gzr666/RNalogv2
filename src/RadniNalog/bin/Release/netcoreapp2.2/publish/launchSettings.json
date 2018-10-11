@@ -1,0 +1,20 @@
+﻿{
+	"profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "RadniNalog": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://10.138.5.2:5002/",
+      "applicationUrl": "http://10.138.5.2:5002/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

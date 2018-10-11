@@ -52,3 +52,4 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\Radni
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.dll
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.csproj.CopyComplete
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\RadniNalog.csprojAssemblyReference.cache

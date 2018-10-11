@@ -18,7 +18,8 @@
     "RadniNalog": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/#/home",
+      "launchUrl": "http://10.138.5.2:5002/",
+      "applicationUrl": "http://10.138.5.2:5002/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

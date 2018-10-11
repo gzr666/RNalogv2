@@ -48,6 +48,8 @@ namespace RadniNalog
         // This method gets called by the runtime. Use this method to add services to the container.
         public  void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             // Add framework services.
            // services.AddApplicationInsightsTelemetry(Configuration);
 
@@ -118,6 +120,9 @@ namespace RadniNalog
 
             //obsolete
             // app.UseIdentity();
+
+
+
             app.UseAuthentication();
 
 
@@ -125,7 +130,12 @@ namespace RadniNalog
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
-            
+
+
+            //postavke CORS-a
+            app.UseCors(builder => builder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
 
 
             app.UseMvc(routes =>

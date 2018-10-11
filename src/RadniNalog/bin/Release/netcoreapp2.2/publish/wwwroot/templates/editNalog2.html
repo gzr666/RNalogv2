@@ -1,0 +1,425 @@
+﻿
+
+
+
+<div id="radniNalog2">
+    <form name="userForm" class="form-horizontal" novalidate>
+        <fieldset>
+
+
+
+
+
+            <!-- Form Name -->
+            <legend class="text-center">Izmjeni Nalog</legend>
+
+
+
+
+            <div class="form-group" ng-class="{'has-error': userForm.datumrada.$invalid && !userForm.datumrada.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasicccc">Datum Naloga</label>
+                <div class="col-md-5">
+                    <input name="datumrada" class="form-control" placeholder="Odaberi datum" ng-model="rnalog.datum" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl" format="DD-MM-YYYY" >
+                </div>
+
+                <span ng-show="userForm.datumrada.$invalid &&  !userForm.datumrada.$dirty " class="has-error">Odaberi Datum</span>
+                <span ng-show="userForm.datumrada.$invalid && !userForm.datumrada.$pristine  " class="has-error">Odaberi Datum</span>
+
+            </div>
+
+
+
+            <!--<div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasicccc">Datum</label>
+        <div class="col-md-5">
+            <input class="form-control" placeholder="Select a month...." ng-model="rnalog.datumheader" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl.datepicker" format="DD-MM-YYYY HH">
+        </div>
+
+
+
+    </div>-->
+            <!--Aktivnosti-->
+            <div class="form-group" ng-class="{'has-error': userForm.aktivnost.$invalid && !userForm.aktivnost.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Aktivnost</label>
+                <div class="col-md-5">
+                    <select data-live-search="true" name="aktivnost" class="form-control" ng-model="rnalog.VrstaRada" ng-options="aktivnost.naziv for aktivnost in vrsteRada" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.aktivnost.$invalid &&  !userForm.aktivnost.$dirty " class="has-error">Odaberi Aktvnost</span>
+                <span ng-show="userForm.aktivnost.$invalid && !userForm.aktivnost.$pristine  " class="has-error">Odaberi Aktivnost</span>
+            </div>
+
+
+            <!--Auti-->
+            <div class="form-group" ng-class="{'has-error': userForm.automobil.$invalid && !userForm.automobil.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Automobil</label>
+                <div class="col-md-5">
+                    <select data-live-search="true" name="automobil" class="form-control" ng-model="rnalog.automobilID" ng-options="auto.registracija for auto in automobili" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.automobil.$invalid &&  !userForm.automobil.$dirty " class="has-error">Odaberi Automobil</span>
+                <span ng-show="userForm.automobil.$invalid && !userForm.automobil.$pristine  " class="has-error">Odaberi Automobil</span>
+            </div>
+
+
+
+
+            <!-- Select Basic -->
+            <div class="form-group" ng-class="{'has-error': userForm.podrucjeID.$invalid && !userForm.podrucjeID.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Podrucje</label>
+                <div class="col-md-5">
+                    <select name="podrucjeID" class="form-control" ng-model="rnalog.podrucjeID" ng-options="podrucje.ime for podrucje in podrucja" ng-change="changePodrucje(rnalog)" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.podrucjeID.$invalid &&  !userForm.podrucjeID.$dirty " class="has-error">Odaberi Podrucje</span>
+                <span ng-show="userForm.podrucjeID.$invalid && !userForm.podrucjeID.$pristine  " class="has-error">Odaberi Podrucje</span>
+
+            </div>
+
+
+
+            <div class="form-group" ng-class="{'has-error': userForm.mRada.$invalid && !userForm.mRada.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Postrojenje</label>
+                <div class="col-md-5">
+                    <select data-live-search="true" name="mRada" class="form-control" ng-model="rnalog.MjestoRada" ng-options="mjestoRada.ime for mjestoRada in mjestaRada" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.mRada.$invalid &&  !userForm.mRada.$dirty " class="has-error">Odaberi Mjesto Rada</span>
+                <span ng-show="userForm.mRada.$invalid && !userForm.mRada.$pristine  " class="has-error">Odaberi Mjesto Rada</span>
+            </div>
+
+
+            <!--<div class="form-group" ng-class="{'has-error': userForm.mjestoRada.$invalid && !userForm.mjestoRada.$pristine}">
+        <label class="col-md-4 control-label" for="mjestoRada">Mjesto Rada</label>
+        <div class="col-md-5">
+
+            <div ng-dropdown-multiselect="" name="mjestoRada" id="mjestoRada" options="example9data" selected-model="rnalog.MjestoRadaID" extra-settings="example9settings" translation-texts="example5customTexts" required></div>
+
+
+        </div>
+
+        <span ng-show="userForm.mjestoRada.$invalid &&  !userForm.mjestoRada.$dirty " class="has-error">Odaberi Mjesto Rada</span>
+        <span ng-show="userForm.mjestoRada.$invalid && !userForm.mjestoRada.$pristine  " class="has-error">Odaberi Mjesto Rada</span>
+    </div>-->
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.lokacijaRada.$invalid && !userForm.lokacijaRada.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Mjesto Radova</label>
+                <div class="col-md-5">
+                    <textarea name="lokacijaRada" id="textinput" ng-model="rnalog.LokacijaRada" placeholder="Mjesto Radova" class="form-control input-md" type="text" cols="30" rows="3" style="min-width: 100%" required></textarea>
+
+                </div>
+
+                <span ng-show="userForm.lokacijaRada.$invalid &&  !userForm.lokacijaRada.$dirty" ng-class="has-error">Upiši mjesto radova</span>
+                <span ng-show="userForm.lokacijaRada.$invalid && !userForm.lokacijaRada.$pristine" ng-class="has-error">Upiši kmjesto radova</span>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.opisRadova.$invalid && !userForm.opisRadova.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Opis Radova</label>
+                <div class="col-md-5">
+                    <textarea name="opisRadova" id="textinput" ng-model="rnalog.OpisRadova" placeholder="Opis Radova" class="form-control input-md" type="text" cols="30" rows="5" style="min-width: 100%" required></textarea>
+
+                </div>
+
+                <span ng-show="userForm.opisRadova.$invalid &&  !userForm.opisRadova.$dirty" ng-class="has-error">Upiši kratak opis radova</span>
+                <span ng-show="userForm.opisRadova.$invalid && !userForm.opisRadova.$pristine" ng-class="has-error">Upiši kratak opis radova</span>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.radvezan.$invalid && !userForm.radvezan.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Rad je vezan uz(org. jedinice/tvrtke)</label>
+                <div class="col-md-5">
+                    <input name="radvezan" id="textinput" name="textinput" ng-model="rnalog.RadVezanUZ" placeholder="Rad vezan uz" class="form-control input-md" type="text" cols="30" rows="5" style="min-width: 100%" />
+
+                </div>
+
+                <span ng-show="userForm.radvezan.$invalid &&  !userForm.radvezan.$dirty " class="has-error">
+                    Rad vezan uz
+                </span>
+                <span ng-show="userForm.radvezan.$invalid && !userForm.radvezan.$pristine  " class="has-error">Rad vezan uz</span>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.prilog.$invalid && !userForm.prilog.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Prilog</label>
+                <div class="col-md-5">
+                    <input name="prilog" id="textinput" ng-model="rnalog.prilog" placeholder="Prilog" class="form-control input-md" type="text" cols="30" rows="5" style="min-width: 100%" />
+
+                </div>
+
+                <span ng-show="userForm.prilog.$invalid &&  !userForm.prilog.$dirty " class="has-error">
+                    Prilog
+                </span>
+                <span ng-show="userForm.prilog.$invalid && !userForm.prilog.$pristine  " class="has-error">Prilog</span>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.napomena.$invalid && !userForm.napomena.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Napomena</label>
+                <div class="col-md-5">
+                    <textarea name="napomena" id="textinput" ng-model="rnalog.napomena" placeholder="Napomena" class="form-control input-md" type="text" cols="30" rows="2" style="min-width: 100%"></textarea>
+
+                </div>
+
+                <span ng-show="userForm.napomena.$invalid &&  !userForm.napomena.$dirty " class="has-error">Napomena</span>
+                <span ng-show="userForm.napomena.$invalid && !userForm.napomena.$pristine  " class="has-error">Napomena</span>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group" ng-class="{'has-error': userForm.rzbroj.$invalid && !userForm.rzbroj.$pristine}">
+                <label class="col-md-4 control-label" for="textinput">Radni zadatak(broj)</label>
+                <div class="col-md-5">
+                    <input name="rzbroj" id="textinput" ng-model="rnalog.RadniZadatakBroj " placeholder="Radni zadatak(broj)" class="form-control input-md" type="text" cols="30" rows="5" style="min-width: 100%" />
+
+                </div>
+
+                <span ng-show="userForm.rzbroj.$invalid &&  !userForm.rzbroj.$dirty " class="has-error">
+                    Unesi broj radnog zadatka
+                </span>
+                <span ng-show="userForm.rzbroj.$invalid && !userForm.rzbroj.$pristine  " class="has-error">Unesi broj radnog zadatka</span>
+            </div>
+
+
+            <div class="form-group" ng-class="{'has-error': userForm.datumpocetak.$invalid && !userForm.datumpocetak.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasicccc">Planirani pocetak radova</label>
+                <div class="col-md-5">
+                    <input class="form-control" name="datumpocetak" placeholder="Odaberi datum" ng-model="rnalog.PocetakRadova" ng-model-options="{ updateOn: 'blur' }" moment-picker="datepickerpocrad" format="DD-MM-YYYY H">
+                </div>
+
+                <span ng-show="userForm.datumpocetak.$invalid &&  !userForm.datumpocetak.$dirty " class="has-error">Datum pocetka radova</span>
+                <span ng-show="userForm.datumpocetak.$invalid && !userForm.datumpocetak.$pristine  " class="has-error">Datum pocetka radova</span>
+
+
+            </div>
+
+
+            <div class="form-group" ng-class="{'has-error': userForm.datumkraj.$invalid && !userForm.datumkraj.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasicccc">Planirani zavrsetak radova</label>
+                <div class="col-md-5">
+                    <input class="form-control" name="datumkraj" placeholder="Odaberi datum" ng-model="rnalog.KrajRadova" ng-model-options="{ updateOn: 'blur' }" moment-picker="datepickerzavrad" format="DD-MM-YYYY H">
+                </div>
+
+                <span ng-show="userForm.datumkraj.$invalid &&  !userForm.datumkraj.$dirty " class="has-error">Datum kraja radova</span>
+                <span ng-show="userForm.datumkraj.$invalid && !userForm.datumkraj.$pristine  " class="has-error">Datum kraja radova</span>
+
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group" ng-class="{'has-error': userForm.rukovoditelj.$invalid && !userForm.rukovoditelj.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Rukovoditelj</label>
+                <div class="col-md-5">
+                    <select name="rukovoditelj" class="form-control" ng-model="rnalog.Rukovoditelj" ng-options="rukovoditelj.ime for rukovoditelj in rukovoditelji" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.rukovoditelj.$invalid &&  !userForm.rukovoditelj.$dirty " class="has-error">Morate odabrati rukovoditelja.</span>
+                <span ng-show="userForm.rukovoditelj.$invalid && !userForm.rukovoditelj.$pristine  " class="has-error">Morate odabrati rukovoditelja.</span>
+            </div>
+
+
+            <!-- Select Basic -->
+            <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 1</label>
+                <div class="col-md-5">
+                    <select class="form-control" name="izvrsitelj1" ng-model="rnalog.Izvrsitelj2" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1" ng-selected="{{rnalog.Izvrsitelj2.id == izvrsitelj1.id}}">
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.izvrsitelj1.$invalid &&  !userForm.izvrsitelj1.$dirty " class="has-error">Morate odabrati izvrsitelja.</span>
+                <span ng-show="userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine  " class="has-error">Morate odabrati izvrsitelja.</span>
+
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 2</label>
+                <div class="col-md-5">
+                    <select name="izvrsitelj3" class="form-control" ng-model="rnalog.Izvrsitelj3" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2">
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.izvrsitelj3.$invalid &&  !userForm.izvrsitelj3.$dirty " class="has-error">Morate odabrati izvrsitelja.</span>
+                <span ng-show="userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine  " class="has-error">Morate odabrati izvrsitelja.</span>
+
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Kategorija Rada</label>
+                <div class="col-md-5">
+
+                    <div class="form-check form-check-inline stanje1">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" ng-model="rnalog.KategorijaRada.beznaponskoStanje">
+                        <label class="form-check-label" for="inlineCheckbox1">-rad u beznaponskom stanju</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option2" ng-model="rnalog.KategorijaRada.blizinaNapona">
+                        <label class="form-check-label" for="inlineCheckbox1">-rad u blizini napona</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Vrsta Rada</label>
+                <div class="col-md-5">
+
+                    <div class="form-check form-check-inline stanje1">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3" ng-model="rnalog.TipRada.planirani">
+                        <label class="form-check-label" for="inlineCheckbox1">-planirani</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option4" ng-model="rnalog.TipRada.neplanirani">
+                        <label class="form-check-label" for="inlineCheckbox1">-neplanirani</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option5" ng-model="rnalog.TipRada.slozeni">
+                        <label class="form-check-label" for="inlineCheckbox1">-slozeni</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option6" ng-model="rnalog.TipRada.posebni">
+                        <label class="form-check-label" for="inlineCheckbox1">-slozeni</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Zaposlenici</label>
+                <div class="col-md-5">
+
+                    <div class="form-check form-check-inline stanje1">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option7" ng-model="rnalog.ObukaZaposlenika.strucni">
+                        <label class="form-check-label" for="inlineCheckbox1">-strucni</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option8" ng-model="rnalog.ObukaZaposlenika.poduceni">
+                        <label class="form-check-label" for="inlineCheckbox1">-poduceni</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option9" ng-model="rnalog.ObukaZaposlenika.nepoduceni">
+                        <label class="form-check-label" for="inlineCheckbox1">-nepoduceni</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option10" ng-model="rnalog.ObukaZaposlenika.pripravnici">
+                        <label class="form-check-label" for="inlineCheckbox1">-pripravnici</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Osiguranje Mjesta Rada</label>
+                <div class="col-md-5">
+
+                    <div class="form-check form-check-inline stanje1">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option11" ng-model="rnalog.OsiguranjeMjestaRada.vn">
+                        <label class="form-check-label" for="inlineCheckbox1">-VN</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option12" ng-model="rnalog.OsiguranjeMjestaRada.sn">
+                        <label class="form-check-label" for="inlineCheckbox1">-SN</label>&nbsp;&nbsp;&nbsp;
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Isprave za rad</label>
+                <div class="col-md-5">
+
+                    <div class="form-check form-check-inline stanje1">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option13" ng-model="rnalog.IspraveZaRad.dopusnicaZaRad">
+                        <label class="form-check-label" for="inlineCheckbox1">-Dopusnica za rad</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option14" ng-model="rnalog.IspraveZaRad.dopusnicaIskljucenjeRad">
+                        <label class="form-check-label" for="inlineCheckbox1">-Dopusnica za iskljucenje i rad</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option15" ng-model="rnalog.IspraveZaRad.izjavaRukovoditelja">
+                        <label class="form-check-label" for="inlineCheckbox1">-Izjava rukovoditelja radova druge tvrtke</label>&nbsp;&nbsp;&nbsp;
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Nadzor zaposlenika druge tvrtke</label>
+                <div class="col-md-5">
+
+                    <div class="form-check form-check-inline stanje1">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option16" ng-model="rnalog.NadzorZaposlenika.trajni">
+                        <label class="form-check-label" for="inlineCheckbox1">-Trajni</label>&nbsp;&nbsp;&nbsp;
+
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option17" ng-model="rnalog.NadzorZaposlenika.povremeni">
+                        <label class="form-check-label" for="inlineCheckbox1">-Povremeni</label>&nbsp;&nbsp;&nbsp;
+
+                        <label class="form-check-label" for="inlineCheckbox1">-Nadzorna osoba</label>
+                        <input class="form-check-input" type="text" id="inlineCheckbox1" value="option18" ng-model="rnalog.NadzorZaposlenika.nadzornaOsoba">&nbsp;&nbsp;&nbsp;
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton">Spremi Nalog</label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" ng-disabled="userForm.$invalid" class="btn btn-success" ng-click="urediNalog(rnalog)">Spremi</button>
+
+                </div>
+            </div>
+
+
+
+
+        </fieldset>
+    </form>
+
+
+
+
+    
+
+           
+
+
+       
+
+    
+
+</div>
+
+
