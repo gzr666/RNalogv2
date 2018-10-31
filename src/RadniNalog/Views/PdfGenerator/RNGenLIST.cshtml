@@ -1,0 +1,271 @@
+﻿@model IEnumerable<RadniNalog.ViewModels.RNalogViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrapprint.css" rel="stylesheet" />
+    <link href="~/css/RNGEN.css" rel="stylesheet" />
+    <title>RNGen</title>
+</head>
+
+
+<body>
+
+    @foreach (var item in @Model)
+
+    {
+        <div class="container-fluid">
+
+            <div class="row headerhold">
+
+                <div class="col-xs-1 imghold">
+
+                    <img class="img-thumbnail imgst" src="~/images/hep.png" />
+
+
+                </div>
+                <div class="col-xs-6 prvi">
+
+                    <p>HEP Operator distribucijskog sustava d.o.o.</p>
+                    <p>Sektor za vođenje sustava</p>
+                    <p><span>Pogon/Služba:</span> &nbsp;<span>Za PSTK</span></p>
+                    <p><span>Odjel/Ured:</span>   &nbsp;<span>Za PSTK Jug</span></p>
+
+
+
+                </div>
+
+                <div class="col-xs-5">
+
+
+
+                    <p>Obrazac br.4</p>
+                    <p><span>Datum:</span> &nbsp;<span>@DateTime.Parse(@item.Datum).ToShortDateString()</span></p>
+                    <p><span>Aktivnost:</span>   &nbsp;<span>@item.VrstaRada.Sifra</span></p>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="row main">
+
+                <div class="col-xs-12">
+
+                    <h2 class="text-center">Nalog za rad br.@item.ID </h2>&nbsp;&nbsp;
+
+
+
+                    <p><span class="textbold2">Naziv postrojenja:</span> &nbsp;<span class="signature">@item.MjestoRada.Ime</span></p>
+                    <p><span class="textbold2">Mjesto Rada:</span> &nbsp;<span>@item.LokacijaRada</span></p>
+                    <p><span class="textbold2">Opis Radova:</span> &nbsp;<span>@item.VrstaRada.Naziv</span></p>
+                    <p><span class="textbold2">Rad je vezan uz (org. jedinice/tvrtke):</span> &nbsp;<span>@item.RadVezanUZ</span></p>
+                    <p><span class="textbold2">Prilog:</span> &nbsp;<span>@item.Prilog</span></p>
+                    <p><span class="textbold2">Napomena:</span> &nbsp;<span>@item.Napomena</span></p>
+                    <p><span class="textbold2">Veza: Radni zadatak broj</span> &nbsp;<span>@item.RadniZadatakBroj</span></p>
+                    <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@item.PocetakRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@item.PocetakRadova).Hour</span>&nbsp;<span>sati</span></p>
+                    <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@item.KrajRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@item.KrajRadova).Hour</span>&nbsp;<span>sati</span></p>
+                    <p><span class="textbold2">Za rukovoditelj radova odredujem:</span> &nbsp;<span>@item.Rukovoditelj.Ime</span></p>
+                    <p><span class="textbold2">Ostali izvrsitelji:</span> &nbsp;<span>@item.Izvrsitelj2.Ime</span><span>,</span><span>@item.Izvrsitelj3.Ime</span></p>
+
+                    <p>
+                        <span class="textbold2">Kategorija rada:</span> &nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.KategorijaRada.BeznaponskoStanje">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -rad u beznaponskom stanju
+                            </label>
+                        </span>&nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.KategorijaRada.BlizinaNapona">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -rad u blizini napona
+                            </label>
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="textbold2">Vrsta rada:</span> &nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.TipRada.Planirani">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -planirani
+                            </label>
+                        </span>&nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.TipRada.Neplanirani">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -neplanirani
+                            </label>
+                        </span>&nbsp;
+
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.TipRada.Slozeni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -složeni
+                            </label>
+                        </span>&nbsp;
+
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.TipRada.Posebni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -posebni/mjerenja i ispitivanja
+                            </label>
+                        </span>&nbsp;
+
+                    </p>
+
+                    <p>
+                        <span class="textbold2">Zaposlenici:</span> &nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.ObukaZaposlenika.Strucni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -stručni
+                            </label>
+                        </span>&nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.ObukaZaposlenika.Poduceni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -podučeni
+                            </label>
+                        </span>&nbsp;
+
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.ObukaZaposlenika.Nepoduceni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -nepodučeni
+                            </label>
+                        </span>&nbsp;
+
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.ObukaZaposlenika.Pripravnici">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -pripravnici/vježbenici
+                            </label>
+                        </span>&nbsp;
+
+                    </p>
+
+                    <p>
+                        <span class="textbold2">Osiguranje mjesta rada:</span> &nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.OsiguranjeMjestaRada.VN">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -na VN
+                            </label>
+                        </span>&nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.OsiguranjeMjestaRada.SN">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -na NN
+                            </label>
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="textbold2">Isprave za rad:</span> &nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.IspraveZaRad.DopusnicaZaRad">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -Dopusnica za rad
+                            </label>
+                        </span>&nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1" checked="@item.IspraveZaRad.DopusnicaIskljucenjeRad">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -Dopusnica za iskljucenje i rad
+                            </label>
+                        </span>&nbsp;
+
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1" checked="@item.IspraveZaRad.IzjavaRukovoditelja">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -Izjava rukovoditelja
+                            </label>
+                        </span>&nbsp;
+
+
+                    </p>
+
+                    <p>
+                        <span class="textbold2">Nadzor zaposlenika:</span> &nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.NadzorZaposlenika.Trajni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -trajni
+                            </label>
+                        </span>&nbsp;
+                        <span>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@item.NadzorZaposlenika.Povremeni">
+                            <label class="form-check-label" for="defaultCheck1">
+                                -povremeni
+                            </label>
+                        </span>&nbsp;
+
+                        <span class="textbold2">Nadzorna osoba:</span> &nbsp;<span><input type="text" class="signature" /></span>
+
+                    </p>
+
+
+
+
+
+
+                    <p><span class="textbold2">Nalog za rad izdao (organizator rada):</span> &nbsp;<span><input type="text" class="signature" /></span></p>
+
+                </div>
+
+
+            </div>
+
+            <div class="row main addp">
+
+                <div class="col-xs-12"></div>
+
+
+                <p>Izjavljujem da mi je Nalog za rad razumljiv, da ću se pridržavati:</p>
+
+                <i class="fa fa-angle-double-right"></i>&nbsp;&nbsp;<span>Pravilnika o zaštiti na radu,</span><br>
+                <i class="fa fa-angle-double-right"></i>&nbsp; &nbsp; <span>Pravila i mjera sigurnosti pri radu na elektrodistribucijskim postrojenjima,</span><br>
+                <i class="fa fa-angle-double-right"></i>&nbsp; &nbsp;<span>posebnih pravila zaštite na radu i uputa za siguran rad,</span><br>
+                <i class="fa fa-angle-double-right"></i>&nbsp; &nbsp;<span>da ću prije početka radova odrediti dopuštenu zonu kretanja i poduzeti potrebne zaštitne mjere na mjestu isključenja i na mjestu rada,</span><br>
+                <i class="fa fa-angle-double-right"></i>&nbsp; &nbsp;<span>da ću sve izvršitelje upozoriti na: dopuštenu zonu kretanja, najbliže dijelove postrojenja koji su pod naponom i na ostale opasnosti, te da ću nadzirati njihov rad,</span><br>
+                <i class="fa fa-angle-double-right"></i>&nbsp; &nbsp;<span>da ću koristiti odgovarajući alat, osobna zaštitna sredstva i zaštitnu opremu te upotrebljavati sigurnosne znakove</span>
+
+            </div>
+
+            <div class="row main">
+
+                <div class="col-xs-12">
+
+                    <p><span class="textbold2">Nalog za rad primio:</span> &nbsp;<span> <input type="text" class="signature" /></span></p>
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+       
+        
+
+
+    }
+
+    <script src="~/js/fontawesome-all.js" type="text/javascript"></script>
+    <script src="~/lib/angular/angular.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>

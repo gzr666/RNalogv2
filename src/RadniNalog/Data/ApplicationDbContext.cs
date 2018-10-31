@@ -29,7 +29,8 @@ namespace RadniNalog.Data
         public DbSet<Zaposlenik> Zaposlenici { get; set; }
         public DbSet<Podrucje> Podrucja { get; set; }
         public DbSet<TipPostrojenja> TipoviPostrojenja { get; set; }
-        
+        public DbSet<TipDas> TipoviDas { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -44,6 +45,7 @@ namespace RadniNalog.Data
             builder.Entity<Zaposlenik>().ToTable("Zaposlenik");
             builder.Entity<Podrucje>().ToTable("Podrucja");
             builder.Entity<TipPostrojenja>().ToTable("TipPostrojenja");
+            builder.Entity<TipDas>().ToTable("TipDas");
 
 
 

@@ -25,6 +25,9 @@ namespace RadniNalog.Controllers
         [HttpGet]
         public IEnumerable<Automobil> GetAutomobili()
         {
+            
+
+
             return _context.Automobili;
         }
 

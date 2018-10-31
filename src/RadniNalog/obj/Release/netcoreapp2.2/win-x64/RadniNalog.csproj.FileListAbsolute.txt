@@ -56,3 +56,4 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\RadniNalog.dll
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\RadniNalog.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\RadniNalog.csproj.CopyComplete
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\PdfGenerator\RNGenLIST.g.cshtml.cs

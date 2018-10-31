@@ -23,15 +23,15 @@ namespace RadniNalog
             //    .Build();
 
             //host.Run();
-          
+         
 
             BuildWebHost(args).Run();
         }
-
+        
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseKestrel(kestrel=>kestrel.Listen(IPAddress.Parse("10.138.5.2"),5003))
+            .UseKestrel(kestrel=>kestrel.Listen(IPAddress.Parse("0.0.0.0"),3003))
             .UseApplicationInsights()
                 .UseStartup<Startup>()
                 .Build();

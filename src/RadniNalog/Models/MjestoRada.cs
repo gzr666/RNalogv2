@@ -20,6 +20,9 @@ namespace RadniNalog.Models
         public int PodrucjeID { get; set; }
         public Podrucje Podrucje { get; set; }
 
+        public int TipDasID{ get; set; }
+        public TipDas TipDas { get; set; }
+
         /// <summary>
         /// ne znam triba li ova referenca na naloge
         /// </summary>
