@@ -94,6 +94,29 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     });
 
+    $stateProvider.state("tipDasa", {
+
+        url: "/tipDasa",
+        templateUrl: "../templates/tipDASA.html",
+        controller: "tipdasaController"
+
+    });
+    $stateProvider.state("createDas", {
+
+        url: "/createDas",
+        templateUrl: "../templates/createDas.html",
+        controller: "CreateDASController"
+
+    });
+
+    $stateProvider.state("editDas", {
+
+        url: "/editDas/:id",
+        templateUrl: "../templates/editDas.html",
+        controller: "CreateDASController"
+
+    });
+
 
     $stateProvider.state("automobil", {
 

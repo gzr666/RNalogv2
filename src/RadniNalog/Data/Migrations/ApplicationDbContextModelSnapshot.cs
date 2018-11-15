@@ -205,11 +205,15 @@ namespace RadniNalog.Data.Migrations
 
                     b.Property<int>("PodrucjeID");
 
+                    b.Property<int>("TipDasID");
+
                     b.Property<int>("TipPostrojenjaID");
 
                     b.HasKey("ID");
 
                     b.HasIndex("PodrucjeID");
+
+                    b.HasIndex("TipDasID");
 
                     b.HasIndex("TipPostrojenjaID");
 
@@ -284,6 +288,19 @@ namespace RadniNalog.Data.Migrations
                     b.HasIndex("VrstaRadaID");
 
                     b.ToTable("RadniNalog");
+                });
+
+            modelBuilder.Entity("RadniNalog.Models.TipDas", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Ime");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("TipDas");
                 });
 
             modelBuilder.Entity("RadniNalog.Models.TipPostrojenja", b =>
@@ -382,6 +399,11 @@ namespace RadniNalog.Data.Migrations
                         .WithMany("MjestaRada")
                         .HasForeignKey("PodrucjeID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("RadniNalog.Models.TipDas", "TipDas")
+                        .WithMany("MjestaRada")
+                        .HasForeignKey("TipDasID")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("RadniNalog.Models.TipPostrojenja", "TipPostrojenja")
                         .WithMany("MjestaRada")

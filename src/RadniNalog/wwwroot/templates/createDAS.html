@@ -1,0 +1,38 @@
+﻿div id="radniNalog2">
+<form name="userForm" class="form-horizontal" novalidate>
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Unesi Tip DAS-a</legend>
+
+       
+
+
+        <!-- Text input-->
+        <div class="form-group" ng-class="{'has-error': userForm.tipDasa.$invalid && !userForm.tipDasa.$pristine}">
+            <label class="col-md-4 control-label" for="textinput">Ime</label>
+            <div class="col-md-5">
+                <input name="tipDasa" ng-model="tipDasa.ime" id="textinput" placeholder="Unesi ime" class="form-control input-md" type="text" required>
+
+            </div>
+
+            <span ng-show="userForm.tipDasa.$invalid &&  !userForm.tipDasa.$dirty " class="has-error">Odaberi tip DAS-a</span>
+            <span ng-show="userForm.tipDasa.$invalid && !userForm.tipDasa.$pristine  " class="has-error">Odaberi tip DAS-a</span>
+
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+                <button ng-click="saveDAS(tipDasa)" id="singlebutton" name="singlebutton" class="btn btn-success" ng-disabled="userForm.$invalid">Kreiraj Tip DAS-a</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+
+<!--<div ng-dropdown-multiselect="" options="example9data" selected-model="example9model" extra-settings="example9settings" translation-texts="example5customTexts"></div>-->
+</div>
