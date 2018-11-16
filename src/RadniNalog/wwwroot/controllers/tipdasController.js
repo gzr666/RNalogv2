@@ -48,7 +48,8 @@
                     toastr.success('Uspjesno izbrisan Tip Dasa', '', {
                         onHidden: function () {
                             //$state.go("admin");
-                            window.location.href = '/#home';
+                          //  $state.go("tipDasa");
+                             window.location.href = '/#tipDasa';
                         }
                     });
 

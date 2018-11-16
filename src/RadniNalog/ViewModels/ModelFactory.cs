@@ -28,10 +28,10 @@ namespace RadniNalog.ViewModels
             {
                 ID = mRada.ID,
                Ime = mRada.Ime,
-               PodrucjeID = mRada.PodrucjeID
-              
-              // Podrucje = mRada.Podrucje.Ime,
-               //TipPostrojenja = mRada.TipPostrojenja.Naziv
+               PodrucjeID = mRada.PodrucjeID,
+               Podrucje = mRada.Podrucje.Ime,
+               TipPostrojenja = mRada.TipPostrojenja.Naziv,
+               DASime = mRada.TipDas.Ime
 
             };
 

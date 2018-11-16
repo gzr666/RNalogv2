@@ -36,12 +36,27 @@
 
             </div>
 
+            <!-- Select Basic -->
+            <div class="form-group" ng-class="{'has-error': userForm.tipDAS.$invalid && !userForm.tipDAS.$pristine}">
+                <label class="col-md-4 control-label" for="selectbasic">Tip DAS-a</label>
+                <div class="col-md-5">
+                    <select name="tipDAS" class="form-control" ng-model="mjestoRada.tipDAS" ng-options="tipDAS.ime for tipDAS in tipoviDAS" required>
+
+                        <option value="">Odaberi</option>
+                    </select>
+                </div>
+
+                <span ng-show="userForm.tipDAS.$invalid &&  !userForm.tipDAS.$dirty " class="has-error">Odaberi TIP DAS-a</span>
+                <span ng-show="userForm.tipDAS.$invalid && !userForm.tipDAS.$pristine  " class="has-error">Odaberi TIP DAS-a</span>
+
+            </div>
+
 
             <!-- Text input-->
             <div class="form-group" ng-class="{'has-error': userForm.imepostrojenja.$invalid && !userForm.imepostrojenja.$pristine}">
                 <label class="col-md-4 control-label" for="textinput">Ime</label>
                 <div class="col-md-5">
-                    <input name="imepostrojenja" ng-model="mjestoRada.ime" id="textinput"  placeholder="Unesi ime" class="form-control input-md" type="text" required>
+                    <input name="imepostrojenja" ng-model="mjestoRada.ime" id="textinput" placeholder="Unesi ime" class="form-control input-md" type="text" required>
 
                 </div>
 

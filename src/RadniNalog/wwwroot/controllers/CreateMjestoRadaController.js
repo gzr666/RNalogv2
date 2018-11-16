@@ -2,12 +2,25 @@
 (function () {
 
     angular.module("appAdmin")
-        .controller("CreateMjestoRadaController", function ($scope, $rootScope, $http, mjestoRadaService, toastr, $state, $stateParams, tipPostrojenjaService, podrucjaService, _,$timeout) {
+        .controller("CreateMjestoRadaController", function ($scope, $rootScope, $http, mjestoRadaService, toastr, $state, $stateParams, tipPostrojenjaService, podrucjaService, tipDASService, _,$timeout) {
         
 
             $scope.tipoviPostrojenja = [];
             $scope.podrucja = [];
             $scope.mjestoRada = {};
+            $scope.tipoviDAS = [];
+
+            //DOHVATI DAS-eve
+            tipDASService.getDASOVI().then(function (data) {
+
+                angular.copy(data, $scope.tipoviDAS);
+
+            }, function () {
+
+
+
+
+                });
 
             //DOHVATI TIPOVE POSTROJENJA
             tipPostrojenjaService.dohvatiTipovePostrojenja().then(function (data) {
@@ -44,6 +57,7 @@
 
                         $scope.mjestoRada.tipPostrojenja = _.where($scope.tipoviPostrojenja, { id: data.tipPostrojenjaID })[0];
                         $scope.mjestoRada.podrucje = _.where($scope.podrucja, { id: data.podrucjeID })[0];
+                        $scope.mjestoRada.tipDAS = _.where($scope.tipoviDAS, { id: data.tipDasID})[0];
 
 
 
@@ -79,7 +93,8 @@
 
                 ime: mjestoRada.ime,
                 PodrucjeID: mjestoRada.podrucje.id,
-                TipPostrojenjaID: mjestoRada.tipPostrojenja.id
+                TipPostrojenjaID: mjestoRada.tipPostrojenja.id,
+                TipDasID: mjestoRada.tipDAS.id
 
 
 
@@ -111,7 +126,8 @@
                 ime: mjestoRada.ime,
                 PodrucjeID: mjestoRada.podrucje.id,
                 TipPostrojenjaID: mjestoRada.tipPostrojenja.id,
-                id:mjestoRada.id
+                id: mjestoRada.id,
+                TipDasID: mjestoRada.tipDAS.id
 
 
             }

@@ -35,8 +35,8 @@
 
                     toastr.success('Uspjesno kreiran Tip Dasa', '', {
                         onHidden: function () {
-                            //$state.go("admin");
-                            window.location.href = '/#tipDasa';
+                            $state.go("tipDasa");
+                           // window.location.href = '/#tipDasa';
                         }
                     });
 
@@ -53,10 +53,15 @@
 
             $scope.editDAS = function (das) {
 
-                console.log("clicked");
+              
                 tipDASService.updateDAS(das).then(function (das) {
 
-                    console.log(das);
+                    toastr.success('Uspjesno izmijenjen Tip Dasa', '', {
+                        onHidden: function () {
+                            $state.go("tipDasa");
+                            // window.location.href = '/#tipDasa';
+                        }
+                    });
 
 
                 }, function (error) {

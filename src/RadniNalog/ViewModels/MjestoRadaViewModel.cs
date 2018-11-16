@@ -12,5 +12,6 @@ namespace RadniNalog.ViewModels
         public string Podrucje { get; set; }
         public string TipPostrojenja { get; set; }
         public int PodrucjeID { get; set; }
+        public string DASime { get; set; }
     }
 }

@@ -120,10 +120,10 @@
         }
 
 
-        var getMjestaRada = function () {
+        var getDASOVI = function () {
 
             var q = $q.defer();
-            var url = "/api/MjestoRada";
+            var url = "/api/TipDAS";
             $http.get(url).then(
                 function (data) {
 
@@ -257,7 +257,8 @@
             updateDAS: updateDAS,
            // dohvatiMjestoRada: getMjestoRada,
             getMjestoCategory: getMjestoRadaCategory,
-            getDas:getDas
+            getDas: getDas,
+            getDASOVI: getDASOVI
 
         }
 
