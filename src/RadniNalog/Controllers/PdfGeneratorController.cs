@@ -316,14 +316,27 @@ namespace RadniNalog.Controllers
         [HttpGet("kreirajPDFList")]
         public IActionResult KreirajNalogPDFListAsync()
         {
-            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada)
-                .Include(m => m.MjestoRada)
-                .Include(a => a.Automobil)
-                .Include(izvr => izvr.Rukovoditelj)
-                .Include(izvr2 => izvr2.Izvrsitelj2)
-                .Include(izvr3 => izvr3.Izvrsitelj3)
-                .Include(katrada => katrada.KategorijaRada)
-                .ToList());
+            //var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada)
+            //    .Include(m => m.MjestoRada)
+            //    .Include(a => a.Automobil)
+            //    .Include(izvr => izvr.Rukovoditelj)
+            //    .Include(izvr2 => izvr2.Izvrsitelj2)
+            //    .Include(izvr3 => izvr3.Izvrsitelj3)
+            //    .Include(katrada => katrada.KategorijaRada)
+            //    .ToList());
+
+
+            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.Podrucje).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja).
+               Include(a => a.Automobil).
+               Include(izvr => izvr.Rukovoditelj)
+               .Include(izvr2 => izvr2.Izvrsitelj2)
+               .Include(izvr3 => izvr3.Izvrsitelj3)
+               .Include(katrada => katrada.KategorijaRada).
+
+               ToList());
 
 
             //var single = nalozi.SingleOrDefault(m => m.ID == id);

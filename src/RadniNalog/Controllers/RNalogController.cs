@@ -95,7 +95,11 @@ namespace RadniNalog.Controllers
 
            // var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
 
-            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).
+            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).
+                Include(m =>m.MjestoRada).ThenInclude(mj=>mj.Podrucje).
+                Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas).
+                Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja).
+                Include(a => a.Automobil).
                 Include(izvr=>izvr.Rukovoditelj)
                 .Include(izvr2=>izvr2.Izvrsitelj2)
                 .Include(izvr3=>izvr3.Izvrsitelj3)
@@ -103,7 +107,11 @@ namespace RadniNalog.Controllers
                 
                 ToList());
 
+
+
            
+               
+
 
             return lista;
         }
@@ -111,16 +119,28 @@ namespace RadniNalog.Controllers
         [HttpGet, Route("/api/nalozi/{id}")]
         public RNalogViewModel GetRadniNalozi3(int id, bool includeAll = false)
         {
-            var lista = ModelFactory.GetRNalozi(
-                _context.RadniNalozi
+            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.Podrucje).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja).
+               Include(a => a.Automobil).
+               Include(izvr => izvr.Rukovoditelj)
+               .Include(izvr2 => izvr2.Izvrsitelj2)
+               .Include(izvr3 => izvr3.Izvrsitelj3)
+               .Include(katrada => katrada.KategorijaRada).
+
+               ToList());
+
+            //var lista = ModelFactory.GetRNalozi(
+            //    _context.RadniNalozi
                
-                .Include(v => v.VrstaRada)
-                .Include(m => m.MjestoRada)
-                .Include(a => a.Automobil)
-                .Include(ruk=>ruk.Rukovoditelj)
-                .Include(izvr1 => izvr1.Izvrsitelj2)
-                .Include(izvr2 => izvr2.Izvrsitelj3)
-                .ToList());
+            //    .Include(v => v.VrstaRada)
+            //    .Include(m => m.MjestoRada)
+            //    .Include(a => a.Automobil)
+            //    .Include(ruk=>ruk.Rukovoditelj)
+            //    .Include(izvr1 => izvr1.Izvrsitelj2)
+            //    .Include(izvr2 => izvr2.Izvrsitelj3)
+            //    .ToList());
 
             var single = lista.SingleOrDefault(m => m.ID == id);
 

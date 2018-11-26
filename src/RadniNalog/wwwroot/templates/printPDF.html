@@ -197,7 +197,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.datumpocetak.$invalid && !userForm.datumpocetak.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasicccc">Planirani pocetak radova</label>
                 <div class="col-md-5">
-                    <input class="form-control" name="datumpocetak" placeholder="Odaberi datum" ng-model="rnalog.PocetakRadova" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl.datepickerpocrad" format="DD-MM-YYYY H" required>
+                    <input class="form-control" name="datumpocetak" placeholder="Odaberi datum" ng-model="rnalog.PocetakRadova" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl.datepickerpocrad" format="DD-MM-YYYY HH:mm" required>
                 </div>
 
                 <span ng-show="userForm.datumpocetak.$invalid &&  !userForm.datumpocetak.$dirty " class="has-error">Datum pocetka radova</span>
@@ -210,7 +210,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.datumkraj.$invalid && !userForm.datumkraj.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasicccc">Planirani zavrsetak radova</label>
                 <div class="col-md-5">
-                    <input class="form-control" name="datumkraj" placeholder="Odaberi datum" ng-model="rnalog.KrajRadova" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl.datepickerzavrad" format="DD-MM-YYYY H" required>
+                    <input class="form-control" name="datumkraj" placeholder="Odaberi datum" ng-model="rnalog.KrajRadova" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl.datepickerzavrad" format="DD-MM-YYYY HH:mm" required>
                 </div>
 
                 <span ng-show="userForm.datumkraj.$invalid &&  !userForm.datumkraj.$dirty " class="has-error">Datum kraja radova</span>

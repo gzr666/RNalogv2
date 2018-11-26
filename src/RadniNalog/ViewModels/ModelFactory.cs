@@ -1,4 +1,6 @@
-﻿using RadniNalog.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using RadniNalog.Data;
+using RadniNalog.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,9 @@ namespace RadniNalog.ViewModels
 {
     public class ModelFactory
     {
+        
+
+       
 
         public static AutomobilViewModel GetAutomobilVM(Automobil auto)
         {
@@ -22,7 +27,7 @@ namespace RadniNalog.ViewModels
 
         public static MjestoRadaViewModel GetMjestoRadaVM(MjestoRada mRada)
         {
-
+           
             
             return new MjestoRadaViewModel
             {
@@ -32,6 +37,23 @@ namespace RadniNalog.ViewModels
                Podrucje = mRada.Podrucje.Ime,
                TipPostrojenja = mRada.TipPostrojenja.Naziv,
                DASime = mRada.TipDas.Ime
+
+            };
+
+        }
+
+        public static MjestoRadaViewModel GetMjestoRadaVMDIRECT(MjestoRada mRada)
+        {
+
+
+            return new MjestoRadaViewModel
+            {
+                ID = mRada.ID,
+                Ime = mRada.Ime,
+                PodrucjeID = mRada.PodrucjeID,
+                Podrucje = mRada.Podrucje.Ime,
+                TipPostrojenja = mRada.TipPostrojenja.Naziv,
+                DASime = mRada.TipDas.Ime
 
             };
 

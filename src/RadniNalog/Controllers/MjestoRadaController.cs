@@ -29,7 +29,7 @@ namespace RadniNalog.Controllers
             return _context.MjestoRada.Include(mjesto=>mjesto.Podrucje).
                 Include(mjesto2=>mjesto2.TipPostrojenja).
                 Include(tipDAS=>tipDAS.TipDas).
-                Select(m=>ModelFactory.GetMjestoRadaVM(m))
+                Select(m=>ModelFactory.GetMjestoRadaVMDIRECT(m))
                 .ToList();
         }
 
