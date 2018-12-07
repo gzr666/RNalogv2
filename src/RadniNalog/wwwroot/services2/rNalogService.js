@@ -124,6 +124,26 @@
 
         }
 
+        var geIzvjestajLokacije = function (id) {
+            var q = $q.defer();
+            var url = "/api/nalozi/lokacija/" + id;
+            $http.get(url).then(
+                function (data) {
+
+                    q.resolve(data.data);
+
+                },
+                function (error) {
+                    q.reject(error);
+
+
+                })
+
+            return q.promise;
+
+
+        }
+
 
 
         
@@ -139,7 +159,8 @@
             deleteNalog: deleteNalog,
             editNalog: updateNalog,
             getNalog: getNalog,
-            getNalozi: getNalozi
+            getNalozi: getNalozi,
+            geIzvjestajLokacije: geIzvjestajLokacije
 
         }
 

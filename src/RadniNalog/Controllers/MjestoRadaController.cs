@@ -22,6 +22,9 @@ namespace RadniNalog.Controllers
             _context = context;
         }
 
+
+        
+
         // GET: api/MjestoRada
         [HttpGet]
         public IEnumerable<MjestoRadaViewModel> GetMjestoRada()

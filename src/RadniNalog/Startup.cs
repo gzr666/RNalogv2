@@ -88,7 +88,7 @@ namespace RadniNalog
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
-            services.AddTransient<IFillRole, FillRole>();
+            services.AddScoped<IFillRole, FillRole>();
 
             //services.AddSingleton<PdfResultExecutor>();
 
@@ -99,7 +99,7 @@ namespace RadniNalog
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void  Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,IFillRole fillRole)
+        public void  Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,IFillRole fillRole2)
         { 
 
             if (env.IsDevelopment())
@@ -146,9 +146,14 @@ namespace RadniNalog
             });
 
 
-            
-             fillRole.testFill();
 
+            //provaj dohvatit servis
+           // var fillRole2 = app.ApplicationServices.GetRequiredService<IFillRole>();
+            //var testContext = app.ApplicationServices.GetService<ApplicationDbContext>();
+
+
+             fillRole2.testFill();
+           // fillRole2.createRolesandUsers();
            
 
 

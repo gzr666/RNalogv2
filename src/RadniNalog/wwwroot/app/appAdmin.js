@@ -157,7 +157,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     });
 
+    $stateProvider.state("izvjestajLokacije", {
 
+        url: "/izvjestajLokacije/:id",
+        templateUrl: "../templates/izvjestajLokacije.html",
+        controller: "IzvjestajLokacijeController"
+
+    });
 
 
 

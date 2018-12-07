@@ -257,7 +257,8 @@
             editMjestoRada: updateMjestoRada,
             dohvatiMjestoRada: getMjestoRada,
             getMjestoCategory: getMjestoRadaCategory,
-            getMjestaRada:getMjestaRada
+            getMjestaRada: getMjestaRada,
+            getMjestoRada: getMjestoRada
 
         }
 

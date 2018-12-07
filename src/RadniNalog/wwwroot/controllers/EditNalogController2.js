@@ -5,7 +5,9 @@
         .controller("EditNalogController2", function ($scope, $rootScope, $http, zaposlenikService, podrucjaService, mjestoRadaService, vrstaRadaService, automobilService, toastr, $state, _, $stateParams,nalogService2,$timeout) {
 
             var ctrl = this;
-           
+
+            $scope.checkSame = false;
+            $scope.dsbBTN = false;
        
         //$scope.zaposlenik = {};
         $scope.rnalog = {
@@ -222,6 +224,8 @@
 
 
 
+        
+
 
         //promjena podrucja trigger
         $scope.changePodrucje = function (podrucje) {
@@ -247,15 +251,23 @@
                 }
 
                 $scope.example9data = test;
-             
+
 
             }, function () { })
 
-            
-
-        }
 
 
+        };
+
+
+
+        $scope.changeAuto = function (auto) {
+
+
+          
+
+        };
+        
        
 
 
@@ -296,14 +308,152 @@
         };
 
 
+        //provjera da nisu isti ruk i izvr
+        $scope.changeRukovoditelj = function (nalog) {
+
+            console.log($scope.rnalog);
+
+            if ($scope.rnalog.rukovoditelj === null || $scope.rnalog.Izvrsitelj2 === null || $scope.rnalog.Izvrsitelj3 === null) {
+
+
+
+            }
+            else {
+
+                if ($scope.rnalog.Rukovoditelj.id === $scope.rnalog.Izvrsitelj2.id || $scope.rnalog.Rukovoditelj.id === $scope.rnalog.Izvrsitelj3.id) {
+
+                 
+                    $scope.checkRUK = true;
+                  
+
+
+
+                }
+                else {
+                    $scope.checkRUK = false;
+                    console.log($scope.checkSame);
+                }
+               
+            }
+
+
+
+            //provjera da nemamo duplicirana imena za izvrsitelje,rukovoditelje
+            if ($scope.checkRUK) {
+
+                $scope.dsBTN = true;
+
+            }
+            else {
+
+                $scope.dsBTN = false;
+
+
+            }
+
+
+
+        };
+
+
+        //provjera da nisu isti ruk i izvr
+        $scope.changeIzvrsitelj2 = function (nalog) {
+
+            console.log($scope.rnalog);
+
+            if ($scope.rnalog.rukovoditelj === null || $scope.rnalog.Izvrsitelj2 === null || $scope.rnalog.Izvrsitelj3 === null) {
+
+              
+
+            }
+
+            else {
+
+                if ($scope.rnalog.Izvrsitelj2.id === $scope.rnalog.Izvrsitelj3.id || $scope.rnalog.Izvrsitelj2.id === $scope.rnalog.Rukovoditelj.id) {
+
+                    $scope.checkIZVR1 = true;
+                }
+                     else {
+                        $scope.checkIZVR1 = false;
+                   
+                    }
+                    
+
+                
+            }
+
+
+            //provjera da nemamo duplicirana imena za izvrsitelje,rukovoditelje
+            if ($scope.checkIZVR1) {
+
+                $scope.dsBTN = true;
+
+            }
+            else {
+
+                $scope.dsBTN = false;
+
+
+            }
+
+
+        };
+
+        $scope.changeIzvrsitelj3 = function (nalog) {
+
+            console.log($scope.rnalog);
+
+            if ($scope.rnalog.rukovoditelj === null || $scope.rnalog.Izvrsitelj2 === null || $scope.rnalog.Izvrsitelj3 === null) {
+
+
+
+            }
+            else {
+
+                if ($scope.rnalog.Izvrsitelj3.id === $scope.rnalog.Izvrsitelj2.id || $scope.rnalog.Izvrsitelj3.id === $scope.rnalog.Rukovoditelj.id) {
+
+                    $scope.checkIZVR2 = true;
+                }
+                else {
+                    $scope.checkIZVR2 = false;
+
+                }
+
+
+
+                
+            }
+
+
+            //provjera da nemamo duplicirana imena za izvrsitelje,rukovoditelje
+            if ($scope.checkIZVR2) {
+
+                $scope.dsBTN = true;
+
+            }
+            else {
+
+                $scope.dsBTN = false;
+
+
+            }
+
+
+        };
+
+
 
         //spremanje naloga
         $scope.urediNalog = function (nalog) {
 
+
+
+          
+
             console.log(nalog);
 
             var rnalog = {
-                LokacijaRada:nalog.LokacijaRada,
+                LokacijaRada: nalog.LokacijaRada,
                 ID: nalog.id,
                 Datum: nalog.datum,
                 IspraveZaRad: nalog.IspraveZaRad,
@@ -318,29 +468,69 @@
                 TipRada: nalog.TipRada,
                 ObukaZaposlenika: nalog.ObukaZaposlenika,
                 OsiguranjeMjestaRada: nalog.OsiguranjeMjestaRada,
-                IspraveZaRad: nalog.IspraveZaRad,
+               // IspraveZaRad: nalog.IspraveZaRad,
                 NadzorZaposlenika: nalog.NadzorZaposlenika,
                 Rukovoditelj: nalog.Rukovoditelj,
                 Izvrsitelj2: nalog.Izvrsitelj2,
                 Izvrsitelj3: nalog.Izvrsitelj3,
-                Automobil: nalog.automobil,
-                MjestoRada: nalog.mjestoRada,
+                Automobil: nalog.automobilID,
+               // MjestoRada: nalog.mjestoRada,
                 VrstaRada: nalog.VrstaRada,
-                AutomobilID: nalog.automobil.id,
+                AutomobilID: nalog.automobilID.id,
                 MjestoRadaID: nalog.MjestoRada.id,
-                VrstaRadaID: nalog.vrstaRada.id
+                VrstaRadaID: nalog.VrstaRada.id
 
 
 
 
 
-            }
+            };
+
+            
+
+            //var rnalog = {
+            //    lokacijaRada: nalog.LokacijaRada,
+            //    ID: nalog.id,
+            //    Datum: nalog.datum,
+            //    IspraveZaRad: nalog.IspraveZaRad,
+            //    OpisRadova: nalog.OpisRadova,
+            //    RadVezanUZ: nalog.RadVezanUZ,
+            //    Prilog: nalog.prilog,
+            //    Napomena: nalog.napomena,
+            //    RadniZadatakBroj: nalog.RadniZadatakBroj,
+            //    PocetakRadova: nalog.PocetakRadova,
+            //    KrajRadova: nalog.KrajRadova,
+            //    KategorijaRada: nalog.KategorijaRada,
+            //    TipRada: nalog.TipRada,
+            //    ObukaZaposlenika: nalog.ObukaZaposlenika,
+            //    OsiguranjeMjestaRada: nalog.OsiguranjeMjestaRada,
+            //    IspraveZaRad: nalog.IspraveZaRad,
+            //    NadzorZaposlenika: nalog.NadzorZaposlenika,
+            //    Rukovoditelj: nalog.Rukovoditelj,
+            //    Izvrsitelj2: nalog.Izvrsitelj2,
+            //    Izvrsitelj3: nalog.Izvrsitelj3,
+            //    Automobil: nalog.automobil,
+            //    MjestoRada: nalog.mjestoRada,
+            //    VrstaRada: nalog.VrstaRada,
+            //    AutomobilID: nalog.automobil.id,
+            //    MjestoRadaID: nalog.MjestoRada.id,
+            //    VrstaRadaID: nalog.vrstaRada.id
+
+
+
+
+
+            //};
+
+
+          
+
 
            
 
 
             nalogService2.editNalog(rnalog).then(function (data) {
-
+                console.log("nn");
                 toastr.success('Uspjesno izmijenjen Nalog', '',
                     {
                         onHidden: function () {
@@ -351,9 +541,9 @@
                     });
 
 
-            }, function () {
+            }, function (err) {
 
-
+                console.log(err);
 
                 })
 

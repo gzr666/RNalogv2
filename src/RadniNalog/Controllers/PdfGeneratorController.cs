@@ -50,7 +50,11 @@ namespace RadniNalog.Controllers
         {
 
 
-            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi
+                .Include(v => v.VrstaRada).
+                 Include(m => m.MjestoRada).ThenInclude(mj => mj.Podrucje).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas). Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja)
+               .Include(a => a.Automobil).ToList());
 
            
 
@@ -142,7 +146,17 @@ namespace RadniNalog.Controllers
                 file = new FileInfo(Path.Combine(webRoot, filename));
             }
 
-            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+            // var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+
+            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi
+                .Include(v => v.VrstaRada).
+                 Include(m => m.MjestoRada).ThenInclude(mj => mj.Podrucje).
+               Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas).Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja).
+             Include(izvr => izvr.Rukovoditelj)
+               .Include(izvr2 => izvr2.Izvrsitelj2)
+               .Include(izvr3 => izvr3.Izvrsitelj3)
+               .Include(a => a.Automobil).ToList());
+
 
             var count = nalozi.Count;
 
@@ -167,10 +181,10 @@ namespace RadniNalog.Controllers
                 row.CreateCell(4).SetCellValue("Rukovoditelj");
                 row.CreateCell(5).SetCellValue("Izvrsitelj1");
                 row.CreateCell(6).SetCellValue("Izvrsitelj2");
-                row.CreateCell(7).SetCellValue("Putni Nalog");
-                row.CreateCell(8).SetCellValue("Automobil");
-                row.CreateCell(9).SetCellValue("Vrsta Rada");
-                row.CreateCell(10).SetCellValue("Mjesto Rada");
+               // row.CreateCell(7).SetCellValue("Putni Nalog");
+                row.CreateCell(7).SetCellValue("Automobil");
+                row.CreateCell(8).SetCellValue("Vrsta Rada");
+                row.CreateCell(9).SetCellValue("Mjesto Rada");
 
 
                 for (int i = 0; i < count; i++)
@@ -187,10 +201,10 @@ namespace RadniNalog.Controllers
                     row.CreateCell(4).SetCellValue(nalozi.ElementAt(i).Rukovoditelj.Ime);
                     row.CreateCell(5).SetCellValue(nalozi.ElementAt(i).Izvrsitelj2.Ime);
                     row.CreateCell(6).SetCellValue(nalozi.ElementAt(i).Izvrsitelj3.Ime);
-                    row.CreateCell(7).SetCellValue(nalozi.ElementAt(i).PutniNalog);
-                    row.CreateCell(8).SetCellValue(nalozi.ElementAt(i).Automobil.Registracija);
-                    row.CreateCell(9).SetCellValue(nalozi.ElementAt(i).VrstaRada.Naziv);
-                    row.CreateCell(10).SetCellValue(nalozi.ElementAt(i).MjestoRada.Ime);
+                 //   row.CreateCell(7).SetCellValue(nalozi.ElementAt(i).PutniNalog);
+                    row.CreateCell(7).SetCellValue(nalozi.ElementAt(i).Automobil.Registracija);
+                    row.CreateCell(8).SetCellValue(nalozi.ElementAt(i).VrstaRada.Naziv);
+                    row.CreateCell(9).SetCellValue(nalozi.ElementAt(i).MjestoRada.Ime);
 
 
 
@@ -281,14 +295,23 @@ namespace RadniNalog.Controllers
         [HttpGet("kreirajPDF/{id}")]
         public IActionResult KreirajNalogPDFAsync([FromRoute] int id)
         {
-            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada)
-                .Include(m => m.MjestoRada)
-                .Include(a => a.Automobil)
-                .Include(izvr=>izvr.Rukovoditelj)
-                .Include(izvr2 => izvr2.Izvrsitelj2)
-                .Include(izvr3 => izvr3.Izvrsitelj3)
-                .Include(katrada=>katrada.KategorijaRada)
-                .ToList());
+            //var nalozi2 = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada)
+            //    .Include(m => m.MjestoRada)
+            //    .Include(a => a.Automobil)
+            //    .Include(izvr=>izvr.Rukovoditelj)
+            //    .Include(izvr2 => izvr2.Izvrsitelj2)
+            //    .Include(izvr3 => izvr3.Izvrsitelj3)
+            //    .Include(katrada=>katrada.KategorijaRada)
+            //    .ToList());
+
+            var nalozi = ModelFactory.GetRNalozi(_context.RadniNalozi
+               .Include(v => v.VrstaRada).
+                Include(m => m.MjestoRada).ThenInclude(mj => mj.Podrucje).
+              Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas).Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja)
+              .Include(a => a.Automobil).
+               Include(izvr => izvr.Rukovoditelj)
+               .Include(izvr2 => izvr2.Izvrsitelj2)
+               .Include(izvr3 => izvr3.Izvrsitelj3).ToList());
 
 
             var single = nalozi.SingleOrDefault(m => m.ID == id);

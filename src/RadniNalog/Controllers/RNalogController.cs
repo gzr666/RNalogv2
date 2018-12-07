@@ -116,6 +116,34 @@ namespace RadniNalog.Controllers
             return lista;
         }
 
+
+        [HttpGet, Route("/api/nalozi/lokacija/{mjestoID}")]
+        public IEnumerable<RNalogViewModel> GetRadniNalozi2(int mjestoID)
+        {
+
+            // var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Include(v => v.VrstaRada).Include(m => m.MjestoRada).Include(a => a.Automobil).ToList());
+
+            var lista = ModelFactory.GetRNalozi(_context.RadniNalozi.Where(mNalog=>mNalog.MjestoRada.ID==mjestoID).Include(v => v.VrstaRada).
+                Include(m => m.MjestoRada).ThenInclude(mj => mj.Podrucje).
+                Include(m => m.MjestoRada).ThenInclude(mj => mj.TipDas).
+                Include(m => m.MjestoRada).ThenInclude(mj => mj.TipPostrojenja).
+                Include(a => a.Automobil).
+                Include(izvr => izvr.Rukovoditelj)
+                .Include(izvr2 => izvr2.Izvrsitelj2)
+                .Include(izvr3 => izvr3.Izvrsitelj3)
+                .Include(katrada => katrada.KategorijaRada).
+                OrderBy(nl=>nl.Datum).
+                ToList());
+
+
+
+
+
+
+
+            return lista;
+        }
+
         [HttpGet, Route("/api/nalozi/{id}")]
         public RNalogViewModel GetRadniNalozi3(int id, bool includeAll = false)
         {
@@ -170,14 +198,16 @@ namespace RadniNalog.Controllers
 
         // PUT: api/RNalog/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRNalog([FromRoute] int id, [FromBody] RNalog rNalog)
+        public async Task<IActionResult> PutRNalog([FromRoute] int id, [FromBody] RNalog nalog)
         {
+
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != rNalog.ID)
+            if (id != nalog.ID)
             {
                 return BadRequest();
             }
@@ -196,34 +226,37 @@ namespace RadniNalog.Controllers
                 .Include(vrada => vrada.VrstaRada)
                 .Include(izvr2=>izvr2.Rukovoditelj)
                 .Include(izvr3 => izvr3.Izvrsitelj2)
-                .Include(izvr4 => izvr4.Izvrsitelj3).AsNoTracking().SingleOrDefault(rn=>rn.ID == rNalog.ID);
+                .Include(aut=>aut.Automobil)
+                .Include(izvr4 => izvr4.Izvrsitelj3).AsNoTracking().SingleOrDefault(rn=>rn.ID == nalog.ID);
 
-            rnalog2.ID = rNalog.ID;
-            rnalog2.AutomobilID = rNalog.AutomobilID;
-            rnalog2.MjestoRadaID = rNalog.MjestoRadaID;
-            rnalog2.VrstaRadaID = rNalog.VrstaRadaID;
-            rnalog2.Datum = String.Format("{0:DD-MM-YYYY HH}", rNalog.Datum);
-            rnalog2.Izvrsitelj2.ID = rNalog.Izvrsitelj2.ID;
-            rnalog2.Izvrsitelj2 = rNalog.Izvrsitelj2;
-            rnalog2.Izvrsitelj3 = rNalog.Izvrsitelj3;
-            rnalog2.Izvrsitelj3.ID = rNalog.Izvrsitelj3.ID;
-            rnalog2.OpisRadova = rNalog.OpisRadova;
-            rnalog2.PutniNalog = rNalog.PutniNalog;
-            rnalog2.Rukovoditelj.ID = rNalog.Rukovoditelj.ID;
-            rnalog2.Rukovoditelj = rNalog.Rukovoditelj;
-            rnalog2.IspraveZaRad = rNalog.IspraveZaRad;
-            rnalog2.KategorijaRada = rNalog.KategorijaRada;
-            rnalog2.TipRada = rNalog.TipRada;
-            rnalog2.ObukaZaposlenika = rNalog.ObukaZaposlenika;
-            rnalog2.OsiguranjeMjestaRada = rNalog.OsiguranjeMjestaRada;
-            rnalog2.NadzorZaposlenika = rNalog.NadzorZaposlenika;
-            rnalog2.RadVezanUZ = rNalog.RadVezanUZ;
-            rnalog2.Prilog = rNalog.Prilog;
-            rnalog2.Napomena = rNalog.Napomena;
-            rnalog2.LokacijaRada = rNalog.LokacijaRada;
-            rnalog2.RadniZadatakBroj = rNalog.RadniZadatakBroj;
-            rnalog2.PocetakRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.PocetakRadova);
-            rnalog2.KrajRadova = String.Format("{0:DD-MM-YYYY HH}", rNalog.KrajRadova);
+            rnalog2.ID = nalog.ID;
+            rnalog2.AutomobilID = nalog.AutomobilID;
+            rnalog2.MjestoRadaID = nalog.MjestoRadaID;
+            rnalog2.VrstaRadaID = nalog.VrstaRadaID;
+            rnalog2.Datum = String.Format("{0:DD-MM-YYYY HH}", nalog.Datum);
+            rnalog2.Izvrsitelj2.ID = nalog.Izvrsitelj2.ID;
+            rnalog2.Izvrsitelj2 = nalog.Izvrsitelj2;
+            rnalog2.Izvrsitelj3 = nalog.Izvrsitelj3;
+            rnalog2.Izvrsitelj3.ID = nalog.Izvrsitelj3.ID;
+            rnalog2.OpisRadova = nalog.OpisRadova;
+            rnalog2.PutniNalog = nalog.PutniNalog;
+            rnalog2.Rukovoditelj.ID = nalog.Rukovoditelj.ID;
+            rnalog2.Rukovoditelj = nalog.Rukovoditelj;
+            rnalog2.IspraveZaRad = nalog.IspraveZaRad;
+            rnalog2.KategorijaRada = nalog.KategorijaRada;
+            rnalog2.TipRada = nalog.TipRada;
+            rnalog2.ObukaZaposlenika = nalog.ObukaZaposlenika;
+            rnalog2.OsiguranjeMjestaRada = nalog.OsiguranjeMjestaRada;
+            rnalog2.NadzorZaposlenika = nalog.NadzorZaposlenika;
+            rnalog2.RadVezanUZ = nalog.RadVezanUZ;
+            rnalog2.Prilog = nalog.Prilog;
+            rnalog2.Napomena = nalog.Napomena;
+            rnalog2.LokacijaRada = nalog.LokacijaRada;
+            rnalog2.RadniZadatakBroj = nalog.RadniZadatakBroj;
+            rnalog2.PocetakRadova = String.Format("{0:DD-MM-YYYY HH}", nalog.PocetakRadova);
+            rnalog2.KrajRadova = String.Format("{0:DD-MM-YYYY HH}", nalog.KrajRadova);
+            rnalog2.Automobil = nalog.Automobil;
+            rnalog2.VrstaRada = nalog.VrstaRada;
 
             //RNalog nalog = new RNalog
             //{
@@ -271,6 +304,8 @@ namespace RadniNalog.Controllers
             _context.Entry(rnalog2.IspraveZaRad).State = EntityState.Modified;
             _context.Entry(rnalog2.NadzorZaposlenika).State = EntityState.Modified;
 
+            _context.Entry(rnalog2.Automobil).State = EntityState.Modified;
+
             _context.Entry(rnalog2).State = EntityState.Modified;
 
             try
@@ -290,7 +325,7 @@ namespace RadniNalog.Controllers
             }
 
             //return NoContent();
-            return Ok("SUCCESSFULLY edited NALOG WITH ID:" + rNalog.ID);
+            return Ok("SUCCESSFULLY edited NALOG WITH ID:" + nalog.ID);
         }
 
         // POST: api/RNalog
