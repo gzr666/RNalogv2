@@ -9,7 +9,7 @@
 
         $scope.gotoprint = function () {
 
-            window.location.href = 'Home/Administracija#/printPDF';
+            window.location.href = 'Home/#/printPDF';
             console.log("lokacion");
 
         }

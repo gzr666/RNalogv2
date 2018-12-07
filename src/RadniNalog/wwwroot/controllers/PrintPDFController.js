@@ -1,7 +1,7 @@
 ﻿
 (function () {
 
-    angular.module("appAdmin")
+    angular.module("myApp")
         .controller("PrintPDFController", function ($scope, $rootScope, $http, zaposlenikService, podrucjaService, mjestoRadaService, vrstaRadaService, automobilService, toastr, $state, _, $stateParams,nalogService2) {
 
         var ctrl = this;

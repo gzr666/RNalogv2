@@ -141,13 +141,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     });
 
-    $stateProvider.state("printPDF", {
+    //$stateProvider.state("printPDF", {
 
-        url: "/printPDF",
-        templateUrl: "../templates/printPDF.html",
-        controller: "PrintPDFController"
+    //    url: "/printPDF",
+    //    templateUrl: "../templates/printPDF.html",
+    //    controller: "PrintPDFController"
 
-    });
+    //});
 
     $stateProvider.state("editNalog2", {
 

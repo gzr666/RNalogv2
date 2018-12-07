@@ -1,7 +1,7 @@
 ﻿/// <reference path="../lib/angular/angular.js" />
 
 
-var myApp = angular.module("myApp", ["ui.router", 'ngTable', 'chart.js', "toastr", "720kb.datepicker", "underscore", "angularMoment"]);
+var myApp = angular.module("myApp", ["ui.router", 'ngTable', 'chart.js', "toastr", "720kb.datepicker", "moment-picker", "underscore", "angularMoment", "angularjs-dropdown-multiselect"]);
 
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -41,7 +41,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     });
 
    
+    $stateProvider.state("printPDF", {
 
+        url: "/printPDF",
+        templateUrl: "../templates/printPDF.html",
+        controller: "PrintPDFController"
+
+    });
     
 
 
