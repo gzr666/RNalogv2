@@ -16,6 +16,12 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20181115082252_AddedTipDAS2.cs" />
     <Compile Remove="Data\Migrations\20181115082252_AddedTipDAS2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20181212063444_DodanaGalerija.cs" />
+    <Compile Remove="Data\Migrations\20181212063444_DodanaGalerija.Designer.cs" />
+    <Compile Remove="Data\Migrations\20181212114629_DodanaGalerija2.cs" />
+    <Compile Remove="Data\Migrations\20181212114629_DodanaGalerija2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20181212114717_DodanaGalerija3.cs" />
+    <Compile Remove="Data\Migrations\20181212114717_DodanaGalerija3.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +82,8 @@
    
     <PackageReference Include="Rotativa.AspNetCore" Version="1.0.6" />
    
+    <PackageReference Include="shortid" Version="2.0.0" />
+   
   
   </ItemGroup>
 
@@ -87,6 +95,10 @@
     <Content Update="wwwroot\services2\tipDASService.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\upload\" />
   </ItemGroup>
 
   <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">

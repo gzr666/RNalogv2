@@ -243,6 +243,30 @@ namespace RadniNalog.Data.Migrations
 
                     b.Property<string>("Datum");
 
+                    b.Property<string>("IzvjIzdatnice");
+
+                    b.Property<string>("IzvjNapomena");
+
+                    b.Property<string>("IzvjNeizvedeniRadovi");
+
+                    b.Property<string>("IzvjOpisIzvRadova");
+
+                    b.Property<string>("IzvjOstaliTroskovi");
+
+                    b.Property<string>("IzvjPodnio");
+
+                    b.Property<string>("IzvjPovratnice");
+
+                    b.Property<string>("IzvjPreglEvident");
+
+                    b.Property<string>("IzvjPrijevoz");
+
+                    b.Property<string>("IzvjPrimio");
+
+                    b.Property<string>("IzvjRadnoVrijeme");
+
+                    b.Property<string>("IzvjUoceniNedostaci");
+
                     b.Property<int?>("Izvrsitelj2ID");
 
                     b.Property<int?>("Izvrsitelj3ID");
@@ -346,6 +370,23 @@ namespace RadniNalog.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Zaposlenik");
+                });
+
+            modelBuilder.Entity("RadniNalog.ViewModels.ImageModel", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<string>("ImagePath");
+
+                    b.Property<int>("LocationID");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

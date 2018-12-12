@@ -1,7 +1,7 @@
 ﻿
 (function () {
 
-    angular.module("appAdmin")
+    angular.module("myApp")
         .controller("EditNalogController2", function ($scope, $rootScope, $http, zaposlenikService, podrucjaService, mjestoRadaService, vrstaRadaService, automobilService, toastr, $state, _, $stateParams,nalogService2,$timeout) {
 
             var ctrl = this;
@@ -178,6 +178,7 @@
                $scope.datepickerzavrad = moment(data.krajRadova);
 
 
+
                $timeout(function () {
                   
               
@@ -208,6 +209,21 @@
                $scope.rnalog.IspraveZaRad = data.ispraveZaRad;
 
                $scope.rnalog.NadzorZaposlenika = data.nadzorZaposlenika;
+
+                //POPULIRAJMO DIO SA IZVJESTAJIMA
+               $scope.rnalog.IzvjOpisIzvRadova = data.izvjOpisIzvRadova;
+               $scope.rnalog.IzvjNeizvedeniRadovi = data.izvjNeizvedeniRadovi;
+
+               $scope.rnalog.IzvjUoceniNedostaci = data.izvjUoceniNedostaci;
+               $scope.rnalog.IzvjNapomena = data.izvjNapomena;
+               $scope.rnalog.IzvjRadnoVrijeme = data.izvjRadnoVrijeme;
+               $scope.rnalog.IzvjPrijevoz = data.izvjPrijevoz;
+               $scope.rnalog.IzvjIzdatnice = data.izvjIzdatnice;
+               $scope.rnalog.IzvjPovratnice = data.izvjPovratnice;
+               $scope.rnalog.IzvjOstaliTroskovi = data.izvjOstaliTroskovi;
+               $scope.rnalog.IzvjPrimio = data.izvjPrimio;
+               $scope.rnalog.IzvjPodnio = data.izvjPodnio;
+               $scope.rnalog.IzvjPreglEvident = data.izvjPreglEvident;
 
                
 
@@ -478,7 +494,19 @@
                 VrstaRada: nalog.VrstaRada,
                 AutomobilID: nalog.automobilID.id,
                 MjestoRadaID: nalog.MjestoRada.id,
-                VrstaRadaID: nalog.VrstaRada.id
+                VrstaRadaID: nalog.VrstaRada.id,
+                IzvjOpisIzvRadova: nalog.IzvjOpisIzvRadova,
+                IzvjNeizvedeniRadovi: nalog.IzvjNeizvedeniRadovi,
+                IzvjUoceniNedostaci : nalog.IzvjUoceniNedostaci,
+                IzvjNapomena : nalog.IzvjNapomena,
+                IzvjRadnoVrijeme : nalog.IzvjRadnoVrijeme,
+                IzvjPrijevoz : nalog.IzvjPrijevoz,
+                IzvjIzdatnice : nalog.IzvjIzdatnice,
+                IzvjPovratnice : nalog.IzvjPovratnice,
+                IzvjOstaliTroskovi : nalog.IzvjOstaliTroskovi,
+                IzvjPrimio : nalog.IzvjPrimio,
+                IzvjPodnio : nalog.IzvjPodnio,
+                IzvjPreglEvident : nalog.IzvjPreglEvident
 
 
 

@@ -3,6 +3,10 @@
 
 var myApp = angular.module("myApp", ["ui.router", 'ngTable', 'chart.js', "toastr", "720kb.datepicker", "moment-picker", "underscore", "angularMoment", "angularjs-dropdown-multiselect"]);
 
+
+
+
+
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 
 
@@ -48,6 +52,40 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         controller: "PrintPDFController"
 
     });
+
+    $stateProvider.state("editNalog2", {
+
+        url: "/editNalog2/:id",
+        templateUrl: "../templates/editNalog2.html",
+        controller: "EditNalogController2"
+
+    });
+
+    $stateProvider.state("mjestoRada", {
+
+        url: "/mjestoRada",
+        templateUrl: "../templates/mjestoRadaPUBLIC.html",
+        controller: "mjestoRadaControllerPUBLIC"
+
+    });
+
+    $stateProvider.state("izvjestajLokacije", {
+
+        url: "/izvjestajLokacije/:id",
+        templateUrl: "../templates/izvjestajLokacije.html",
+        controller: "IzvjestajLokacijeControllerPUBLIC"
+
+    });
+
+
+    $stateProvider.state("imageupload", {
+
+        url: "/imageupload/:id",
+        templateUrl: "../templates/ImageUpload.html",
+        controller: "ImageUploadController"
+
+    });
+
     
 
 

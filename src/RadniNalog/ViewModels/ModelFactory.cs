@@ -96,9 +96,6 @@ namespace RadniNalog.ViewModels
                     PocetakRadova = m.PocetakRadova,
                     KrajRadova = m.KrajRadova,
                     LokacijaRada = m.LokacijaRada,
-
-
-
                     Datum = m.Datum,
                     Izvrsitelj2 = m.Izvrsitelj2,
                     Izvrsitelj3 = m.Izvrsitelj3,
@@ -107,8 +104,21 @@ namespace RadniNalog.ViewModels
                     OpisRadova = m.OpisRadova,
                     PutniNalog = m.PutniNalog,
                     Rukovoditelj = m.Rukovoditelj,
-                    VrstaRada = ModelFactory.GetVrstaVM(m.VrstaRada)
-                    
+                    VrstaRada = ModelFactory.GetVrstaVM(m.VrstaRada),
+                    IzvjOpisIzvRadova = m.IzvjOpisIzvRadova,
+                    IzvjNeizvedeniRadovi = m.IzvjNeizvedeniRadovi,
+                    IzvjUoceniNedostaci = m.IzvjUoceniNedostaci,
+                    IzvjNapomena = m.IzvjNapomena,
+                    IzvjRadnoVrijeme = m.IzvjRadnoVrijeme,
+                    IzvjPrijevoz = m.IzvjPrijevoz,
+                    IzvjIzdatnice = m.IzvjIzdatnice,
+                    IzvjPovratnice = m.IzvjPovratnice,
+                    IzvjOstaliTroskovi = m.IzvjOstaliTroskovi,
+                    IzvjPrimio = m.IzvjPrimio,
+                    IzvjPodnio = m.IzvjPodnio,
+                    IzvjPreglEvident = m.IzvjPreglEvident
+
+
 
                 };
 

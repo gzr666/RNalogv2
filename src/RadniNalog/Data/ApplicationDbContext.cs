@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using RadniNalog.Models;
 using Microsoft.EntityFrameworkCore.Metadata;
 using RadniNalog.Services;
+using RadniNalog.ViewModels;
 
 namespace RadniNalog.Data
 {
@@ -30,6 +31,7 @@ namespace RadniNalog.Data
         public DbSet<Podrucje> Podrucja { get; set; }
         public DbSet<TipPostrojenja> TipoviPostrojenja { get; set; }
         public DbSet<TipDas> TipoviDas { get; set; }
+        public DbSet<ImageModel> Images { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -1,0 +1,23 @@
+﻿<div class="container fixmarg ">
+
+
+    <form name="userForm" class="form-horizontal" novalidate>
+
+       
+
+        <div class="form-group center_div">
+            <div class="col-md-10 ">
+                <label class="labelapov">Odaberi sliku:</label>
+                <input type="file" name="file" placeholder="test" class="fixmarg2" id="file"  file-upload multiple />
+            </div>
+        </div>
+        <div class="form-group center_div">
+            <div class="col-md-10">
+                <!--<input type="submit" value="Upload" class="btn btn-primary btn-block" />-->
+                <button ng-click="postImage(slika.files)" id="singlebutton" name="singlebutton" class="btn btn-success">Post Image</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>

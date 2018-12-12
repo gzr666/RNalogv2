@@ -12,6 +12,8 @@ using RadniNalog.Models;
 using RadniNalog.Models.AccountViewModels;
 using RadniNalog.Services;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using RadniNalog.Data;
+using RadniNalog.ViewModels;
 
 namespace RadniNalog.Controllers
 {
@@ -24,13 +26,15 @@ namespace RadniNalog.Controllers
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
         private RoleManager<IdentityRole> _roleManager;
+        private ApplicationDbContext _context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory, RoleManager<IdentityRole> roleManager)
+            ILoggerFactory loggerFactory, RoleManager<IdentityRole> roleManager,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -38,6 +42,7 @@ namespace RadniNalog.Controllers
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
             _roleManager = roleManager;
+            _context = context;
         }
 
         //
@@ -50,6 +55,43 @@ namespace RadniNalog.Controllers
             return View();
 
            
+
+        }
+
+        [HttpGet]
+        [Route("/api/useri")]
+        public async Task<IActionResult> GetUsers()
+        {
+
+
+            //dohvatimo sve usere iz baze
+            var useri = _userManager.Users.ToAsyncEnumerable().ToList();
+            // var rola= _context.UserRoles.Where(user => user.UserId == "bcf401a3-465e-40bd-a0c0-4e610c388601");
+           
+            List<UserWithRole> userwithrole = new List<UserWithRole>();
+
+
+            foreach (var user in _userManager.Users)
+            {
+               var role = await _userManager.GetRolesAsync(user) as List<string>;
+                
+
+                userwithrole.Add(new UserWithRole { user = user, rolee = role });
+               
+
+            }
+
+
+
+
+            //var user1 = await _userManager.FindByIdAsync("bcf401a3-465e-40bd-a0c0-4e610c388601");
+            //var roles = await _userManager.GetRolesAsync(user1);
+
+            
+
+            return Ok(userwithrole);
+
+
 
         }
 

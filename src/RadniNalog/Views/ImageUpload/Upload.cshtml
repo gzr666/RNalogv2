@@ -1,0 +1,24 @@
+
+
+<div class="container fixmarg ">
+
+
+    <form method="post" enctype="multipart/form-data" asp-controller="ImageUpload" asp-action="UploadImage">
+
+        @*<input id="ID" name="ID" type="hidden" value=@ViewBag.ID>*@
+
+        <div class="form-group center_div">
+            <div class="col-md-10 ">
+                <label class="labelapov">Odaberi sliku:</label>
+                <input type="file" name="file" placeholder="test" class="fixmarg2" />
+            </div>
+        </div>
+        <div class="form-group center_div">
+            <div class="col-md-10">
+                <input type="submit" value="Upload" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    </form>
+
+
+</div>

@@ -108,3 +108,36 @@ background-color:black;
 
 
 }
+.trl {
+
+    font-size:18px;
+}
+
+.testunder {
+    text-decoration: underline;
+}
+
+.fixmarg{
+
+    margin-top:70px;
+}
+
+.fixmarg2 {
+    margin-bottom: 15px;
+}
+.center_div {
+    margin: 0 auto;
+    width: 80% /* value of your choice which suits your alignment */
+}
+.labelapov {
+
+    font-size:16px;
+}
+.gallery {
+    display: inline-block;
+    margin-top: 20px;
+}
+.galerija {
+
+    margin-top:50px;
+}

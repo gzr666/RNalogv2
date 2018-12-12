@@ -16,7 +16,7 @@
 
         $scope.gotoEditNalog = function (user) {
 
-            window.location.href = 'Home/Administracija#/editNalog2/' + user.id;
+            window.location.href = 'Home/#/editNalog2/' + user.id;
             console.log("lokacion edit");
 
         }

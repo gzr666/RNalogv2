@@ -45,5 +45,23 @@ namespace RadniNalog.ViewModels
         public AutomobilViewModel Automobil{get;set;}
         public VrstRadaViewModel VrstaRada { get; set; }
         public MjestoRadaViewModel MjestoRada { get; set; }
+
+
+        //properties za IZVJESCE
+        public string IzvjOpisIzvRadova { get; set; }
+        public string IzvjNeizvedeniRadovi { get; set; }
+        public string IzvjUoceniNedostaci { get; set; }
+        public string IzvjNapomena { get; set; }
+        public string IzvjRadnoVrijeme { get; set; }
+        public string IzvjPrijevoz { get; set; }
+        public string IzvjIzdatnice { get; set; }
+        public string IzvjPovratnice { get; set; }
+        public string IzvjOstaliTroskovi { get; set; }
+        public string IzvjPrimio { get; set; }
+        public string IzvjPodnio { get; set; }
+        public string IzvjPreglEvident { get; set; }
+
+
+
     }
 }

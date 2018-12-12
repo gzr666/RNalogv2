@@ -19,7 +19,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.datumrada.$invalid && !userForm.datumrada.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasicccc">Datum Naloga</label>
                 <div class="col-md-5">
-                    <input name="datumrada" class="form-control" placeholder="Odaberi datum" ng-model="rnalog.datum" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl" format="DD-MM-YYYY" >
+                    <input name="datumrada" class="form-control" placeholder="Odaberi datum" ng-model="rnalog.datum" ng-model-options="{ updateOn: 'blur' }" moment-picker="ctrl" format="DD-MM-YYYY">
                 </div>
 
                 <span ng-show="userForm.datumrada.$invalid &&  !userForm.datumrada.$dirty " class="has-error">Odaberi Datum</span>
@@ -392,6 +392,156 @@
 
 
             </div>
+
+
+            <hr>
+
+            <!--Dio za izvjestaj-->
+            <legend class="text-center">Dodaj Izvjestaj</legend>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Opis izvedenih radova</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjOpisIzvRadova" id="textinput" ng-model="rnalog.IzvjOpisIzvRadova" placeholder="Opis izvedenih radova" class="form-control input-md" type="text" cols="30" rows="5" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Neizvedeni radovi i razlozi</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjNeizvedeniRadovi" id="textinput" ng-model="rnalog.IzvjNeizvedeniRadovi" placeholder="Neizvedeni radovi i razlozi" class="form-control input-md" type="text" cols="30" rows="5" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Uočeni nedostaci i zapazanja</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjUoceniNedostaci" id="textinput" ng-model="rnalog.IzvjUoceniNedostaci" placeholder="Uoceni nedostaci" class="form-control input-md" type="text" cols="30" rows="4" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Napomena</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjNapomena" id="textinput" ng-model="rnalog.IzvjNapomena" placeholder="Napomena" class="form-control input-md" type="text" cols="30" rows="2" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label trl" for="textinput">Troskovi:</label>
+
+
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Radno vrijeme</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjRadnoVrijeme" id="textinput" ng-model="rnalog.IzvjRadnoVrijeme" placeholder="Radno vrijeme" class="form-control input-md" type="text" cols="30" rows="1" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Prijevoz</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjPrijevoz" id="textinput" ng-model="rnalog.IzvjPrijevoz" placeholder="Prijevoz" class="form-control input-md" type="text" cols="30" rows="1" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Izdatnice Broj</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjIzdatnice" id="textinput" ng-model="rnalog.IzvjIzdatnice" placeholder="Izdatnice" class="form-control input-md" type="text" cols="30" rows="1" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Povratnice Broj</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjPovratnice" id="textinput" ng-model="rnalog.IzvjPovratnice" placeholder="Povratnice" class="form-control input-md" type="text" cols="30" rows="1" style="min-width: 100%" ></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Ostali troskovi</label>
+                <div class="col-md-5">
+                    <textarea name="IzvjOstaliTroskovi" id="textinput" ng-model="rnalog.IzvjOstaliTroskovi" placeholder="Ostali troskovi" class="form-control input-md" type="text" cols="30" rows="1" style="min-width: 100%"></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Izvjestaj podnio:</label>
+                <div class="col-md-5">
+
+
+
+
+                    <input class="form-check-input" type="text" id="inlineCheckbox1" value="option17" ng-model="rnalog.IzvjPodnio">
+
+
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Izvjestaj primio:</label>
+                <div class="col-md-5">
+
+
+
+
+                    <input class="form-check-input" type="text" id="inlineCheckbox1" value="option18" ng-model="rnalog.IzvjPrimio">
+
+
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Pregledao i evidentirao:</label>
+                <div class="col-md-5">
+
+
+
+
+                    <input class="form-check-input" type="text" id="inlineCheckbox1" value="option19" ng-model="rnalog.IzvjPreglEvident">
+
+
+
+                </div>
+            </div>
+
 
 
 

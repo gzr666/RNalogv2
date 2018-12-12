@@ -257,6 +257,18 @@ namespace RadniNalog.Controllers
             rnalog2.KrajRadova = String.Format("{0:DD-MM-YYYY HH}", nalog.KrajRadova);
             rnalog2.Automobil = nalog.Automobil;
             rnalog2.VrstaRada = nalog.VrstaRada;
+            rnalog2.IzvjOpisIzvRadova = nalog.IzvjOpisIzvRadova;
+            rnalog2.IzvjNeizvedeniRadovi = nalog.IzvjNeizvedeniRadovi;
+            rnalog2.IzvjUoceniNedostaci = nalog.IzvjUoceniNedostaci;
+            rnalog2.IzvjNapomena = nalog.IzvjNapomena;
+            rnalog2.IzvjRadnoVrijeme = nalog.IzvjRadnoVrijeme;
+            rnalog2.IzvjPrijevoz = nalog.IzvjPrijevoz;
+            rnalog2.IzvjIzdatnice = nalog.IzvjIzdatnice;
+            rnalog2.IzvjPovratnice = nalog.IzvjPovratnice;
+            rnalog2.IzvjOstaliTroskovi = nalog.IzvjOstaliTroskovi;
+            rnalog2.IzvjPrimio = nalog.IzvjPrimio;
+            rnalog2.IzvjPodnio = nalog.IzvjPodnio;
+            rnalog2.IzvjPreglEvident = nalog.IzvjPreglEvident;
 
             //RNalog nalog = new RNalog
             //{

@@ -5,10 +5,10 @@
     .controller("chartController", function ($scope,$http) {
 
 
-        $scope.options = {
-            title: { display: true, text: 'Otvoreni Nalozi', position: 'bottom', padding: 5 },
-            legend: { display: true, position: "bottom" }
-        };
+        //$scope.options = {
+        //    title: { display: true, text: 'Otvoreni Nalozi', position: 'bottom', padding: 5 },
+        //    legend: { display: true, position: "bottom" }
+        //};
 
         $scope.options2 = {
             title: { display: true, text: 'Automobil/Broj Naloga', position: 'bottom', padding: 5 },
@@ -19,15 +19,15 @@
 
 
 
-        $http.get("/api/statistika/putninalozi").then(function (data) {
+        //$http.get("/api/statistika/putninalozi").then(function (data) {
 
-            $scope.labels = ["DA", "NE"];
+        //    $scope.labels = ["DA", "NE"];
             
-            $scope.data = [data.data.naloziDa, data.data.naloziNe];
+        //    $scope.data = [data.data.naloziDa, data.data.naloziNe];
 
 
-        }, function (error) {
-        });
+        //}, function (error) {
+        //});
 
 
         $http.get("/api/statistika/automobili").then(function (data2) {

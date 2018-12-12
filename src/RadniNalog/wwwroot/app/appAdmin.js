@@ -149,13 +149,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     //});
 
-    $stateProvider.state("editNalog2", {
+    //$stateProvider.state("editNalog2", {
 
-        url: "/editNalog2/:id",
-        templateUrl: "../templates/editNalog2.html",
-        controller: "EditNalogController2"
+    //    url: "/editNalog2/:id",
+    //    templateUrl: "../templates/editNalog2.html",
+    //    controller: "EditNalogController2"
 
-    });
+    //});
 
     $stateProvider.state("izvjestajLokacije", {
 

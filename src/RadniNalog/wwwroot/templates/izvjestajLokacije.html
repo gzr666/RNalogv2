@@ -1,4 +1,4 @@
-﻿<div class="izvj">
+﻿<!--<div class="izvj">
     <div class="panel panel-danger">
         <div class="panel-heading text-center"><h3>Popis obilazaka - {{info.ime}}</h3></div>
         <div class="panel-body">
@@ -11,6 +11,37 @@
             </div>
 
         </div>
+
+    </div>
+
+</div>-->
+
+<div class="panel panel-primary" id="radniNalog">
+
+   
+    <div class="panel-heading text-center"><h3>Popis obilazaka</h3></div>
+    <div class="panel-body">
+
+        <table ng-table="lokacijeTable" show-filter="true" class="table table-striped table-condensed ">
+
+            <tr ng-repeat="user in data">
+                <td data-title="'Datum'" sortable="'datum'" filter="{ 'datum': 'text' }">
+                    {{user.datum | date: 'dd-MM-yyyy' }}
+                </td>
+
+                <td data-title="'Opis Radova'" sortable="'opisRadova'" filter="{ 'opisRadova': 'text' }">
+                    {{user.opisRadova }}
+                </td>
+
+
+                <td data-title="'Vrsta Rada'" >
+                    {{user.vrstaRada.naziv }}
+                </td>
+
+
+            </tr>
+        </table>
+
 
     </div>
 

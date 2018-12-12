@@ -26,6 +26,29 @@
         }
 
 
+        var postImage = function (data) {
+
+
+            var q = $q.defer();
+
+            $http.post("/api/postImageMulti",data).then(
+                function (data) {
+
+
+                    q.resolve(data.data);
+
+                },
+                function (error) {
+
+                    q.reject(error);
+                });
+
+            return q.promise;
+
+
+        }
+
+
 
 
         var saveNalog = function (nalog) {
@@ -160,7 +183,8 @@
             editNalog: updateNalog,
             getNalog: getNalog,
             getNalozi: getNalozi,
-            geIzvjestajLokacije: geIzvjestajLokacije
+            geIzvjestajLokacije: geIzvjestajLokacije,
+            postImage :postImage
 
         }
 

@@ -10,6 +10,9 @@ namespace RadniNalog.Models
 {
     public class RNalog
     {
+        //neka radni nalog ima svog usera koji ga je napravio
+
+
         public int ID { get; set; }
 
         //
@@ -65,6 +68,23 @@ namespace RadniNalog.Models
 
         public int VrstaRadaID { get; set; }
         public VrstaRada VrstaRada { get; set; }
+
+
+
+        //properties za IZVJESCE
+        public string IzvjOpisIzvRadova { get; set; }
+        public string IzvjNeizvedeniRadovi { get; set; }
+        public string IzvjUoceniNedostaci { get; set; }
+        public string IzvjNapomena { get; set; }
+        public string IzvjRadnoVrijeme { get; set; }
+        public string IzvjPrijevoz { get; set; }
+        public string IzvjIzdatnice { get; set; }
+        public string IzvjPovratnice { get; set; }
+        public string IzvjOstaliTroskovi { get; set; }
+        public string IzvjPrimio { get; set; }
+        public string IzvjPodnio { get; set; }
+        public string IzvjPreglEvident { get; set; }
+
 
     }
 }

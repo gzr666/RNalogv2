@@ -58,9 +58,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">RNalog</a></li>
+                    @*<li><a ui-sref="mjestoRada">Lokacije</a></li>*@
+                    <li><a href="/#mjestoRada">Lokacije</a></li>
+                    @*<li><a asp-area="" asp-controller="ImageUpload" asp-action="Upload">Dodaj fotografiju</a></li>*@
+                    @*<li><a ui-sref="statistika">Statistika</a></li>*@
+                    <li><a href="/#statistika">Statistika</a></li>
+
                     <li><a asp-area="" asp-controller="Home" asp-action="Administracija">Administracija</a></li>
-                    <li><a ui-sref="statistika">Statistika</a></li>
-                    
+
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
@@ -158,13 +163,16 @@
         <script src="~/controllers/CreateVrstaRadaController.js"></script>
         <script src="~/controllers/CreateMjestoRadaController.js"></script>
         <script src="~/controllers/mjestoRadaController.js"></script>
+        <script src="~/controllers/mjestoRadaControllerPUBLIC.js"></script>
         <script src="~/controllers/tipdasController.js"></script>
         <script src="~/controllers/CreateDASController.js"></script>
         <script src="~/controllers/IzvjestajLokacijeController.js"></script>
+        <script src="~/controllers/IzvjestajLokacijeControllerPUBLIC.js"></script>
         <script src="~/controllers/automobilController.js"></script>
         <script src="~/controllers/PrintPDFController.js"></script>
         <script src="~/controllers/CreateAutomobilController.js"></script>
         <script src="~/controllers/EditNalogController2.js"></script>
+        <script src="~/controllers/ImageUploadController.js"></script>
         <script src="~/lib/angular-toastr/angular-toastr-tpl.js"></script>
 
         <script src="~/lib/ng-table/ngTable.js"></script>
@@ -233,6 +241,7 @@
         <script src="~/controllers/CreateVrstaRadaController.js"></script>
         <script src="~/controllers/CreateMjestoRadaController.js"></script>
         <script src="~/controllers/mjestoRadaController.js"></script>
+        <script src="~/controllers/mjestoRadaControllerPUBLIC.js"></script>
         <script src="~/controllers/automobilController.js"></script>
         <script src="~/controllers/CreateAutomobilController.js"></script>
         <script src="~/controllers/PrintPDFController.js"></script>
@@ -240,6 +249,7 @@
         <script src="~/controllers/tipdasController.js"></script>
         <script src="~/controllers/CreateDASController.js"></script>
         <script src="~/controllers/IzvjestajLokacijeController.js"></script>
+        <script src="~/controllers/IzvjestajLokacijeControllerPUBLIC.js"></script>
         <script src="~/lib/angular-toastr/angular-toastr-tpl.js"></script>
         <link rel="stylesheet" href="~/css/ng-table.css">
         <script src="~/lib/ng-table/ngTable.js"></script>
