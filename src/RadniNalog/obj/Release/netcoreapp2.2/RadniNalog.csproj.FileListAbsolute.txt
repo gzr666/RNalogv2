@@ -59,3 +59,4 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\Razor
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\Razor\Views\ImageUpload\Index.g.cshtml.cs
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\Razor\Views\ImageUpload\Details.g.cshtml.cs
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\Razor\Views\ImageUpload\UspjesanUpload.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\Razor\Views\Home\mjestoRadaPUBLIC.g.cshtml.cs

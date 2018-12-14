@@ -12,12 +12,19 @@
                 </td>
                 <td data-title="'NAZIV'" sortable="'naziv'" filter="{ 'naziv': 'text' }">
                     {{user.naziv | limitTo: 100 }}
-                
-                   
-                   
+
+
+
+                </td>
+
+                <td data-title="'ŠIFRA'" sortable="'sifra'" filter="{ 'sifra': 'text' }">
+                    {{user.sifra | limitTo: 100 }}
+
+
+
                 </td>
                 <td>
-                    <a ui-sref="editVrstaRada({id:user.id})"  class="btn btn-primary btn-sm">Uredi</a>
+                    <a ui-sref="editVrstaRada({id:user.id})" class="btn btn-primary btn-sm">Uredi</a>
 
                 </td>
                 <td>

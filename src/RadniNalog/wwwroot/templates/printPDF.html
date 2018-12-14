@@ -42,7 +42,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.aktivnost.$invalid && !userForm.aktivnost.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Aktivnost</label>
                 <div class="col-md-5">
-                    <select data-live-search="true" name="aktivnost" class="form-control" ng-model="rnalog.VrstaRada" ng-options="aktivnost.naziv for aktivnost in vrsteRada" required>
+                    <select data-live-search="true" name="aktivnost" class="form-control" ng-model="rnalog.VrstaRada" ng-options="aktivnost.sifra + '-' + aktivnost.naziv  for aktivnost in vrsteRada" required>
 
                         <option value="">Odaberi</option>
                     </select>
@@ -219,10 +219,10 @@
             </div>
 
             <!-- Select Basic -->
-            <div class="form-group" ng-class="{'has-error': userForm.rukovoditelj.$invalid && !userForm.rukovoditelj.$pristine}">
+            <div class="form-group" ng-class="{'has-error': userForm.rukovoditelj.$invalid && !userForm.rukovoditelj.$pristine,'test-err':checkRUK}">
                 <label class="col-md-4 control-label" for="selectbasic">Rukovoditelj</label>
                 <div class="col-md-5">
-                    <select name="rukovoditelj" class="form-control" ng-model="rnalog.Rukovoditelj" ng-options="rukovoditelj.ime for rukovoditelj in rukovoditelji" required>
+                    <select name="rukovoditelj" class="form-control" ng-change="changeRukovoditelj(rnalog)" ng-model="rnalog.Rukovoditelj" ng-options="rukovoditelj.ime for rukovoditelj in rukovoditelji" required>
 
                         <option value="">Odaberi</option>
                     </select>
@@ -230,14 +230,16 @@
 
                 <span ng-show="userForm.rukovoditelj.$invalid &&  !userForm.rukovoditelj.$dirty " class="has-error">Morate odabrati rukovoditelja.</span>
                 <span ng-show="userForm.rukovoditelj.$invalid && !userForm.rukovoditelj.$pristine  " class="has-error">Morate odabrati rukovoditelja.</span>
+                <span ng-show="checkRUK" class="has-error">Provjeri imena</span>
+
             </div>
 
 
             <!-- Select Basic -->
-            <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine}">
+            <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine,'test-err':checkIZVR1}">
                 <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 1</label>
                 <div class="col-md-5">
-                    <select class="form-control" name="izvrsitelj1" ng-model="rnalog.Izvrsitelj2" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1">
+                    <select class="form-control" name="izvrsitelj1" ng-change="changeIzvrsitelj2(rnalog)" ng-model="rnalog.Izvrsitelj2" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1">
 
                         <option value="">Odaberi</option>
                     </select>
@@ -245,14 +247,15 @@
 
                 <span ng-show="userForm.izvrsitelj1.$invalid &&  !userForm.izvrsitelj1.$dirty " class="has-error">Morate odabrati izvrsitelja.</span>
                 <span ng-show="userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine  " class="has-error">Morate odabrati izvrsitelja.</span>
+                <span ng-show="checkIZVR1" class="has-error">Provjeri imena</span>
 
             </div>
 
             <!-- Select Basic -->
-            <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine}">
+            <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine,'test-err':checkIZVR2}">
                 <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 2</label>
                 <div class="col-md-5">
-                    <select name="izvrsitelj3" class="form-control" ng-model="rnalog.Izvrsitelj3" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2">
+                    <select name="izvrsitelj3" class="form-control" ng-change="changeIzvrsitelj3(rnalog)" ng-model="rnalog.Izvrsitelj3" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2">
 
                         <option value="">Odaberi</option>
                     </select>
@@ -260,6 +263,7 @@
 
                 <span ng-show="userForm.izvrsitelj3.$invalid &&  !userForm.izvrsitelj3.$dirty " class="has-error">Morate odabrati izvrsitelja.</span>
                 <span ng-show="userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine  " class="has-error">Morate odabrati izvrsitelja.</span>
+                <span ng-show="checkIZVR2" class="has-error">Provjeri imena</span>
 
             </div>
 
@@ -397,7 +401,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton">Spremi Nalog</label>
                 <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" ng-disabled="userForm.$invalid" class="btn btn-success" ng-click="saveNalog(rnalog)">Spremi</button>
+                    <button id="singlebutton" name="singlebutton" ng-disabled="userForm.$invalid|| dsBTN" class="btn btn-success" ng-click="saveNalog(rnalog)">Spremi</button>
 
                 </div>
             </div>

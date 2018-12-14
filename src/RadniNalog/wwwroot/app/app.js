@@ -64,6 +64,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state("mjestoRada", {
 
         url: "/mjestoRada",
+        //templateUrl: "../templates/mjestoRadaPUBLIC.html",
         templateUrl: "../templates/mjestoRadaPUBLIC.html",
         controller: "mjestoRadaControllerPUBLIC"
 

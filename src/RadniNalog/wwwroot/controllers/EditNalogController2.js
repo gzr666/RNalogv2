@@ -415,6 +415,8 @@
 
         };
 
+
+        //provjera
         $scope.changeIzvrsitelj3 = function (nalog) {
 
             console.log($scope.rnalog);

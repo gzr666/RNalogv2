@@ -62,6 +62,9 @@ namespace RadniNalog.Controllers
         [Route("/api/useri")]
         public async Task<IActionResult> GetUsers()
         {
+            
+           
+
 
 
             //dohvatimo sve usere iz baze

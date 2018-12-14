@@ -6,6 +6,11 @@
 
         var ctrl = this;
         $scope.test2 = "Radi li PRINT PDF";
+        $scope.checkSame = false;
+        $scope.dsbBTN = false;
+
+       
+
         //$scope.zaposlenik = {};
         $scope.rnalog = {
 
@@ -62,9 +67,11 @@
         $scope.izvrsitelji2 = [];
         $scope.vrsteRada = [];
         $scope.automobili = [];
+        $scope.rnalog.Izvrsitelj2 = {};
+        $scope.rnalog.Izvrsitelj3 = {};
 
 
-        
+        $scope.rnalog.Datum = moment();
 
 
         $scope.example5customTexts = { buttonDefaultText: 'Odaberi mjesta' };
@@ -243,6 +250,149 @@
 
 
         };
+
+
+        //provjera da nisu isti ruk i izvr
+        $scope.changeRukovoditelj = function (nalog) {
+
+            console.log($scope.rnalog);
+
+            if ($scope.rnalog.Rukovoditelj === null || $scope.rnalog.Izvrsitelj2 === null || $scope.rnalog.Izvrsitelj3 === null) {
+
+
+
+            }
+            else {
+
+                if ($scope.rnalog.Rukovoditelj.id === $scope.rnalog.Izvrsitelj2.id || $scope.rnalog.Rukovoditelj.id === $scope.rnalog.Izvrsitelj3.id) {
+
+
+                    $scope.checkRUK = true;
+
+
+
+
+                }
+                else {
+                    $scope.checkRUK = false;
+                    console.log($scope.checkSame);
+                }
+
+            }
+
+
+
+            //provjera da nemamo duplicirana imena za izvrsitelje,rukovoditelje
+            if ($scope.checkRUK) {
+
+                $scope.dsBTN = true;
+
+            }
+            else {
+
+                $scope.dsBTN = false;
+
+
+            }
+
+
+
+        };
+
+
+        //provjera da nisu isti ruk i izvr
+        $scope.changeIzvrsitelj2 = function (nalog) {
+
+            console.log($scope.rnalog);
+
+            if ($scope.rnalog.rukovoditelj === null || $scope.rnalog.Izvrsitelj2 === null || $scope.rnalog.Izvrsitelj3 === null) {
+
+
+
+            }
+
+            else {
+
+                if ($scope.rnalog.Izvrsitelj2.id === $scope.rnalog.Izvrsitelj3.id || $scope.rnalog.Izvrsitelj2.id === $scope.rnalog.Rukovoditelj.id) {
+
+                    $scope.checkIZVR1 = true;
+                }
+                else {
+                    $scope.checkIZVR1 = false;
+
+                }
+
+
+
+            }
+
+
+            //provjera da nemamo duplicirana imena za izvrsitelje,rukovoditelje
+            if ($scope.checkIZVR1) {
+
+                $scope.dsBTN = true;
+
+            }
+            else {
+
+                $scope.dsBTN = false;
+
+
+            }
+
+
+        };
+
+
+
+
+        //provjera
+        $scope.changeIzvrsitelj3 = function (nalog) {
+
+            console.log($scope.rnalog);
+
+            if ($scope.rnalog.rukovoditelj === null || $scope.rnalog.Izvrsitelj2 === null || $scope.rnalog.Izvrsitelj3 === null) {
+
+
+
+            }
+            else {
+
+                if ($scope.rnalog.Izvrsitelj3.id === $scope.rnalog.Izvrsitelj2.id || $scope.rnalog.Izvrsitelj3.id === $scope.rnalog.Rukovoditelj.id) {
+
+                    $scope.checkIZVR2 = true;
+                }
+                else {
+                    $scope.checkIZVR2 = false;
+
+                }
+
+
+
+
+            }
+
+
+            //provjera da nemamo duplicirana imena za izvrsitelje,rukovoditelje
+            if ($scope.checkIZVR2) {
+
+                $scope.dsBTN = true;
+
+            }
+            else {
+
+                $scope.dsBTN = false;
+
+
+            }
+
+
+        };
+
+
+
+
+
 
 
 

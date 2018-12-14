@@ -19,18 +19,18 @@ namespace RadniNalog.Controllers
 
         }
 
-
+      
         public IActionResult home()
         {
-         
+            //ViewBag.AppName = "myApp";
 
 
             return View();
         }
 
 
-
-        public  IActionResult Index()
+        [Authorize(Roles = "Admin,SuperAdmin,Korisnik")]
+        public IActionResult Index()
         {
 
 

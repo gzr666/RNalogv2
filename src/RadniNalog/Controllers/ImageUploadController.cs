@@ -34,7 +34,11 @@ namespace RadniNalog.Controllers
             var listOfImages = _context.Images.Where(image => image.LocationID == id).ToList();
 
 
-          
+            //dodajmo jos i ime lokacije kao dio viewbag-a
+            var mjestoRada = _context.MjestoRada.FirstOrDefault(m => m.ID == id);
+
+            ViewBag.ImePostrojenja = mjestoRada.Ime;
+            ViewBag.IDPostrojenja = mjestoRada.ID;
 
 
             return View(listOfImages.OrderByDescending(x => x.DateAdded));
@@ -127,8 +131,10 @@ namespace RadniNalog.Controllers
             _context.Images.Add(new ImageModel { ImagePath = fileURL, LocationID = id ,DateAdded=DateTime.Now});
             await _context.SaveChangesAsync();
 
-            // process uploaded files
-            // Don't rely on or trust the FileName property without validation.
+
+
+            ViewBag.myid = id;
+
             return View("UspjesanUpload");
             // return Ok(new ImageModel{ImageName=newFileName,ImagePath=fileURL});
         }

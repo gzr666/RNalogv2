@@ -17,26 +17,30 @@
 <!-- Page Content -->
 <div class="container page-top">
 
+    <h3 class="text-center">@ViewBag.ImePostrojenja</h3>
+    <hr>
 
-   
 
     <div class="row">
 
 
+
+
+
         @foreach (var img in Model)
-    {
+        {
 
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a href="@img.ImagePath" class="fancybox" rel="ligthbox">
-                <img src="@img.ImagePath" class="zoom img-fluid " alt="test">
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="@img.ImagePath" class="fancybox" rel="ligthbox">
+                    <img src="@img.ImagePath" class="zoom img-fluid " alt="test">
 
-            </a>
-        </div>
-
-
+                </a>
+            </div>
 
 
-}
+
+
+        }
 
 
 
@@ -53,8 +57,10 @@
 
 <div class="container">
 
+    <a href="/ImageUpload/Upload/@ViewBag.IDPostrojenja" class="btn btn-block btn-success">Dodaj novu sliku</a>
 
-    <a href="javascript:history.go(-1)" class="btn btn-block btn-danger">Povratak</a>
+    @*<a href="javascript:history.go(-1)" class="btn btn-block btn-danger">Povratak</a>*@
+    <a href="/Home/#mjestoRada" class="btn btn-block btn-danger">Povratak na listu Lokacija</a>
 
 </div>
 

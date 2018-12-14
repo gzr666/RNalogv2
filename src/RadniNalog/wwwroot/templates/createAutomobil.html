@@ -1,25 +1,29 @@
 ﻿
 <div id="radniNalog2">
-    <form class="form-horizontal">
+    <form name="userForm" class="form-horizontal" novalidate>
         <fieldset>
 
             <!-- Form Name -->
             <legend>Unesi Automobil</legend>
 
             <!-- Text input-->
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': userForm.Registracija.$invalid && !userForm.Registracija.$pristine}">
                 <label class="col-md-4 control-label" for="textinput">Ime</label>
                 <div class="col-md-6">
-                    <input ng-model="automobil.Registracija" id="textinput" name="textinput" placeholder="Unesi ime" class="form-control input-md" type="text">
+                    <input name="Registracija" ng-model="automobil.Registracija" id="textinput" placeholder="Unesi ime" class="form-control input-md" type="text" required>
 
                 </div>
+
+                <span ng-show="userForm.Registracija.$invalid &&  !userForm.Registracija.$dirty " class="has-error">Unesi ime automobila</span>
+                <span ng-show="userForm.Registracija.$invalid && !userForm.Registracija.$pristine  " class="has-error">Unesi ime automobila</span>
+
             </div>
 
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
-                    <button ng-click="saveAutomobil(automobil)" id="singlebutton" name="singlebutton" class="btn btn-success">Kreiraj Automobil</button>
+                    <button ng-click="saveAutomobil(automobil)" id="singlebutton" name="singlebutton" class="btn btn-success" ng-disabled="userForm.$invalid">Kreiraj Automobil</button>
                 </div>
             </div>
 
