@@ -14066,9 +14066,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "E:\\Projects\\RNALOGV3_git\\RNalogv2\\src\\RadniNalog\\RadniNalog.csproj",
       "projectName": "RadniNalog",

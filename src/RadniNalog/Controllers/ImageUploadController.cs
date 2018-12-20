@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using RadniNalog.Data;
 using RadniNalog.ViewModels;
@@ -108,6 +109,8 @@ namespace RadniNalog.Controllers
         [HttpPost("/{id}")]
         public async Task<IActionResult> UploadImage(IFormFile file,int id)
         {
+           // var httpConnectionFeature = this.HttpContext.Features.Get<IHttpConnectionFeature>();
+
 
             if (file == null || file.Length == 0)
             {
@@ -118,6 +121,7 @@ namespace RadniNalog.Controllers
             // full path to file in temp location
             var filePath = Path.Combine(_env.WebRootPath, "upload", newFileName);
             var fileURL = this.Request.Scheme + "://" + this.Request.Host + "/upload/" + newFileName;
+            //var fileURL = httpConnectionFeature?.LocalIpAddress.ToString();
 
 
             if (file.Length > 0)

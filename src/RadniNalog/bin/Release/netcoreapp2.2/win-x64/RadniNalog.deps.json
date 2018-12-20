@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2/win-x64",
-    "signature": "814db8fb0f09b14fc8123d6f80765f92a16a75d4"
+    "signature": "6b07149a6018dc26b98dbf05470a903cbe488b38"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,8 @@
           "Microsoft.AspNetCore.All": "2.2.0-preview2-35157",
           "Microsoft.AspNetCore.Cors": "2.2.0-preview2-35157",
           "Microsoft.NETCore.App": "2.2.0-preview2-26905-02",
-          "Rotativa.AspNetCore": "1.0.6"
+          "Rotativa.AspNetCore": "1.0.6",
+          "shortid": "2.0.0"
         },
         "compile": {
           "RadniNalog.dll": {}
@@ -2453,6 +2454,11 @@
           "lib/netstandard1.3/ICSharpCode.SharpZipLib.dll": {}
         }
       },
+      "shortid/2.0.0": {
+        "compile": {
+          "lib/netstandard1.3/shortid.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.11": {
         "dependencies": {
           "SQLitePCLRaw.core": "1.1.11",
@@ -3509,7 +3515,8 @@
           "Microsoft.AspNetCore.All": "2.2.0-preview2-35157",
           "Microsoft.AspNetCore.Cors": "2.2.0-preview2-35157",
           "Microsoft.NETCore.App": "2.2.0-preview2-26905-02",
-          "Rotativa.AspNetCore": "1.0.6"
+          "Rotativa.AspNetCore": "1.0.6",
+          "shortid": "2.0.0"
         },
         "runtime": {
           "RadniNalog.dll": {}
@@ -7246,6 +7253,14 @@
           }
         }
       },
+      "shortid/2.0.0": {
+        "runtime": {
+          "lib/netstandard1.3/shortid.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.11": {
         "dependencies": {
           "SQLitePCLRaw.core": "1.1.11",
@@ -10013,6 +10028,13 @@
       "sha512": "sha512-ndshrRoIzWdvoHr5ncGvSp3p/At+H2l4nT4bfWgPB0VU39TOT5/6uS6XbkO9N95Y8quO5RgLMiEBO3M0nq4pXw==",
       "path": "sharpziplib/1.0.0-alpha2",
       "hashPath": "sharpziplib.1.0.0-alpha2.nupkg.sha512"
+    },
+    "shortid/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-09LPtU9WfviCnNa/D7RJ9s1oWG21m/gy4IlKd162Pv78iAK0HhuelCX1gBvbjaJWhCrqYWm6PMuQbFPq0D9CYQ==",
+      "path": "shortid/2.0.0",
+      "hashPath": "shortid.2.0.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.11": {
       "type": "package",

@@ -57,3 +57,9 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\RadniNalog.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\RadniNalog.csproj.CopyComplete
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\PdfGenerator\RNGenLIST.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Home\mjestoRadaPUBLIC.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\ImageUpload\Details.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\ImageUpload\Index.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\ImageUpload\Upload.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\ImageUpload\UploadMulti.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win-x64\Razor\Views\ImageUpload\UspjesanUpload.g.cshtml.cs
