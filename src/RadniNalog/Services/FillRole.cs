@@ -393,6 +393,86 @@ namespace RadniNalog.Services
             }
             else { }
 
+            //fill automobila
+            if (_context.Automobili.Count() == 0)
+            {
+                List<Automobil> listaAuta = new List<Automobil> {
+
+                    new Automobil{ Registracija="Dacia Dokker ST-1435 F"},
+                    new Automobil{ Registracija="Dacia Dokker ST-1674 C"},
+                    new Automobil{ Registracija="Dacia Sandero ST-2653 C"},
+                    new Automobil{ Registracija="Fiat Doblo ST-851 PA"},
+                    new Automobil{ Registracija="Fiat Panda ST-2164 C"},
+                    new Automobil{ Registracija="Fiat Stilo-741 OS"},
+
+
+
+
+
+                };
+
+
+
+                foreach (var auto in listaAuta)
+                {
+                    _context.Automobili.Add(auto);
+                    _context.Entry(auto).State = EntityState.Added;
+
+
+
+                }
+
+                _context.SaveChanges();
+
+            }
+            else { }
+
+
+
+            //fill zaposlenici
+            if (_context.Zaposlenici.Count() == 0)
+            {
+                List<Zaposlenik> listaZap = new List<Zaposlenik> {
+
+                   new Zaposlenik{Ime="Branislav Vuljan"},
+                   new Zaposlenik{Ime="Eduard Rusijan"},
+                   new Zaposlenik{Ime="Igor Bakotić"},
+                   new Zaposlenik{Ime="Ivan Maleš"},
+                   new Zaposlenik{Ime="Ivica Brstilo"},
+                   new Zaposlenik{Ime="Ivica Jovanović"},
+                   new Zaposlenik{Ime="Ivica Radačić"},
+                   new Zaposlenik{Ime="Jure Radan"},
+                   new Zaposlenik{Ime="Maja Planinić"},
+                   new Zaposlenik{Ime="Mario Eterovć"},
+                   new Zaposlenik{Ime="Marko Sikirica"},
+                   new Zaposlenik{Ime="Matko Peko"},
+                   new Zaposlenik{Ime="Matko Đogaš"},
+                   new Zaposlenik{Ime="Siniša Poljak"},
+                   new Zaposlenik{Ime="Teo Živković"}
+
+
+
+
+
+                };
+
+
+
+                foreach (var zap in listaZap)
+                {
+                    _context.Zaposlenici.Add(zap);
+                    _context.Entry(zap).State = EntityState.Added;
+
+
+
+                }
+
+                _context.SaveChanges();
+
+            }
+            else { }
+
+
             //fill tipovi postrojenja
 
             if (_context.TipoviPostrojenja.Count() == 0)
