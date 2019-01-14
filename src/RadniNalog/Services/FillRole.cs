@@ -393,6 +393,45 @@ namespace RadniNalog.Services
             }
             else { }
 
+
+            //fill tipovi das-a
+            if (_context.TipoviDas.Count() == 0)
+            {
+                List<TipDas> listaDAS = new List<TipDas> {
+
+                    new TipDas{Ime="Advantech 510"},
+                    new TipDas{Ime="Advantech 610"},
+                    new TipDas{Ime="ARK-2120F"},
+                    new TipDas{Ime="AVA 8B"},
+                    new TipDas{Ime="CJ-20 IEL"},
+                    new TipDas{Ime="DS 2000"},
+                    new TipDas{Ime="DS 802"},
+                    new TipDas{Ime="DSR 100"},
+                    new TipDas{Ime="DSSN 200"},
+                    new TipDas{Ime="RTU 520"},
+                    new TipDas{Ime="RTU 560"},
+                    new TipDas{Ime="UST-10Gc"}
+
+
+
+                };
+
+
+
+                foreach (var das in listaDAS)
+                {
+                    _context.TipoviDas.Add(das);
+                    _context.Entry(das).State = EntityState.Added;
+
+
+
+                }
+
+                _context.SaveChanges();
+
+            }
+            else { }
+
             //fill automobila
             if (_context.Automobili.Count() == 0)
             {
@@ -479,10 +518,14 @@ namespace RadniNalog.Services
             {
                 List<TipPostrojenja> TipoviPostrojenja = new List<TipPostrojenja> {
 
-                new TipPostrojenja { Naziv = "TS 110/35 kV"},
-                new TipPostrojenja { Naziv = "TS 35/10 kV"},
-                new TipPostrojenja { Naziv="TS 10/0.4 kV"},
-                new TipPostrojenja { Naziv="Ostalo"}
+                new TipPostrojenja { Naziv = "110/10 kV"},
+                new TipPostrojenja { Naziv = "110/20 kV"},
+                new TipPostrojenja { Naziv = "110/35 kV"},
+                new TipPostrojenja { Naziv = "110/35/10 kV"},
+                new TipPostrojenja { Naziv = "220/110/35 kV"},
+                new TipPostrojenja { Naziv = "35/10 kV"},
+                new TipPostrojenja { Naziv="10/0.4 kV"},
+                new TipPostrojenja { Naziv="10 LR"}
 
 
             };
