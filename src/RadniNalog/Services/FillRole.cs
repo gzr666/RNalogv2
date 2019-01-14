@@ -425,33 +425,70 @@ namespace RadniNalog.Services
 
             if (_context.VrstaRada.Count() == 0)
             {
-                List<VrstaRada> VrsteRada = new List<VrstaRada> {
+                //List<VrstaRada> VrsteRada = new List<VrstaRada> {
 
-                    new VrstaRada{ Naziv="Pregledi MR NN",Sifra="1211",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi TS 10(20)/0.4 kV",Sifra="1212",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi MR 10(20) kV",Sifra="1213",TipPregleda=121},
-                    new VrstaRada {Naziv="Pregledi TS X/10 kV",Sifra="1214",TipPregleda=121 },
-                    new VrstaRada{ Naziv="Pregledi MR 35 kV",Sifra="1215",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi MR 110 kV",Sifra="1217",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi Ostala Oprema",Sifra="1218",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi Sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi Sustava MTU",Sifra="12182",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi Sustava Daljinskog Vodenja",Sifra="12183",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi Poslovno Informatickih Sustava",Sifra="12184",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi Sustava Mjerenja i Relejne Zastite",Sifra="12185",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi MR NN",Sifra="1211",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi TS 10(20)/0.4 kV",Sifra="1212",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi MR 10(20) kV",Sifra="1213",TipPregleda=121},
+                //    new VrstaRada {Naziv="Pregledi TS X/10 kV",Sifra="1214",TipPregleda=121 },
+                //    new VrstaRada{ Naziv="Pregledi MR 35 kV",Sifra="1215",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi MR 110 kV",Sifra="1217",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Ostala Oprema",Sifra="1218",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava MTU",Sifra="12182",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava Daljinskog Vodenja",Sifra="12183",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Poslovno Informatickih Sustava",Sifra="12184",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava Mjerenja i Relejne Zastite",Sifra="12185",TipPregleda=121},
 
-                     new VrstaRada{ Naziv="Redovno odrzavanje MR NN",Sifra="1221",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje TS 10(20)/0.4 kV",Sifra="1222",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje MR 10(20) kV",Sifra="1223",TipPregleda=122},
-                    new VrstaRada {Naziv="Redovno odrzavanje TS X/10 kV",Sifra="1224",TipPregleda=122 },
-                    new VrstaRada{ Naziv="Redovno odrzavanje MR 35 kV",Sifra="1225",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje MR 110 kV",Sifra="1227",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje Ostala Oprema",Sifra="1228",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava MTU",Sifra="12282",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Daljinskog Vodenja",Sifra="12283",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje Poslovno Informatickih Sustava",Sifra="12284",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Mjerenja i Relejne Zastite",Sifra="12285",TipPregleda=122},
+                //     new VrstaRada{ Naziv="Redovno odrzavanje MR NN",Sifra="1221",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje TS 10(20)/0.4 kV",Sifra="1222",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 10(20) kV",Sifra="1223",TipPregleda=122},
+                //    new VrstaRada {Naziv="Redovno odrzavanje TS X/10 kV",Sifra="1224",TipPregleda=122 },
+                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 35 kV",Sifra="1225",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 110 kV",Sifra="1227",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Ostala Oprema",Sifra="1228",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava MTU",Sifra="12282",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Daljinskog Vodenja",Sifra="12283",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Poslovno Informatickih Sustava",Sifra="12284",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Mjerenja i Relejne Zastite",Sifra="12285",TipPregleda=122},
+
+                //};
+
+                List<VrstaRada> VrsteRada = new List<VrstaRada>
+                {
+                    new VrstaRada{ Naziv="Pregledi sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi sustava MTU",Sifra="12182",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi sustava Daljinskog Vođenja",Sifra="12183",TipPregleda=121},
+                   
+
+                    new VrstaRada{ Naziv="Redovno održavanje sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno održavanje sustava MTU",Sifra="12282",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno održavanje sustava Daljinskog Vođenja",Sifra="12283",TipPregleda=122},
+
+                    new VrstaRada{ Naziv="Remont sustava Telekomunikacija",Sifra="12381",TipPregleda=123},
+                    new VrstaRada{ Naziv="Remont sustava MTU",Sifra="12382",TipPregleda=123},
+                    new VrstaRada{ Naziv="Remont sustava Daljinskog Vođenja",Sifra="12383",TipPregleda=123},
+
+                    new VrstaRada{ Naziv="Modifikacije sustava Telekomunikacija",Sifra="12581",TipPregleda=125},
+                    new VrstaRada{ Naziv="Modifikacije sustava MTU",Sifra="12582",TipPregleda=125},
+                    new VrstaRada{ Naziv="Modifikacije sustava Daljinskog Vođenja",Sifra="12583",TipPregleda=125},
+
+                    new VrstaRada{ Naziv="Korektivno održavanje sustava Telekomunikacija",Sifra="12681",TipPregleda=126},
+                    new VrstaRada{ Naziv="Korektivno održavanje sustava MTU",Sifra="12682",TipPregleda=126},
+                    new VrstaRada{ Naziv="Korektivno održavanje sustava Daljinskog Vođenja",Sifra="12683",TipPregleda=126},
+
+                    new VrstaRada{ Naziv="Interventno održavanje sustava Telekomunikacija",Sifra="12781",TipPregleda=127},
+                    new VrstaRada{ Naziv="Interventno održavanje sustava MTU",Sifra="12782",TipPregleda=127},
+                    new VrstaRada{ Naziv="Interventno održavanje sustava Daljinskog Vođenja",Sifra="12783",TipPregleda=127},
+
+                    new VrstaRada{ Naziv="Elementarne nepogode sustava Telekomunikacija",Sifra="12881",TipPregleda=128},
+                    new VrstaRada{ Naziv="Elementarne nepogode sustava MTU",Sifra="12882",TipPregleda=128},
+                    new VrstaRada{ Naziv="Elementarne nepogode sustava Daljinskog Vođenja",Sifra="12883",TipPregleda=128}
+
+
+
+
 
                 };
 
