@@ -67,8 +67,8 @@
         $scope.izvrsitelji2 = [];
         $scope.vrsteRada = [];
         $scope.automobili = [];
-        $scope.rnalog.Izvrsitelj2 = {};
-        $scope.rnalog.Izvrsitelj3 = {};
+       // $scope.rnalog.Izvrsitelj2 = {};
+        //$scope.rnalog.Izvrsitelj3 = {};
 
 
         $scope.rnalog.Datum = moment();

@@ -239,14 +239,14 @@
             <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine,'test-err':checkIZVR1}">
                 <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 2</label>
                 <div class="col-md-5">
-                    <select class="form-control" name="izvrsitelj1" ng-change="changeIzvrsitelj2(rnalog)" ng-model="rnalog.Izvrsitelj2" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1"  required>
+                    <select class="form-control" required name="izvrsitelj1" ng-change="changeIzvrsitelj2(rnalog)" ng-model="rnalog.Izvrsitelj2" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1"  >
 
                         <option value="">Odaberi</option>
                     </select>
                 </div>
 
-                <span ng-show="userForm.izvrsitelj1.$invalid &&  !userForm.izvrsitelj1.$dirty " class="has-error">Morate odabrati izvrsitelja.</span>
-                <span ng-show="userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine  " class="has-error">Morate odabrati izvrsitelja.</span>
+                <span ng-show="userForm.izvrsitelj1.$invalid &&  !userForm.izvrsitelj1.$dirty" class="has-error">Morate odabrati izvrsitelja 2.</span>
+                <span ng-show="userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine" class="has-error">Morate odabrati izvrsitelja 2</span>
                 <span ng-show="checkIZVR1" class="has-error">Provjeri imena</span>
 
             </div>
@@ -261,8 +261,8 @@
                     </select>
                 </div>
 
-                <span ng-show="userForm.izvrsitelj3.$invalid &&  !userForm.izvrsitelj3.$dirty " class="has-error">Morate odabrati izvrsitelja.</span>
-                <span ng-show="userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine  " class="has-error">Morate odabrati izvrsitelja.</span>
+                <span ng-show="userForm.izvrsitelj3.$invalid &&  !userForm.izvrsitelj3.$dirty " class="has-error">Morate odabrati izvrsitelja 3.</span>
+                <span ng-show="userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine  " class="has-error">Morate odabrati izvrsitelja 3.</span>
                 <span ng-show="checkIZVR2" class="has-error">Provjeri imena</span>
 
             </div>
