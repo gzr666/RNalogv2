@@ -36,6 +36,7 @@ namespace RadniNalog.Services
 
 
 
+
         //public  void fillNalog()
         //{
 
@@ -363,6 +364,57 @@ namespace RadniNalog.Services
         public void  testFill()
         {
 
+
+            //fill stanica
+               string jsonDAS = @"apexbaza/DAS.json";
+               var pathToFile = Path.Combine(_env.WebRootPath, jsonDAS);
+
+               var parseDAS = System.IO.File.ReadAllText(pathToFile);
+
+
+                var deserDAS = JsonConvert.DeserializeObject<List<DasJSON>>(parseDAS);
+
+
+            
+            
+
+                if (_context.MjestoRada.Count() == 0)
+            {
+
+                          foreach (var mjestoRada in deserDAS)
+                           {
+                               MjestoRada m = new MjestoRada
+                                {
+
+                                  Ime = mjestoRada.Naziv,
+                                  PodrucjeID = 1,
+                                  TipDasID = mjestoRada.ID_DAS,
+                                  TipPostrojenjaID = mjestoRada.ID_NIVO
+                                  
+
+
+                              };
+                             // _context.Zaposlenici.Add(z);
+                            _context.Entry(m).State = EntityState.Added;
+
+
+                         }
+
+                        _context.SaveChanges();
+
+                     }
+                    else
+                      {
+
+                     }
+
+
+
+            
+
+
+
+
             //fill podrucja
             if (_context.Podrucja.Count() == 0)
             {
@@ -410,7 +462,8 @@ namespace RadniNalog.Services
                     new TipDas{Ime="DSSN 200"},
                     new TipDas{Ime="RTU 520"},
                     new TipDas{Ime="RTU 560"},
-                    new TipDas{Ime="UST-10Gc"}
+                    new TipDas{Ime="UST-10Gc"},
+                    new TipDas{Ime="Ostalo"}
 
 
 

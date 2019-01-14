@@ -1,0 +1,1171 @@
+[
+ {
+   "Naziv": "DUGOPOLJE",
+   "Nivo": "110/20",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 2,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "DUJMOVAČA",
+   "Nivo": "110/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 1,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "VISOKA",
+   "Nivo": "110/10",
+   "Tip": "ostalo (navesti u napomeni)",
+   "ID_NIVO": 1,
+   "ID_DAS": 13
+ },
+ {
+   "Naziv": "ZAGVOZD",
+   "Nivo": "110/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 1,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "DUGI RAT",
+   "Nivo": "110/35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 4,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "SUĆIDAR",
+   "Nivo": "110/35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 4,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "MAKARSKA (110/35/10 kV)",
+   "Nivo": "110/35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 4,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "VRBORAN",
+   "Nivo": "220/110/35",
+   "Tip": "RTU 560",
+   "ID_NIVO": 5,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "BRIŽINE",
+   "Nivo": "35/10",
+   "Tip": "RTU 560",
+   "ID_NIVO": 6,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "BRODOGRADILIŠTE",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "GOMILICA",
+   "Nivo": "35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "GRIPE",
+   "Nivo": "35/10",
+   "Tip": "DS 2000",
+   "ID_NIVO": 6,
+   "ID_DAS": 6
+ },
+ {
+   "Naziv": "GROHOTE",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "KAŠTELA",
+   "Nivo": "35/10",
+   "Tip": "AVA 8B",
+   "ID_NIVO": 6,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "KLIS",
+   "Nivo": "35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 6,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "MILJEVAC",
+   "Nivo": "35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 6,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "MUĆ",
+   "Nivo": "35/10",
+   "Tip": "RTU 560",
+   "ID_NIVO": 6,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "BOL",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "MILNA",
+   "Nivo": "35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "POSTIRA",
+   "Nivo": "35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "PUČIŠĆA",
+   "Nivo": "35/10",
+   "Tip": "RTU 560",
+   "ID_NIVO": 6,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "HVAR",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "STARIGRAD",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "VIS",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "ČIOVO",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "DIVULJE",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "MARINA",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "TROGIR",
+   "Nivo": "35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "PRANČEVIĆI",
+   "Nivo": "35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 6,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "RUDA",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "SINJ 1",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "SINJ 2",
+   "Nivo": "35/10",
+   "Tip": "RTU 560",
+   "ID_NIVO": 6,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "TRILJ",
+   "Nivo": "35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 6,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "VRLIKA",
+   "Nivo": "35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 6,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "OMIŠ",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "RAVNICE",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "BAŠKA VODA",
+   "Nivo": "35/10",
+   "Tip": "DS 802",
+   "ID_NIVO": 6,
+   "ID_DAS": 7
+ },
+ {
+   "Naziv": "MAKARSKA",
+   "Nivo": "35/10",
+   "Tip": "AVA 8B",
+   "ID_NIVO": 6,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "PODGORA",
+   "Nivo": "35/10",
+   "Tip": "RTU 560",
+   "ID_NIVO": 6,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "METKOVIĆ 1",
+   "Nivo": "35/10",
+   "Tip": "Advantech 510",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "METKOVIĆ 2",
+   "Nivo": "35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "OPUZEN",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "VRGORAC",
+   "Nivo": "110/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 1,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "BRIST",
+   "Nivo": "35/10",
+   "Tip": "Advantech 610",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "MEDOV DOLAC",
+   "Nivo": "35/10",
+   "Tip": "RTU 560",
+   "ID_NIVO": 6,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "DOBRI",
+   "Nivo": "110/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 1,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "NEREŽIŠĆA",
+   "Nivo": "110/35",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 3,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "IMOTSKI",
+   "Nivo": "110/35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 4,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "OPUZEN",
+   "Nivo": "110/35",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 3,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "KAŠTELA",
+   "Nivo": "110/35",
+   "Tip": "RTU 560",
+   "ID_NIVO": 3,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "HRVACE",
+   "Nivo": "35/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "PLOČE",
+   "Nivo": "110/10",
+   "Tip": "ARK 2120F",
+   "ID_NIVO": 1,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "K.Sućurac 5",
+   "Nivo": "10/0,4",
+   "Tip": "DSSN 200",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Konjsko 2",
+   "Nivo": "10/0,4",
+   "Tip": "DSSN 200",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Lećevica 1",
+   "Nivo": "10/0,4",
+   "Tip": "DSSN 200",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "LR Bajnice",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Gizdavac",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Kotlenice",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Kozjak",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR VRBA",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Tešije 1",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "PUO Radošić",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Vučevica",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Osmakovac",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "PUO Kozjak",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Konjsko 1",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Konjsko 2",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Dugopolje",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Zaranač",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "PUO Kotlenica",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Bisko",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Akrapi",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Bisko",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "RS Selca",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "Selca 3",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Nerežišća1",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "G. Humac",
+   "Nivo": "10/0,4",
+   "Tip": "DSSN 200",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "LR Vrboska",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Bogomolje",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Pitve Zavala",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Zastražišće",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Cista Velika 1",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "Cista Provo 1",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "Poljica 1",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Zmijavci 3",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "COKP Sv. Ilija",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Sv. Ilija 1",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Sv. Ilija 2",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Sv. Ilija 3",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "PUO Zagvozd",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "Čvor Zagvozd 1",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "COKP Zagvozd",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "Čvor Zagvozd 2",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "PUO Župa",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 520",
+   "ID_NIVO": 7,
+   "ID_DAS": 10
+ },
+ {
+   "Naziv": "Čvor Baška Voda",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Sv. Ilija 4",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Šćit",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Dominovića Draga",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Drašnice 1",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Sv. Nikola",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Alga1",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Kula Norinska",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Metković 34",
+   "Nivo": "10/0,4",
+   "Tip": "DSSN 200",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Ušće",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "LR Borovci",
+   "Nivo": "10/0,4",
+   "Tip": "DSR 100",
+   "ID_NIVO": 7,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Dobranje",
+   "Nivo": "10/0,4",
+   "Tip": "DSR 100",
+   "ID_NIVO": 7,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Glušci",
+   "Nivo": "10/0,4",
+   "Tip": "DSR 100",
+   "ID_NIVO": 7,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Metković 5",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Lovorje",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "ČCP ČARAPINE",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "PUO POJEZERJE",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "GP Metković",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Šubir 1",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Šubir 2",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel mali prolog 1",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel mali prolog 2",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Kobiljača 1",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Kobiljača 2",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Srijane1-Radovići",
+   "Nivo": "10/0,4",
+   "Tip": "DSSN 200",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Omial Blato",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Dugi Rat 4",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Srinjine-škola(12/2012)",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "CS Šestanovac",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "LR Bile Laze",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR N.Sela",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Blato Baričevići",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Rudine",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Sumpetar 2",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Duće 1",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Ivašnjak 2",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Kostanje 1",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Umjetni Tunel Rošca",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Umjetni Tunel Konščica",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Umjetni Tunel Vrankovića ograda",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "PUO Mosor",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Crna Brda",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Stražina",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Blato",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "PČCP Šestanovac",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Šestanovac",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "ZL1 ST  TS 10kV ",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "ZL2 ST  TS 10kV ",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "LR VELI DRVENIK",
+   "Nivo": "10/0,4",
+   "Tip": "DSR 100",
+   "ID_NIVO": 7,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Trogir 17",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Seget donji 9",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Trogir 1",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Okrug Gornji 13",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Tunel Dubrave 1",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Dubrave 2",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Prgomet",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Naplatne kućice Prgomet",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Ravča 1",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Banja",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Dragljane1",
+   "Nivo": "10/0,4",
+   "Tip": "RTU 560",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "PUO Biokovo",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "CP Ravča",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Tunel Umac",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Čvor Vrgorac",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "PUO Dusina",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Mostina",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Ploče 4",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Zaostrog 4",
+   "Nivo": "10/0,4",
+   "Tip": "UST-10Gc",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Tunel Puljani",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "CP Karamatići",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "Ravno",
+   "Nivo": "10/0,4",
+   "Tip": "CJ-20 IEL",
+   "ID_NIVO": 7,
+   "ID_DAS": 5
+ },
+ {
+   "Naziv": "LR Bisko",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "LR Bitelić",
+   "Nivo": "10",
+   "Tip": "DSR 100",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ }
+]

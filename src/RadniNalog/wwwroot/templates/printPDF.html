@@ -90,7 +90,7 @@
             <div class="form-group" ng-class="{'has-error': userForm.mRada.$invalid && !userForm.mRada.$pristine}">
                 <label class="col-md-4 control-label" for="selectbasic">Postrojenje</label>
                 <div class="col-md-5">
-                    <select data-live-search="true" name="mRada" class="form-control" ng-model="rnalog.MjestoRada" ng-options="mjestoRada.ime for mjestoRada in mjestaRada" required>
+                    <select data-live-search="true" name="mRada" class="form-control" ng-model="rnalog.MjestoRada" ng-options="mjestoRada.ime for mjestoRada in mjestaRada | orderBy:'ime':false:localeSensitiveComparator" required>
 
                         <option value="">Odaberi</option>
                     </select>
