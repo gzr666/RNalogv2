@@ -237,9 +237,9 @@
 
             <!-- Select Basic -->
             <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj1.$invalid && !userForm.izvrsitelj1.$pristine,'test-err':checkIZVR1}">
-                <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 1</label>
+                <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 2</label>
                 <div class="col-md-5">
-                    <select class="form-control" name="izvrsitelj1" ng-model="rnalog.Izvrsitelj2" ng-change="changeIzvrsitelj2(rnalog)" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1" ng-selected="{{rnalog.Izvrsitelj2.id == izvrsitelj1.id}}">
+                    <select class="form-control" name="izvrsitelj1" ng-model="rnalog.Izvrsitelj2" ng-change="changeIzvrsitelj2(rnalog)" ng-options="izvrsitelj1.ime for izvrsitelj1 in izvrsitelji1" ng-selected="{{rnalog.Izvrsitelj2.id == izvrsitelj1.id}}" required>
 
                         <option value="">Odaberi</option>
                     </select>
@@ -253,9 +253,9 @@
 
             <!-- Select Basic -->
             <div class="form-group" ng-class="{'has-error': userForm.izvrsitelj3.$invalid && !userForm.izvrsitelj3.$pristine,'test-err':checkIZVR2}">
-                <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 2</label>
+                <label class="col-md-4 control-label" for="selectbasic">Izvršitelj 3</label>
                 <div class="col-md-5">
-                    <select name="izvrsitelj3" class="form-control" ng-model="rnalog.Izvrsitelj3" ng-change="changeIzvrsitelj3(rnalog)" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2">
+                    <select name="izvrsitelj3" class="form-control" ng-model="rnalog.Izvrsitelj3" ng-change="changeIzvrsitelj3(rnalog)" ng-options="izvrsitelj2.ime for izvrsitelj2 in izvrsitelji2" required>
 
                         <option value="">Odaberi</option>
                     </select>
