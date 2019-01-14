@@ -540,7 +540,9 @@ namespace RadniNalog.Services
                    new Zaposlenik{Ime="Matko Peko"},
                    new Zaposlenik{Ime="Matko Đogaš"},
                    new Zaposlenik{Ime="Siniša Poljak"},
-                   new Zaposlenik{Ime="Teo Živković"}
+                   new Zaposlenik{Ime="Teo Živković"},
+                   new Zaposlenik{Ime="Bez Izvršitelja 2"},
+                   new Zaposlenik{Ime="Bez Izvršitelja 3"}
 
 
 

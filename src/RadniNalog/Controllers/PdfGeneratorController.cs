@@ -316,7 +316,7 @@ namespace RadniNalog.Controllers
 
             var single = nalozi.SingleOrDefault(m => m.ID == id);
 
-
+           
 
             return new ViewAsPdf("RNGen", single)
             {
