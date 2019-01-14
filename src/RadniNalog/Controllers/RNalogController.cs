@@ -350,6 +350,10 @@ namespace RadniNalog.Controllers
 
            
            // rNalog.Datum = DateTime.Now.ToShortDateString();
+         
+
+            //provjera ako su dodatni izvrsitelji prazni
+
 
 
             if (!ModelState.IsValid)

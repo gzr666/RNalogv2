@@ -368,7 +368,7 @@ namespace RadniNalog.Controllers
 
             return new ViewAsPdf("RNGenLIST", nalozi)
             {
-                PageMargins = { Left = 20, Bottom = 50, Right = 20, Top = 20 },
+                PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 20 },
                 PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
                 CustomSwitches = "--page-offset 0 --footer-center [page] --footer-font-size 12",
                 PageSize = Rotativa.AspNetCore.Options.Size.A4
