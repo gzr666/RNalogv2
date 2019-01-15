@@ -1,0 +1,317 @@
+[
+ {
+   "Naziv": "OBROVAC",
+   "ID_NIVO": 3,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "ZADAR I",
+   "ID_NIVO": 3,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "NIN",
+   "ID_NIVO": 3,
+   "ID_DAS": 13
+ },
+ {
+   "Naziv": "BENKOVAC",
+   "ID_NIVO": 1,
+   "ID_DAS": 13
+ },
+ {
+   "Naziv": "BIOGRAD",
+   "ID_NIVO": 1,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "PAG",
+   "ID_NIVO": 1,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "ZADAR CENTAR",
+   "ID_NIVO": 1,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "ZADAR 1",
+   "ID_NIVO": 6,
+   "ID_DAS": 16
+ },
+ {
+   "Naziv": "ZADAR 2",
+   "ID_NIVO": 6,
+   "ID_DAS": 16
+ },
+ {
+   "Naziv": "ZADAR 3",
+   "ID_NIVO": 6,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "ZADAR 4",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "UGLJAN",
+   "ID_NIVO": 6,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "DUGI OTOK",
+   "ID_NIVO": 6,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "SILBA",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "KUKLJICA",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "SALI",
+   "ID_NIVO": 6,
+   "ID_DAS": 1
+ },
+ {
+   "Naziv": "SELINE",
+   "ID_NIVO": 6,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "OBROVAC (HAC)",
+   "ID_NIVO": 6,
+   "ID_DAS": 3
+ },
+ {
+   "Naziv": "Babindub (RS)",
+   "ID_NIVO": 8,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "Banj 3",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Božava",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Božava (KK)",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Brgud",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "COPA Maslenica",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Čvor Zadar 1",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Čvor Zadar2",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Galovac",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Gorica (RS)",
+   "ID_NIVO": 8,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "Ilirija",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Ist",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Ist 2",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Iž (RS)",
+   "ID_NIVO": 8,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "Jagodnja Gornja 1",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Jasenice Vulići",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Kakma1",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Kožino 6",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Lisičići",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Lukoran",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Mandalina",
+   "ID_NIVO": 7,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "Novigrad 4",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Pag (RS)",
+   "ID_NIVO": 8,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "Paljuv 2",
+   "ID_NIVO": 7,
+   "ID_DAS": 12
+ },
+ {
+   "Naziv": "Pašman 1",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Petračane Gornje",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Poličnik",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Poljana 2",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Posedarje (RS)",
+   "ID_NIVO": 8,
+   "ID_DAS": 4
+ },
+ {
+   "Naziv": "Preko",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Pridraga Gospići",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Pridraga Zubčići",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Ražanac (RS)",
+   "ID_NIVO": 8,
+   "ID_DAS": 2
+ },
+ {
+   "Naziv": "Škabrnja Centar",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Škabrnja Ivkovići 2",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Tkon 2",
+   "ID_NIVO": 7,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Tribanj Kruščica",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "Tun 2 (KK)",
+   "ID_NIVO": 8,
+   "ID_DAS": 9
+ },
+ {
+   "Naziv": "Zaton 5",
+   "ID_NIVO": 7,
+   "ID_DAS": 11
+ },
+ {
+   "Naziv": "DURN kod Vodospreme Ribnica",
+   "ID_NIVO": 8,
+   "ID_DAS": 15
+ },
+ {
+   "Naziv": "DURN Murvica",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "DURN Sikovo",
+   "ID_NIVO": 8,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Digipiter Dračevac",
+   "ID_NIVO": 9,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Digipiter Dragove",
+   "ID_NIVO": 9,
+   "ID_DAS": 8
+ },
+ {
+   "Naziv": "Digipiter Islam Latinski",
+   "ID_NIVO": 9,
+   "ID_DAS": 8
+ }
+]

@@ -365,7 +365,7 @@ namespace RadniNalog.Services
         {
 
 
-            //fill stanica
+            //fill stanica SPLIT
                string jsonDAS = @"apexbaza/DAS.json";
                var pathToFile = Path.Combine(_env.WebRootPath, jsonDAS);
 
@@ -374,11 +374,20 @@ namespace RadniNalog.Services
 
                 var deserDAS = JsonConvert.DeserializeObject<List<DasJSON>>(parseDAS);
 
+            //fill stanica zadar
+            string jsonZadar = @"apexbaza/ZADAR.json";
+            var pathToFileZadar = Path.Combine(_env.WebRootPath, jsonZadar);
 
-            
-            
+            var parseZadar = System.IO.File.ReadAllText(pathToFileZadar);
 
-                if (_context.MjestoRada.Count() == 0)
+
+            var deserZadar = JsonConvert.DeserializeObject<List<DasJSON>>(parseZadar);
+
+
+
+
+
+            if (_context.MjestoRada.Count() == 0)
             {
 
                           foreach (var mjestoRada in deserDAS)
@@ -399,8 +408,30 @@ namespace RadniNalog.Services
 
 
                          }
+                _context.SaveChanges();
 
-                        _context.SaveChanges();
+                foreach (var mjestoRada2 in deserZadar)
+                {
+                    MjestoRada n = new MjestoRada
+                    {
+
+                        Ime = mjestoRada2.Naziv,
+                        PodrucjeID = 2,
+                        TipDasID = mjestoRada2.ID_DAS,
+                        TipPostrojenjaID = mjestoRada2.ID_NIVO
+
+
+
+                    };
+                    // _context.Zaposlenici.Add(z);
+                    _context.Entry(n).State = EntityState.Added;
+
+
+                }
+
+
+
+                _context.SaveChanges();
 
                      }
                     else
@@ -463,7 +494,9 @@ namespace RadniNalog.Services
                     new TipDas{Ime="RTU 520"},
                     new TipDas{Ime="RTU 560"},
                     new TipDas{Ime="UST-10Gc"},
-                    new TipDas{Ime="Ostalo"}
+                    new TipDas{Ime="Ostalo"},
+                    new TipDas{Ime="DSR 200"},
+                    new TipDas{Ime="ARK-2120L"}
 
 
 
@@ -580,7 +613,9 @@ namespace RadniNalog.Services
                 new TipPostrojenja { Naziv = "220/110/35 kV"},
                 new TipPostrojenja { Naziv = "35/10 kV"},
                 new TipPostrojenja { Naziv="10/0.4 kV"},
-                new TipPostrojenja { Naziv="10 LR"}
+                new TipPostrojenja { Naziv="10 LR"},
+                 new TipPostrojenja { Naziv="Ostalo"}
+
 
 
             };
