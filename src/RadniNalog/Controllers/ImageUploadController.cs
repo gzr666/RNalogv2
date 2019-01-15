@@ -186,9 +186,14 @@ namespace RadniNalog.Controllers
         [HttpGet("/ImageUpload/Delete/{id}", Name = "UploadMyImage2")]
         public IActionResult Delete(int id)
         {
-            ViewBag.myid = id;
+         
 
-             _context.Images.Remove(_context.Images.FirstOrDefault(img => img.ID == id));
+            var image = _context.Images.FirstOrDefault(img => img.ID == id);
+
+            ViewBag.myid = image.LocationID;
+
+
+            _context.Images.Remove(image);
             _context.SaveChanges();
 
             return View();

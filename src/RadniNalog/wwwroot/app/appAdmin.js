@@ -165,6 +165,14 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     });
 
+    $stateProvider.state("bazaUsers", {
+
+        url: "/useri/",
+        templateUrl: "../templates/bazausers.html",
+        controller: "UsersController"
+
+    });
+
 
 
 });

@@ -479,6 +479,28 @@ namespace RadniNalog.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
+        [HttpGet]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+
+            if (Request.HttpContext.User.IsInRole("SuperAdmin"))
+            {
+                var user = await _userManager.FindByIdAsync(id);
+
+                var test = await _userManager.DeleteAsync(user);
+                ViewBag.nematePravo = false;
+            }
+            else {
+
+                ViewBag.nematePravo = true;
+            }
+
+            return View();
+
+        }
+
+
+
         //
         // POST: /Account/VerifyCode
         [HttpPost]
@@ -510,6 +532,8 @@ namespace RadniNalog.Controllers
                 return View(model);
             }
         }
+
+       
 
         #region Helpers
 
