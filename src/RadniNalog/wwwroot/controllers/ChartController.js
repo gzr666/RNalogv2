@@ -34,14 +34,29 @@
 
 
          
-            $scope.labels2 = ["Dacia Dokker ST-1435 F", "Dacia Dokker ST-1674 C", "Dacia Sandero ST-2653 C", "Fiat Doblo ST-851 PA", "Fiat Panda ST-2164 C", "Fiat Stilo-741 OS"];
+            $scope.labels2 = ["Dacia Dokker ST-1435 F",
+			"Dacia Dokker ST-1674 C",
+			"Dacia Sandero ST-2653 C",
+			"Fiat Doblo ST-851 PA",
+			"Fiat Panda ST-2164 C",
+			"Fiat Stilo-741 OS",
+			"Fiat Stilo ZD-496-ER",
+			"Ford Ranger ŠI 986-FU",
+            "Renault Megane DU107GJ",
+            "Nepoznato"
+			];
            
             $scope.data2 = [    data2.data.daciaDokkerS1435F,
                                 data2.data.daciaDokkerST1674C,
                                 data2.data.daciaSanderoST2653C,
                                 data2.data.fiatDobloST851PA,
                                 data2.data.fiatPandaST2164C,
-                                data2.data.fiatStilo741OS]
+                                data2.data.fiatStilo741OS,
+								data2.data.fiatStiloZD496ER,
+								data2.data.fordRangerSI986FU,
+                                data2.data.renaultMeganeDU107GJ,
+                                data2.data.nepoznato
+								]
 
 
         }, function (error) {

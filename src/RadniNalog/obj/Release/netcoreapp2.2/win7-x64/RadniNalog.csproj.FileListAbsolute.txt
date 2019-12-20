@@ -57,3 +57,11 @@ E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\RadniNalog.pdb
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\RadniNalog.csproj.CopyComplete
 E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\PdfGenerator\RNGenLIST.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\Account\DeleteUser.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\Home\mjestoRadaPUBLIC.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\ImageUpload\Delete.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\ImageUpload\Details.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\ImageUpload\Index.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\ImageUpload\Upload.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\ImageUpload\UploadMulti.g.cshtml.cs
+E:\Projects\RNALOGV3_git\RNalogv2\src\RadniNalog\obj\Release\netcoreapp2.2\win7-x64\Razor\Views\ImageUpload\UspjesanUpload.g.cshtml.cs

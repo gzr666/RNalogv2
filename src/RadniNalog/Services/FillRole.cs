@@ -364,171 +364,70 @@ namespace RadniNalog.Services
         public void  testFill()
         {
 
+            //fill  Aktivnosti
 
-            //fill stanica SPLIT
-               string jsonDAS = @"apexbaza/DAS.json";
-               var pathToFile = Path.Combine(_env.WebRootPath, jsonDAS);
-
-               var parseDAS = System.IO.File.ReadAllText(pathToFile);
-
-
-                var deserDAS = JsonConvert.DeserializeObject<List<DasJSON>>(parseDAS);
-
-            //fill stanica zadar
-            string jsonZadar = @"apexbaza/ZADAR.json";
-            var pathToFileZadar = Path.Combine(_env.WebRootPath, jsonZadar);
-
-            var parseZadar = System.IO.File.ReadAllText(pathToFileZadar);
-
-
-            var deserZadar = JsonConvert.DeserializeObject<List<DasJSON>>(parseZadar);
-
-
-
-
-
-            if (_context.MjestoRada.Count() == 0)
+            if (_context.VrstaRada.Count() == 0)
             {
+                //List<VrstaRada> VrsteRada = new List<VrstaRada> {
 
-                          foreach (var mjestoRada in deserDAS)
-                           {
-                               MjestoRada m = new MjestoRada
-                                {
+                //    new VrstaRada{ Naziv="Pregledi MR NN",Sifra="1211",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi TS 10(20)/0.4 kV",Sifra="1212",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi MR 10(20) kV",Sifra="1213",TipPregleda=121},
+                //    new VrstaRada {Naziv="Pregledi TS X/10 kV",Sifra="1214",TipPregleda=121 },
+                //    new VrstaRada{ Naziv="Pregledi MR 35 kV",Sifra="1215",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi MR 110 kV",Sifra="1217",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Ostala Oprema",Sifra="1218",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava MTU",Sifra="12182",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava Daljinskog Vodenja",Sifra="12183",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Poslovno Informatickih Sustava",Sifra="12184",TipPregleda=121},
+                //    new VrstaRada{ Naziv="Pregledi Sustava Mjerenja i Relejne Zastite",Sifra="12185",TipPregleda=121},
 
-                                  Ime = mjestoRada.Naziv,
-                                  PodrucjeID = 1,
-                                  TipDasID = mjestoRada.ID_DAS,
-                                  TipPostrojenjaID = mjestoRada.ID_NIVO
-                                  
+                //     new VrstaRada{ Naziv="Redovno odrzavanje MR NN",Sifra="1221",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje TS 10(20)/0.4 kV",Sifra="1222",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 10(20) kV",Sifra="1223",TipPregleda=122},
+                //    new VrstaRada {Naziv="Redovno odrzavanje TS X/10 kV",Sifra="1224",TipPregleda=122 },
+                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 35 kV",Sifra="1225",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 110 kV",Sifra="1227",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Ostala Oprema",Sifra="1228",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava MTU",Sifra="12282",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Daljinskog Vodenja",Sifra="12283",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Poslovno Informatickih Sustava",Sifra="12284",TipPregleda=122},
+                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Mjerenja i Relejne Zastite",Sifra="12285",TipPregleda=122},
 
+                //};
 
-                              };
-                             // _context.Zaposlenici.Add(z);
-                            _context.Entry(m).State = EntityState.Added;
-
-
-                         }
-                _context.SaveChanges();
-
-                foreach (var mjestoRada2 in deserZadar)
+                List<VrstaRada> VrsteRada = new List<VrstaRada>
                 {
-                    MjestoRada n = new MjestoRada
-                    {
-
-                        Ime = mjestoRada2.Naziv,
-                        PodrucjeID = 2,
-                        TipDasID = mjestoRada2.ID_DAS,
-                        TipPostrojenjaID = mjestoRada2.ID_NIVO
+                    new VrstaRada{ Naziv="Pregledi sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi sustava MTU",Sifra="12182",TipPregleda=121},
+                    new VrstaRada{ Naziv="Pregledi sustava Daljinskog Vođenja",Sifra="12183",TipPregleda=121},
 
 
+                    new VrstaRada{ Naziv="Redovno održavanje sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno održavanje sustava MTU",Sifra="12282",TipPregleda=122},
+                    new VrstaRada{ Naziv="Redovno održavanje sustava Daljinskog Vođenja",Sifra="12283",TipPregleda=122},
 
-                    };
-                    // _context.Zaposlenici.Add(z);
-                    _context.Entry(n).State = EntityState.Added;
+                    new VrstaRada{ Naziv="Remont sustava Telekomunikacija",Sifra="12381",TipPregleda=123},
+                    new VrstaRada{ Naziv="Remont sustava MTU",Sifra="12382",TipPregleda=123},
+                    new VrstaRada{ Naziv="Remont sustava Daljinskog Vođenja",Sifra="12383",TipPregleda=123},
 
+                    new VrstaRada{ Naziv="Modifikacije sustava Telekomunikacija",Sifra="12581",TipPregleda=125},
+                    new VrstaRada{ Naziv="Modifikacije sustava MTU",Sifra="12582",TipPregleda=125},
+                    new VrstaRada{ Naziv="Modifikacije sustava Daljinskog Vođenja",Sifra="12583",TipPregleda=125},
 
-                }
+                    new VrstaRada{ Naziv="Korektivno održavanje sustava Telekomunikacija",Sifra="12681",TipPregleda=126},
+                    new VrstaRada{ Naziv="Korektivno održavanje sustava MTU",Sifra="12682",TipPregleda=126},
+                    new VrstaRada{ Naziv="Korektivno održavanje sustava Daljinskog Vođenja",Sifra="12683",TipPregleda=126},
 
+                    new VrstaRada{ Naziv="Interventno održavanje sustava Telekomunikacija",Sifra="12781",TipPregleda=127},
+                    new VrstaRada{ Naziv="Interventno održavanje sustava MTU",Sifra="12782",TipPregleda=127},
+                    new VrstaRada{ Naziv="Interventno održavanje sustava Daljinskog Vođenja",Sifra="12783",TipPregleda=127},
 
-
-                _context.SaveChanges();
-
-                     }
-                    else
-                      {
-
-                     }
-
-
-
-            
-
-
-
-
-            //fill podrucja
-            if (_context.Podrucja.Count() == 0)
-            {
-                List<Podrucje> listaPodrucja = new List<Podrucje> {
-
-                new Podrucje { Ime = "Split" },
-                new Podrucje { Ime="Zadar"},
-                new Podrucje { Ime="Šibenik"},
-                new Podrucje { Ime = "Dubrovnik"}
-
-
-
-                };
-
-
-           
-                foreach (var podrucje in listaPodrucja)
-                {
-                    _context.Podrucja.Add(podrucje);
-                    _context.Entry(podrucje).State = EntityState.Added;
-
-
-
-                }
-
-               _context.SaveChanges();
-              
-            }
-            else { }
-
-
-            //fill tipovi das-a
-            if (_context.TipoviDas.Count() == 0)
-            {
-                List<TipDas> listaDAS = new List<TipDas> {
-
-                    new TipDas{Ime="Advantech 510"},
-                    new TipDas{Ime="Advantech 610"},
-                    new TipDas{Ime="ARK-2120F"},
-                    new TipDas{Ime="AVA 8B"},
-                    new TipDas{Ime="CJ-20 IEL"},
-                    new TipDas{Ime="DS 2000"},
-                    new TipDas{Ime="DS 802"},
-                    new TipDas{Ime="DSR 100"},
-                    new TipDas{Ime="DSSN 200"},
-                    new TipDas{Ime="RTU 520"},
-                    new TipDas{Ime="RTU 560"},
-                    new TipDas{Ime="UST-10Gc"},
-                    new TipDas{Ime="Ostalo"},
-                    new TipDas{Ime="DSR 200"},
-                    new TipDas{Ime="ARK-2120L"}
-
-
-
-                };
-
-
-
-                foreach (var das in listaDAS)
-                {
-                    _context.TipoviDas.Add(das);
-                    _context.Entry(das).State = EntityState.Added;
-
-
-
-                }
-
-                _context.SaveChanges();
-
-            }
-            else { }
-
-            //fill automobila
-            if (_context.Automobili.Count() == 0)
-            {
-                List<Automobil> listaAuta = new List<Automobil> {
-
-                    new Automobil{ Registracija="Dacia Dokker ST-1435 F"},
-                    new Automobil{ Registracija="Dacia Dokker ST-1674 C"},
-                    new Automobil{ Registracija="Dacia Sandero ST-2653 C"},
-                    new Automobil{ Registracija="Fiat Doblo ST-851 PA"},
-                    new Automobil{ Registracija="Fiat Panda ST-2164 C"},
-                    new Automobil{ Registracija="Fiat Stilo-741 OS"},
+                    new VrstaRada{ Naziv="Elementarne nepogode sustava Telekomunikacija",Sifra="12881",TipPregleda=128},
+                    new VrstaRada{ Naziv="Elementarne nepogode sustava MTU",Sifra="12882",TipPregleda=128},
+                    new VrstaRada{ Naziv="Elementarne nepogode sustava Daljinskog Vođenja",Sifra="12883",TipPregleda=128}
 
 
 
@@ -536,14 +435,10 @@ namespace RadniNalog.Services
 
                 };
 
-
-
-                foreach (var auto in listaAuta)
+                foreach (var vrsta in VrsteRada)
                 {
-                    _context.Automobili.Add(auto);
-                    _context.Entry(auto).State = EntityState.Added;
-
-
+                    _context.VrstaRada.Add(vrsta);
+                    _context.Entry(vrsta).State = EntityState.Added;
 
                 }
 
@@ -629,75 +524,22 @@ namespace RadniNalog.Services
                 }
 
                 _context.SaveChanges();
-                
+
             }
             else { }
 
 
-            //fill  Aktivnosti
-
-            if (_context.VrstaRada.Count() == 0)
+            //fill automobila
+            if (_context.Automobili.Count() == 0)
             {
-                //List<VrstaRada> VrsteRada = new List<VrstaRada> {
+                List<Automobil> listaAuta = new List<Automobil> {
 
-                //    new VrstaRada{ Naziv="Pregledi MR NN",Sifra="1211",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi TS 10(20)/0.4 kV",Sifra="1212",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi MR 10(20) kV",Sifra="1213",TipPregleda=121},
-                //    new VrstaRada {Naziv="Pregledi TS X/10 kV",Sifra="1214",TipPregleda=121 },
-                //    new VrstaRada{ Naziv="Pregledi MR 35 kV",Sifra="1215",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi MR 110 kV",Sifra="1217",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi Ostala Oprema",Sifra="1218",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi Sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi Sustava MTU",Sifra="12182",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi Sustava Daljinskog Vodenja",Sifra="12183",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi Poslovno Informatickih Sustava",Sifra="12184",TipPregleda=121},
-                //    new VrstaRada{ Naziv="Pregledi Sustava Mjerenja i Relejne Zastite",Sifra="12185",TipPregleda=121},
-
-                //     new VrstaRada{ Naziv="Redovno odrzavanje MR NN",Sifra="1221",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje TS 10(20)/0.4 kV",Sifra="1222",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 10(20) kV",Sifra="1223",TipPregleda=122},
-                //    new VrstaRada {Naziv="Redovno odrzavanje TS X/10 kV",Sifra="1224",TipPregleda=122 },
-                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 35 kV",Sifra="1225",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje MR 110 kV",Sifra="1227",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje Ostala Oprema",Sifra="1228",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava MTU",Sifra="12282",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Daljinskog Vodenja",Sifra="12283",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje Poslovno Informatickih Sustava",Sifra="12284",TipPregleda=122},
-                //    new VrstaRada{ Naziv="Redovno odrzavanje Sustava Mjerenja i Relejne Zastite",Sifra="12285",TipPregleda=122},
-
-                //};
-
-                List<VrstaRada> VrsteRada = new List<VrstaRada>
-                {
-                    new VrstaRada{ Naziv="Pregledi sustava Telekomunikacija",Sifra="12181",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi sustava MTU",Sifra="12182",TipPregleda=121},
-                    new VrstaRada{ Naziv="Pregledi sustava Daljinskog Vođenja",Sifra="12183",TipPregleda=121},
-                   
-
-                    new VrstaRada{ Naziv="Redovno održavanje sustava Telekomunikacija",Sifra="12281",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno održavanje sustava MTU",Sifra="12282",TipPregleda=122},
-                    new VrstaRada{ Naziv="Redovno održavanje sustava Daljinskog Vođenja",Sifra="12283",TipPregleda=122},
-
-                    new VrstaRada{ Naziv="Remont sustava Telekomunikacija",Sifra="12381",TipPregleda=123},
-                    new VrstaRada{ Naziv="Remont sustava MTU",Sifra="12382",TipPregleda=123},
-                    new VrstaRada{ Naziv="Remont sustava Daljinskog Vođenja",Sifra="12383",TipPregleda=123},
-
-                    new VrstaRada{ Naziv="Modifikacije sustava Telekomunikacija",Sifra="12581",TipPregleda=125},
-                    new VrstaRada{ Naziv="Modifikacije sustava MTU",Sifra="12582",TipPregleda=125},
-                    new VrstaRada{ Naziv="Modifikacije sustava Daljinskog Vođenja",Sifra="12583",TipPregleda=125},
-
-                    new VrstaRada{ Naziv="Korektivno održavanje sustava Telekomunikacija",Sifra="12681",TipPregleda=126},
-                    new VrstaRada{ Naziv="Korektivno održavanje sustava MTU",Sifra="12682",TipPregleda=126},
-                    new VrstaRada{ Naziv="Korektivno održavanje sustava Daljinskog Vođenja",Sifra="12683",TipPregleda=126},
-
-                    new VrstaRada{ Naziv="Interventno održavanje sustava Telekomunikacija",Sifra="12781",TipPregleda=127},
-                    new VrstaRada{ Naziv="Interventno održavanje sustava MTU",Sifra="12782",TipPregleda=127},
-                    new VrstaRada{ Naziv="Interventno održavanje sustava Daljinskog Vođenja",Sifra="12783",TipPregleda=127},
-
-                    new VrstaRada{ Naziv="Elementarne nepogode sustava Telekomunikacija",Sifra="12881",TipPregleda=128},
-                    new VrstaRada{ Naziv="Elementarne nepogode sustava MTU",Sifra="12882",TipPregleda=128},
-                    new VrstaRada{ Naziv="Elementarne nepogode sustava Daljinskog Vođenja",Sifra="12883",TipPregleda=128}
+                    new Automobil{ Registracija="Dacia Dokker ST-1435 F"},
+                    new Automobil{ Registracija="Dacia Dokker ST-1674 C"},
+                    new Automobil{ Registracija="Dacia Sandero ST-2653 C"},
+                    new Automobil{ Registracija="Fiat Doblo ST-851 PA"},
+                    new Automobil{ Registracija="Fiat Panda ST-2164 C"},
+                    new Automobil{ Registracija="Fiat Stilo-741 OS"},
 
 
 
@@ -705,10 +547,14 @@ namespace RadniNalog.Services
 
                 };
 
-                foreach (var vrsta in VrsteRada)
+
+
+                foreach (var auto in listaAuta)
                 {
-                    _context.VrstaRada.Add(vrsta);
-                    _context.Entry(vrsta).State = EntityState.Added;
+                    _context.Automobili.Add(auto);
+                    _context.Entry(auto).State = EntityState.Added;
+
+
 
                 }
 
@@ -716,6 +562,173 @@ namespace RadniNalog.Services
 
             }
             else { }
+
+            //fill podrucja
+            if (_context.Podrucja.Count() == 0)
+            {
+                List<Podrucje> listaPodrucja = new List<Podrucje> {
+
+                new Podrucje { Ime = "Split" },
+                new Podrucje { Ime="Zadar"},
+                new Podrucje { Ime="Šibenik"},
+                new Podrucje { Ime = "Dubrovnik"}
+
+
+
+                };
+
+
+
+                foreach (var podrucje in listaPodrucja)
+                {
+                    _context.Podrucja.Add(podrucje);
+                    _context.Entry(podrucje).State = EntityState.Added;
+
+
+
+                }
+
+                _context.SaveChanges();
+
+            }
+            else { }
+
+
+            //fill tipovi das-a
+            if (_context.TipoviDas.Count() == 0)
+            {
+                List<TipDas> listaDAS = new List<TipDas> {
+
+                    new TipDas{Ime="Advantech 510"},
+                    new TipDas{Ime="Advantech 610"},
+                    new TipDas{Ime="ARK-2120F"},
+                    new TipDas{Ime="AVA 8B"},
+                    new TipDas{Ime="CJ-20 IEL"},
+                    new TipDas{Ime="DS 2000"},
+                    new TipDas{Ime="DS 802"},
+                    new TipDas{Ime="DSR 100"},
+                    new TipDas{Ime="DSSN 200"},
+                    new TipDas{Ime="RTU 520"},
+                    new TipDas{Ime="RTU 560"},
+                    new TipDas{Ime="UST-10Gc"},
+                    new TipDas{Ime="Ostalo"},
+                    new TipDas{Ime="DSR 200"},
+                    new TipDas{Ime="ARK-2120L"}
+
+
+
+                };
+
+
+
+                foreach (var das in listaDAS)
+                {
+                    _context.TipoviDas.Add(das);
+                    _context.Entry(das).State = EntityState.Added;
+
+
+
+                }
+
+                _context.SaveChanges();
+
+            }
+            else { }
+
+
+
+
+
+            //fill stanica SPLIT
+            string jsonDAS = @"apexbaza/DAS.json";
+               var pathToFile = Path.Combine(_env.WebRootPath, jsonDAS);
+
+               var parseDAS = System.IO.File.ReadAllText(pathToFile);
+
+
+                var deserDAS = JsonConvert.DeserializeObject<List<DasJSON>>(parseDAS);
+
+            //fill stanica zadar
+            string jsonZadar = @"apexbaza/ZADAR.json";
+            var pathToFileZadar = Path.Combine(_env.WebRootPath, jsonZadar);
+
+            var parseZadar = System.IO.File.ReadAllText(pathToFileZadar);
+
+
+            var deserZadar = JsonConvert.DeserializeObject<List<DasJSON>>(parseZadar);
+
+
+
+
+
+            if (_context.MjestoRada.Count() == 0)
+            {
+
+                          foreach (var mjestoRada in deserDAS)
+                           {
+                               MjestoRada m = new MjestoRada
+                                {
+
+                                  Ime = mjestoRada.Naziv,
+                                  PodrucjeID = 1,
+                                  TipDasID = mjestoRada.ID_DAS,
+                                  TipPostrojenjaID = mjestoRada.ID_NIVO
+                                  
+
+
+                              };
+                             // _context.Zaposlenici.Add(z);
+                            _context.Entry(m).State = EntityState.Added;
+
+
+                         }
+                _context.SaveChanges();
+
+                foreach (var mjestoRada2 in deserZadar)
+                {
+                    MjestoRada n = new MjestoRada
+                    {
+
+                        Ime = mjestoRada2.Naziv,
+                        PodrucjeID = 2,
+                        TipDasID = mjestoRada2.ID_DAS,
+                        TipPostrojenjaID = mjestoRada2.ID_NIVO
+
+
+
+                    };
+                    // _context.Zaposlenici.Add(z);
+                    _context.Entry(n).State = EntityState.Added;
+
+
+                }
+
+
+
+                _context.SaveChanges();
+
+                     }
+                    else
+                      {
+
+                     }
+
+
+
+            
+
+
+
+
+           
+
+           
+
+
+
+           
+
+          
 
 
         }
@@ -808,6 +821,99 @@ namespace RadniNalog.Services
             }
 
          //  await _context.SaveChangesAsync();
+        }
+
+
+
+
+        public void createRolesandUserstest()
+        {
+
+            if ( !_roleManager.RoleExistsAsync("SuperAdmin").Result)
+            {
+               _roleManager.CreateAsync(new IdentityRole("SuperAdmin")).Wait();
+
+            }
+
+
+            var result =  _userManager.FindByEmailAsync("imales@hep.hr").Result;
+            if (result == null)
+            {
+                var user = new ApplicationUser { UserName = "imales@hep.hr", Email = "imales@hep.hr" };
+
+                var result2 =  _userManager.CreateAsync(user, "Sjetise1234@").Result;
+                if (result2.Succeeded)
+                {
+
+                     _userManager.AddToRoleAsync(user, "SuperAdmin").Wait();
+
+
+
+
+                }
+
+
+            }
+
+
+
+
+
+
+
+
+            //  var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_context));
+            //  var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
+
+
+
+            // In Startup iam creating first Admin Role and creating a default Admin User    
+            if (!_roleManager.RoleExistsAsync("Admin").Result)
+            {
+
+
+                _roleManager.CreateAsync(new IdentityRole("Admin")).Wait();
+
+
+                //Here we create a Admin super user who will maintain the website  
+
+
+
+                //var user = new ApplicationUser();
+                //user.UserName = "Administrator";
+                //user.Email = "imales@hep.hr";
+                //user.EmailConfirmed = true;
+
+
+                //string userPWD = "Sjetise1234@";
+
+
+
+                //var chkUser = await _userManager.CreateAsync(user, userPWD);
+
+                //Add default User to Role Admin   
+                //if (chkUser.Succeeded)
+                //{
+                //    var result1 = await _userManager.AddToRoleAsync(user, "Admin");
+
+                //}
+            }
+
+            // creating Creating Manager role    
+            if (!_roleManager.RoleExistsAsync("User").Result)
+            {
+                 _roleManager.CreateAsync(new IdentityRole("Korisnik")).Wait();
+
+            }
+
+            // creating Creating Employee role    
+            if (! _roleManager.RoleExistsAsync("Viewer").Result)
+            {
+
+               _roleManager.CreateAsync(new IdentityRole("Viewer")).Wait();
+            }
+
+            //  await _context.SaveChangesAsync();
         }
 
 

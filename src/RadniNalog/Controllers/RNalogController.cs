@@ -78,7 +78,11 @@ namespace RadniNalog.Controllers
                 DaciaSanderoST2653C = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Dacia Sandero ST-2653 C").Count(),
                 FiatDobloST851PA = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Doblo ST-851 PA").Count(),
                 FiatPandaST2164C = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Panda ST-2164 C").Count(),
-                FiatStilo741OS = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Stilo-741 OS").Count()
+                FiatStilo741OS = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Stilo-741 OS").Count(),
+				FiatStiloZD496ER = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Fiat Stilo ZD-496-ER").Count(),
+				FordRangerSI986FU = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Ford Ranger ŠI 986-FU").Count(),
+				RenaultMeganeDU107GJ = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Renault Megane DU107GJ").Count(),
+                nepoznato = _context.RadniNalozi.Where(c => c.Automobil.Registracija == "Nepoznato").Count()
 
 
 

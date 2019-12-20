@@ -56,7 +56,7 @@ namespace RadniNalog
 
             /*Dodavanje servisa za interakciju s  MSSQLbazom u INJECT KONTAINER*/
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionLOKAL")));
 
 
             //services.AddDbContext<ApplicationDbContext>(options =>
@@ -148,12 +148,13 @@ namespace RadniNalog
 
 
             //provaj dohvatit servis
-           // var fillRole2 = app.ApplicationServices.GetRequiredService<IFillRole>();
+            // var fillRole2 = app.ApplicationServices.GetRequiredService<IFillRole>();
             //var testContext = app.ApplicationServices.GetService<ApplicationDbContext>();
 
 
-             fillRole2.testFill();
-           // fillRole2.createRolesandUsers();
+            fillRole2.testFill();
+             fillRole2.createRolesandUserstest();
+           
            
 
 

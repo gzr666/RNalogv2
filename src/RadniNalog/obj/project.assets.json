@@ -14081,7 +14081,8 @@
       ],
       "configFilePaths": [
         "C:\\Users\\Ivan Males\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\NuGetDefaults.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

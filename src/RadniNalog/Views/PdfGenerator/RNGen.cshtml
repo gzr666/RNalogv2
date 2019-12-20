@@ -96,17 +96,17 @@
                                 </li>
                             </ul>*@
 
-               
+
                 @if (Model.Izvrsitelj2.Ime == "Bez Izvršitelja 2")
-                        {
+    {
 
-                            Model.Izvrsitelj2.Ime = "";
+        Model.Izvrsitelj2.Ime = "";
 
 
 
-                        }
+    }
 
-                <p><span class="textbold2">Naziv postrojenja:</span> &nbsp;<span class="signature">@Model.MjestoRada.Ime</span></p>
+                <p><span class="textbold2">Naziv postrojenja:</span> &nbsp;<span class="signature">@Model.MjestoRada.TipPostrojenja @Model.MjestoRada.Ime</span></p>
                 <p><span class="textbold2">Mjesto Rada:</span> &nbsp;<span>@Model.LokacijaRada</span></p>
                 <p><span class="textbold2">Opis Radova:</span> &nbsp;<span>@Model.VrstaRada.Naziv</span></p>
                 <p><span class="textbold2">Rad je vezan uz (org. jedinice/tvrtke):</span> &nbsp;<span>@Model.RadVezanUZ</span></p>
@@ -116,158 +116,162 @@
                 <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@Model.PocetakRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.PocetakRadova).Hour</span>&nbsp;<span>sati</span></p>
                 <p><span class="textbold2">Planirani pocetak radova dana:</span> &nbsp;<span class="signature">@DateTime.Parse(@Model.KrajRadova).ToShortDateString()</span>&nbsp;&nbsp;<span>u</span>&nbsp;&nbsp;<span>@DateTime.Parse(@Model.KrajRadova).Hour</span>&nbsp;<span>sati</span></p>
                 <p><span class="textbold2">Za rukovoditelj radova odredujem:</span> &nbsp;<span>@Model.Rukovoditelj.Ime</span></p>
-                <p><span class="textbold2">Ostali izvrsitelji:</span> &nbsp;<span>@Model.Izvrsitelj2.Ime</span>@if (Model.Izvrsitelj3.Ime == "Bez Izvršitelja 3")
-                {
-                    Model.Izvrsitelj3.Ime = "";
-                <span>&nbsp;</span>
-                } else
-                { <span>,</span>}
-                <span>@Model.Izvrsitelj3.Ime</span></p>
+                <p>
+                    <span class="textbold2">Ostali izvrsitelji:</span> &nbsp;<span>@Model.Izvrsitelj2.Ime</span>@if (Model.Izvrsitelj3.Ime == "Bez Izvršitelja 3")
+        {
+            Model.Izvrsitelj3.Ime = "";
+            <span>&nbsp;</span>
+}
+else
+{ <span>,</span>}
+                    <span>@Model.Izvrsitelj3.Ime</span>
+                </p>
 
-            <p>
-                <span class="textbold2">Kategorija rada:</span> &nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.KategorijaRada.BeznaponskoStanje">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -rad u beznaponskom stanju
-                    </label>
-                </span>&nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.KategorijaRada.BlizinaNapona">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -rad u blizini napona
-                    </label>
-                </span>
-            </p>
+                <p>
+                    <span class="textbold2">Kategorija rada:</span> &nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.KategorijaRada.BeznaponskoStanje">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -rad u beznaponskom stanju
+                        </label>
+                    </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.KategorijaRada.BlizinaNapona">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -rad u blizini napona
+                        </label>
+                    </span>
+                </p>
 
-            <p>
-                <span class="textbold2">Vrsta rada:</span> &nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Planirani">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -planirani
-                    </label>
-                </span>&nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Neplanirani">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -neplanirani
-                    </label>
-                </span>&nbsp;
+                <p>
+                    <span class="textbold2">Vrsta rada:</span> &nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Planirani">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -planirani
+                        </label>
+                    </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Neplanirani">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -neplanirani
+                        </label>
+                    </span>&nbsp;
 
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Slozeni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -složeni
-                    </label>
-                </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Slozeni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -složeni
+                        </label>
+                    </span>&nbsp;
 
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Posebni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -posebni/mjerenja i ispitivanja
-                    </label>
-                </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.TipRada.Posebni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -posebni/mjerenja i ispitivanja
+                        </label>
+                    </span>&nbsp;
 
-            </p>
+                </p>
 
-            <p>
-                <span class="textbold2">Zaposlenici:</span> &nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Strucni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -stručni
-                    </label>
-                </span>&nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Poduceni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -podučeni
-                    </label>
-                </span>&nbsp;
+                <p>
+                    <span class="textbold2">Zaposlenici:</span> &nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Strucni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -stručni
+                        </label>
+                    </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Poduceni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -podučeni
+                        </label>
+                    </span>&nbsp;
 
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Nepoduceni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -nepodučeni
-                    </label>
-                </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Nepoduceni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -nepodučeni
+                        </label>
+                    </span>&nbsp;
 
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Pripravnici">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -pripravnici/vježbenici
-                    </label>
-                </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.ObukaZaposlenika.Pripravnici">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -pripravnici/vježbenici
+                        </label>
+                    </span>&nbsp;
 
-            </p>
+                </p>
 
-            <p>
-                <span class="textbold2">Osiguranje mjesta rada:</span> &nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.OsiguranjeMjestaRada.VN">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -na VN
-                    </label>
-                </span>&nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.OsiguranjeMjestaRada.SN">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -na NN
-                    </label>
-                </span>
-            </p>
+                <p>
+                    <span class="textbold2">Osiguranje mjesta rada:</span> &nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.OsiguranjeMjestaRada.VN">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -na VN
+                        </label>
+                    </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.OsiguranjeMjestaRada.SN">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -na NN
+                        </label>
+                    </span>
+                </p>
 
-            <p>
-                <span class="textbold2">Isprave za rad:</span> &nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.IspraveZaRad.DopusnicaZaRad">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -Dopusnica za rad
-                    </label>
-                </span>&nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1" checked="@Model.IspraveZaRad.DopusnicaIskljucenjeRad">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -Dopusnica za iskljucenje i rad
-                    </label>
-                </span>&nbsp;
+                <p>
+                    <span class="textbold2">Isprave za rad:</span> &nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.IspraveZaRad.DopusnicaZaRad">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -Dopusnica za rad
+                        </label>
+                    </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1" checked="@Model.IspraveZaRad.DopusnicaIskljucenjeRad">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -Dopusnica za iskljucenje i rad
+                        </label>
+                    </span>&nbsp;
 
-                <span>
-                    <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1" checked="@Model.IspraveZaRad.IzjavaRukovoditelja">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -Izjava rukovoditelja
-                    </label>
-                </span>&nbsp;
-
-
-            </p>
-
-            <p>
-                <span class="textbold2">Nadzor zaposlenika:</span> &nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.NadzorZaposlenika.Trajni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -trajni
-                    </label>
-                </span>&nbsp;
-                <span>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.NadzorZaposlenika.Povremeni">
-                    <label class="form-check-label" for="defaultCheck1">
-                        -povremeni
-                    </label>
-                </span>&nbsp;
-
-                <span class="textbold2">Nadzorna osoba:</span> &nbsp;<span><input type="text" class="signature" /></span>
-
-            </p>
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1" checked="@Model.IspraveZaRad.IzjavaRukovoditelja">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -Izjava rukovoditelja
+                        </label>
+                    </span>&nbsp;
 
 
+                </p>
+
+                <p>
+                    <span class="textbold2">Nadzor zaposlenika:</span> &nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.NadzorZaposlenika.Trajni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -trajni
+                        </label>
+                    </span>&nbsp;
+                    <span>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="@Model.NadzorZaposlenika.Povremeni">
+                        <label class="form-check-label" for="defaultCheck1">
+                            -povremeni
+                        </label>
+                    </span>&nbsp;
+
+                    <span class="textbold2">Nadzorna osoba:</span> &nbsp;<span><input type="text" class="signature" value="@Model.NadzorZaposlenika.NadzornaOsoba" /></span>
+
+                </p>
 
 
 
 
-            <p><span class="textbold2">Nalog za rad izdao (organizator rada):</span> &nbsp;<span><input type="text" class="signature" /></span></p>
+
+
+                @*<p><span class="textbold2">Nalog za rad izdao (organizator rada):</span> &nbsp;<span><input type="text" class="signature" value="@Model.Rukovoditelj.Ime" /></span></p>*@
+                <p><span class="textbold2">Nalog za rad izdao (organizator rada):</span> &nbsp;<span><input type="text" class="signature" value="Ivica Brstilo" /></span></p>
 
             </div>
 
@@ -294,7 +298,7 @@
 
             <div class="col-xs-12">
 
-                <p><span class="textbold2">Nalog za rad primio:</span> &nbsp;<span> <input type="text" class="signature" /></span></p>
+                <p><span class="textbold2">Nalog za rad primio:</span> &nbsp;<span> <input type="text" class="signature" value="@Model.Rukovoditelj.Ime"/></span></p>
 
 
 
